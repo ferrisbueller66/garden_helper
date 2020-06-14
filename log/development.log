@@ -72,3 +72,45 @@ Migrating to DeviseCreateUsers (20200614225204)
   [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-06-14 19:10:48 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.html.erb within layouts/application
+  Rendered application/welcome.html.erb within layouts/application (Duration: 7.4ms | Allocations: 202)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 318.0ms | Allocations: 82880)
+Completed 500 Internal Server Error in 426ms (ActiveRecord: 0.0ms | Allocations: 90602)
+
+
+  
+ActionView::Template::Error (undefined method `user_logged_in?' for #<#<Class:0x00007facd6a604e8>:0x00007facd6a6a7e0>
+Did you mean?  user_signed_in?):
+    1: <nav>
+    2:     <ul>
+    3:     <li>Home</li>
+    4:     <% if !user_logged_in? %>
+    5:         <li>SignUp</li>
+    6:         <li>Sign In</li>
+    7:     <% else  %>
+  
+app/views/layouts/_nav.html.erb:4
+app/views/layouts/application.html.erb:15
+Started GET "/" for ::1 at 2020-06-14 19:11:14 -0400
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.html.erb within layouts/application
+  Rendered application/welcome.html.erb within layouts/application (Duration: 1.0ms | Allocations: 86)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 7.5ms | Allocations: 251)
+Completed 200 OK in 46ms (Views: 43.5ms | ActiveRecord: 0.0ms | Allocations: 5101)
+
+
+Started GET "/" for ::1 at 2020-06-14 19:11:16 -0400
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.html.erb within layouts/application
+  Rendered application/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 87)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 3992)
+
+
