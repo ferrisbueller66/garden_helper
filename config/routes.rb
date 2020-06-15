@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     get 'signup', to: 'devise/registrations#new'
   end
 
+  resources :users, only: [:show]
+
   root 'application#welcome'
 end
