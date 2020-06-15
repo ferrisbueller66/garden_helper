@@ -1464,3 +1464,18 @@ Migrating to CreateBeds (20200615193822)
   [1m[36mBed Create (1.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "size", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "outside1"], ["size", 4], ["medium", "soil"], ["created_at", "2020-06-15 19:51:35.458535"], ["updated_at", "2020-06-15 19:51:35.458535"]]
   [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/beds" for ::1 at 2020-06-15 16:00:00 -0400
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BedsController#index as HTML
+  Rendering beds/index.html.erb within layouts/application
+  [1m[36mBed Load (7.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds"[0m
+  ↳ app/views/beds/index.html.erb:5
+  Rendered beds/index.html.erb within layouts/application (Duration: 60.9ms | Allocations: 5941)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/_nav.html.erb:4
+  Rendered layouts/_nav.html.erb (Duration: 83.6ms | Allocations: 10500)
+Completed 200 OK in 266ms (Views: 235.2ms | ActiveRecord: 9.9ms | Allocations: 39439)
+
+

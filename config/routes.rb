@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   devise_for :users, :controllers => {:registrations => 'registrations', :omniauth_callbacks => 'callbacks'}
   devise_scope :user do
     get 'signin', to: 'devise/sessions#new'
@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show]
+  resources :beds, only: [:index, :show, :new, :create]
 
   root 'application#welcome'
 end
