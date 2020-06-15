@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_193822) do
+ActiveRecord::Schema.define(version: 2020_06_15_203537) do
 
   create_table "beds", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,21 @@ ActiveRecord::Schema.define(version: 2020_06_15_193822) do
     t.string "medium"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.date "germination_date"
+    t.date "transplant_date"
+    t.string "nickname"
+    t.string "variety"
+    t.string "species"
+    t.text "description"
+    t.integer "user_id"
+    t.integer "bed_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bed_id"], name: "index_plants_on_bed_id"
+    t.index ["user_id"], name: "index_plants_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,4 +53,6 @@ ActiveRecord::Schema.define(version: 2020_06_15_193822) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "plants", "beds"
+  add_foreign_key "plants", "users"
 end

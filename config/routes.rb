@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resources :beds, only: [:index, :show, :new, :create]
+  resources :plants, only: [:index, :show, :new, :create]
 
   root 'application#welcome'
 end
