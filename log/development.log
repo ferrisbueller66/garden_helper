@@ -114,3 +114,198 @@ Processing by ApplicationController#welcome as HTML
 Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 3992)
 
 
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /Users/user/.rvm/gems/ruby-2.6.1/bin/rake:23)
+Started GET "/" for ::1 at 2020-06-15 09:19:50 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.html.erb within layouts/application
+  Rendered application/welcome.html.erb within layouts/application (Duration: 2.5ms | Allocations: 303)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 14.5ms | Allocations: 256)
+Completed 200 OK in 307ms (Views: 288.2ms | ActiveRecord: 0.0ms | Allocations: 19603)
+
+
+Started GET "/" for ::1 at 2020-06-15 09:20:37 -0400
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.html.erb within layouts/application
+  Rendered application/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.6ms | Allocations: 87)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 4100)
+
+
+Started GET "/" for ::1 at 2020-06-15 09:20:55 -0400
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.html.erb within layouts/application
+  Rendered application/welcome.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.4ms | Allocations: 87)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 4096)
+
+
+Started GET "/" for ::1 at 2020-06-15 09:21:12 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.html.erb within layouts/application
+  Rendered application/welcome.html.erb within layouts/application (Duration: 7.5ms | Allocations: 202)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 9.7ms | Allocations: 419)
+Completed 200 OK in 129ms (Views: 104.0ms | ActiveRecord: 0.0ms | Allocations: 10092)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-15 09:21:17 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 213)
+  Rendered devise/shared/_links.html.erb (Duration: 6.7ms | Allocations: 542)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 100.9ms | Allocations: 8869)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 1.1ms | Allocations: 131)
+Completed 200 OK in 207ms (Views: 143.4ms | ActiveRecord: 1.4ms | Allocations: 22837)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-15 09:23:14 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 205)
+  Rendered devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 489)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 12.7ms | Allocations: 2562)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 1.9ms | Allocations: 335)
+Completed 200 OK in 46ms (Views: 42.7ms | ActiveRecord: 0.0ms | Allocations: 9434)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-15 09:23:22 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1273)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.7ms | Allocations: 124)
+Completed 200 OK in 73ms (Views: 30.2ms | ActiveRecord: 0.0ms | Allocations: 5659)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-15 09:23:45 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 205)
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 489)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 16.5ms | Allocations: 2534)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 2.4ms | Allocations: 335)
+Completed 200 OK in 87ms (Views: 85.2ms | ActiveRecord: 0.0ms | Allocations: 9440)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-15 09:29:56 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 205)
+  Rendered devise/shared/_links.html.erb (Duration: 2.5ms | Allocations: 489)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.5ms | Allocations: 2541)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 31.8ms | Allocations: 3605)
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 0.0ms | Allocations: 12682)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <nav>
+    <ul>
+    <li><%= link_to "Home", root_path %></li>
+    <% if !user_signed_in? %>
+        <li><%= link_to "SignUp", new_user_registration_path %></li>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+    <% else  %>
+        <li><%= link_to "Logout", destroy_user_session_path, method: "delete" %></li>
+        <%= "Signed in as" current_user.username %>
+    <% end  %>
+    </ul>
+</nav>
+):
+1:    <nav>
+2:        <ul>
+3:        <li><%= link_to "Home", root_path %></li>
+4:        <% if !user_signed_in? %>
+5:            <li><%= link_to "SignUp", new_user_registration_path %></li>
+6:            <li><%= link_to "Sign In", new_user_session_path %></li>
+7:        <% else  %>
+8:            <li><%= link_to "Logout", destroy_user_session_path, method: "delete" %></li>
+9:            <%= "Signed in as" current_user.username %>
+10:        <% end  %>
+11:        </ul>
+12:    </nav>
+  
+app/views/layouts/_nav.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_nav.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_nav.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_nav.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_nav.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_nav.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:15
+Started GET "/users/sign_up" for ::1 at 2020-06-15 09:30:23 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 206)
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 490)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 2553)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 1.6ms | Allocations: 355)
+Completed 200 OK in 53ms (Views: 50.7ms | ActiveRecord: 0.0ms | Allocations: 9529)
+
+
+Started POST "/users" for ::1 at 2020-06-15 09:30:37 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"kDl3x03/+p90qzbDD2wh/OcLupKB5Fxj5MPiBsO+VY5UP+2S7JppExAQQ2+alUqWphzQvYCVe6vN0a/QJzfH7Q==", "user"=>{"username"=>"trevort", "email"=>"trevor@trevor.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :username[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "trevor@trevor.com"], ["encrypted_password", "$2a$12$W0XpMdkzXg9JsH5VSSTjOuFfMeBBNj2VOoiKjXUlqdYbZjsVB9Tee"], ["created_at", "2020-06-15 13:30:38.467947"], ["updated_at", "2020-06-15 13:30:38.467947"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 587ms (ActiveRecord: 3.8ms | Allocations: 11009)
+
+
+Started GET "/" for ::1 at 2020-06-15 09:30:38 -0400
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.html.erb within layouts/application
+  Rendered application/welcome.html.erb within layouts/application (Duration: 1.7ms | Allocations: 80)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_nav.html.erb:4
+  Rendered layouts/_nav.html.erb (Duration: 10.1ms | Allocations: 1095)
+Completed 200 OK in 54ms (Views: 46.8ms | ActiveRecord: 4.0ms | Allocations: 5496)
+
+
+Started GET "/" for ::1 at 2020-06-15 09:35:13 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.html.erb within layouts/application
+  Rendered application/welcome.html.erb within layouts/application (Duration: 3.3ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_nav.html.erb:4
+  Rendered layouts/_nav.html.erb (Duration: 45.9ms | Allocations: 8741)
+Completed 200 OK in 99ms (Views: 92.2ms | ActiveRecord: 4.3ms | Allocations: 13619)
+
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2020-06-15 09:42:25 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.html.erb within layouts/application
+  Rendered application/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_nav.html.erb:4
+  Rendered layouts/_nav.html.erb (Duration: 4.7ms | Allocations: 1006)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.6ms | Allocations: 5024)
+
+
