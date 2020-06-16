@@ -1622,3 +1622,133 @@ Processing by PlantsController#index as HTML
 Completed 200 OK in 238ms (Views: 173.5ms | ActiveRecord: 4.0ms | Allocations: 48428)
 
 
+Started GET "/plants" for ::1 at 2020-06-15 20:35:00 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:3:in `index'
+  Rendering plants/index.html.erb within layouts/application
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/plants/index.html.erb:4
+  Rendered plants/index.html.erb within layouts/application (Duration: 25.1ms | Allocations: 8872)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 2.0ms | Allocations: 338)
+Completed 200 OK in 146ms (Views: 77.9ms | ActiveRecord: 4.2ms | Allocations: 34197)
+
+
+Started GET "/" for ::1 at 2020-06-15 20:35:06 -0400
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.html.erb within layouts/application
+  Rendered application/welcome.html.erb within layouts/application (Duration: 0.9ms | Allocations: 84)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/_nav.html.erb:4
+  Rendered layouts/_nav.html.erb (Duration: 4.0ms | Allocations: 1003)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.3ms | Allocations: 5556)
+
+
+Started GET "/beds" for ::1 at 2020-06-15 20:35:24 -0400
+  
+SyntaxError (/Users/user/Development/projects/garden_helper/app/controllers/beds_controller.rb:22: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/beds_controller.rb:22: syntax error, unexpected end-of-input, expecting end
+app/controllers/beds_controller.rb:22: syntax error, unexpected end-of-input, expecting end
+app/controllers/beds_controller.rb:22: syntax error, unexpected end-of-input, expecting end
+Started GET "/beds" for ::1 at 2020-06-15 20:35:36 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BedsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:3:in `index'
+  Rendering beds/index.html.erb within layouts/application
+  [1m[36mBed Load (1.7ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/beds/index.html.erb:5
+  Rendered beds/index.html.erb within layouts/application (Duration: 328.6ms | Allocations: 88715)
+Completed 500 Internal Server Error in 391ms (ActiveRecord: 5.6ms | Allocations: 104608)
+
+
+  
+ActionView::Template::Error (undefined method `linke_to' for #<#<Class:0x00007f9b52140e20>:0x00007f9b4fe5f7a8>
+Did you mean?  link_to):
+    4: 
+    5: <% @beds.each do |bed|  %>
+    6: <ul>
+    7: <li> <%= linke_to bed.name, bed_path(bed) %></li>
+    8: </ul>
+    9: <%end  %>
+  
+app/views/beds/index.html.erb:7
+app/views/beds/index.html.erb:5
+Started GET "/beds" for ::1 at 2020-06-15 20:35:47 -0400
+Processing by BedsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:3:in `index'
+  Rendering beds/index.html.erb within layouts/application
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/beds/index.html.erb:5
+  Rendered beds/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 832)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 3.6ms | Allocations: 297)
+Completed 200 OK in 95ms (Views: 56.4ms | ActiveRecord: 0.6ms | Allocations: 7690)
+
+
+Started GET "/beds/1" for ::1 at 2020-06-15 20:35:52 -0400
+Processing by BedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBed Load (0.6ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:7:in `show'
+  Rendering beds/show.html.erb within layouts/application
+  Rendered beds/show.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1103)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms | Allocations: 2415)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1><%= @bed.name %></h1>
+<h2> Bed Details</h2>
+<p> <strong> Location: </strong><%= @bed.location if @bed.location %></p>
+<p> <strong> Size (in sq. ft.): </strong><%= @bed.size if @bed.size %></p>
+<p> <strong> Grow Medium: </strong><%= @bed.medium if @bed.medium %></p>
+
+<h5><%= link_to "Back to Your Beds" beds_path %></h5>
+):
+1:    <h1><%= @bed.name %></h1>
+2:    <h2> Bed Details</h2>
+3:    <p> <strong> Location: </strong><%= @bed.location if @bed.location %></p>
+4:    <p> <strong> Size (in sq. ft.): </strong><%= @bed.size if @bed.size %></p>
+5:    <p> <strong> Grow Medium: </strong><%= @bed.medium if @bed.medium %></p>
+6:    
+7:    <h5><%= link_to "Back to Your Beds" beds_path %></h5>
+  
+app/views/beds/show.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/beds/show.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/beds/show.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/beds/show.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/beds/show.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/beds/show.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/beds/1" for ::1 at 2020-06-15 20:36:06 -0400
+Processing by BedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:7:in `show'
+  Rendering beds/show.html.erb within layouts/application
+  Rendered beds/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 219)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/_nav.html.erb:4
+  Rendered layouts/_nav.html.erb (Duration: 6.5ms | Allocations: 1197)
+Completed 200 OK in 48ms (Views: 41.1ms | ActiveRecord: 0.8ms | Allocations: 7387)
+
+
+Started GET "/beds" for ::1 at 2020-06-15 20:36:48 -0400
+Processing by BedsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:3:in `index'
+  Rendering beds/index.html.erb within layouts/application
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/beds/index.html.erb:5
+  Rendered beds/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 828)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 73)
+Completed 200 OK in 78ms (Views: 65.0ms | ActiveRecord: 0.6ms | Allocations: 6399)
+
+

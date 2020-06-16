@@ -4,6 +4,6 @@
 
 <% @beds.each do |bed|  %>
 <ul>
-<li> <%= bed.name %></li>
+<li> <%= link_to bed.name, bed_path(bed) %></li>
 </ul>
 <%end  %>

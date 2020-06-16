@@ -1,6 +1,6 @@
 class BedsController < ApplicationController
   def index
-    @beds = Bed.all#current_user.beds.all
+    @beds = current_user.beds.all
   end
 
   def show
@@ -8,8 +8,16 @@ class BedsController < ApplicationController
   end
 
   def new
+    @bed = Bed.new
   end
 
   def create
+    @bed = Bed.create(bed_params)
+  end
+
+  private
+
+  def bed_params
+    params.require(:bed).permit(:name, :location, :size, :medium)
   end
 end

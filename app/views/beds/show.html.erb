@@ -1,2 +1,7 @@
-<h1>Beds#show</h1>
-<p>Find me in app/views/beds/show.html.erb</p>
+<h1><%= @bed.name %></h1>
+<h2> Bed Details</h2>
+<p> <strong> Location: </strong><%= @bed.location if @bed.location %></p>
+<p> <strong> Size (in sq. ft.): </strong><%= @bed.size if @bed.size %></p>
+<p> <strong> Grow Medium: </strong><%= @bed.medium if @bed.medium %></p>
+
+<h5><%= link_to "Back to Your Beds", beds_path %></h5>
