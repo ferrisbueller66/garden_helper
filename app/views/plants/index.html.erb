@@ -3,7 +3,7 @@
 
 <% @plants.each do |plant|  %>
 <ul>
-<li> <%= plant.variety %></li>
+<li> <%= link_to plant.variety, plant_path(plant) %></li>
 </ul>
 <%end  %>
 
