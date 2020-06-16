@@ -1,7 +1,17 @@
-<h1><%= @bed.name %></h1>
+<h1>Bed Name: <%= @bed.name %></h1>
 <h2> Bed Details</h2>
 <p> <strong> Location: </strong><%= @bed.location if @bed.location %></p>
 <p> <strong> Size (in sq. ft.): </strong><%= @bed.size if @bed.size %></p>
 <p> <strong> Grow Medium: </strong><%= @bed.medium if @bed.medium %></p>
 
+<h2>Plants in this Bed</h2>
+<% @bed.plants.each do |plant| %>
+    <ol>
+    <li><%= link_to plant.variety, plant_path(plant) %> - </li>
+    </ol>
+<% end %>
+
+
 <h5><%= link_to "Back to Your Beds", beds_path %></h5>
+
+<h5><%= link_to "Go to Your Plants", plants_path %></h5> 

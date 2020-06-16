@@ -1,6 +1,4 @@
-<h1>Beds#index</h1>
-<p>Find me in app/views/beds/index.html.erb</p>
-
+<h1>Here are Your Grow Beds</h1>
 
 <% @beds.each do |bed|  %>
 <ul>
@@ -10,3 +8,5 @@
 
 
 <h5><%= link_to "Add a New Bed", new_bed_path %></h5>
+
+<h5><%= link_to "Go to Your Plants", plants_path %></h5>

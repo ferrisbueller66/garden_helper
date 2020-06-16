@@ -1,6 +1,6 @@
 class BedsController < ApplicationController
   def index
-    @beds = current_user.beds.all
+    @beds = current_user.beds.uniq {|b| b.id}
   end
 
   def show
