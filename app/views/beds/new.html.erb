@@ -1,18 +1,19 @@
 <h2>Add a New Grow Bed</h2>
 <%= form_for(@bed) do |f| %>
-
+     <%= flash.alert if flash[:alert]%>
     <%= f.label :Name %><br>
     <%= f.text_field :name %><br>
 
     <%= f.label :Location %><br>
     <%= f.text_field :location %><br>
 
-    <%= f.label :"Size (in sq ft)" %><br>
+    <%= f.label :"Size (sq ft)" %><br>
     <%= f.text_field :size %><br>
-
+  
     <%= f.label :"Grow Medium" %><br>
-    <%= f.text_field :medium %><br>
-
+    <%= f.collection_select :medium, Bed.select(:medium).distinct, :medium, :medium, {:include_blank => "Please select"} %>
+    <br>
+    <br>
     <%= f.submit %>
 
 <% end %>
