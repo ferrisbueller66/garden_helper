@@ -1,2 +1,21 @@
-<h1>Beds#new</h1>
-<p>Find me in app/views/beds/new.html.erb</p>
+<h2>Add a New Grow Bed</h2>
+<%= form_for(@bed) do |f| %>
+
+    <%= f.label :Name %><br>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :Location %><br>
+    <%= f.text_field :location %><br>
+
+    <%= f.label :"Size (in sq ft)" %><br>
+    <%= f.text_field :size %><br>
+
+    <%= f.label :"Grow Medium" %><br>
+    <%= f.text_field :medium %><br>
+
+    <%= f.submit %>
+
+<% end %>
+
+<p>Change Your Mind?</p>
+<h5><%= link_to "Back to Your Beds", beds_path %></h5>

@@ -13,6 +13,11 @@ class BedsController < ApplicationController
 
   def create
     @bed = Bed.create(bed_params)
+    if @bed.valid?
+      redirect_to @bed
+    else
+      render :new
+    end
   end
 
   private
