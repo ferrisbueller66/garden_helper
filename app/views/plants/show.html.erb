@@ -1,2 +1,14 @@
-<h1>Plants#show</h1>
-<p>Find me in app/views/plants/show.html.erb</p>
+<h1><%= @plant.variety %></h1>
+<h2> Plant Details</h2>
+<p> <strong> Nickname: </strong><%= @plant.nickname if @plant.nickname %></p>
+<p> <strong> Bed: </strong><%= @plant.bed.name if @plant.bed %></p>
+<p> <strong> Location: </strong><%= @plant.bed.location if @plant.bed %></p>
+<p> <strong> Species: </strong><%= @plant.species if @plant.species %></p>
+<p> <strong> Description: </strong><%= @plant.description if @plant.description %></p>
+<p> <strong> Germination Date: </strong><%= @plant.germination_date if @plant.germination_date %></p>
+<p> <strong> Transplant Date: </strong><%= @plant.transplant_date if @plant.transplant_date %></p>
+  
+
+<h5><%= link_to "Go to Your Grow Beds", beds_path %></h5>
+
+<h5><%= link_to "Back to Your Plants", plants_path %></h5>
