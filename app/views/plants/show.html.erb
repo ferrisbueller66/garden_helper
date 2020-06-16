@@ -1,7 +1,7 @@
 <h1><%= @plant.variety %></h1>
 <h2> Plant Details</h2>
 <p> <strong> Nickname: </strong><%= @plant.nickname if @plant.nickname %></p>
-<p> <strong> Bed: </strong><%= @plant.bed.name if @plant.bed %></p>
+<p> <strong> Bed: </strong><%= link_to @plant.bed.name, bed_path(@plant.bed) if @plant.bed %></p>
 <p> <strong> Location: </strong><%= @plant.bed.location if @plant.bed %></p>
 <p> <strong> Species: </strong><%= @plant.species if @plant.species %></p>
 <p> <strong> Description: </strong><%= @plant.description if @plant.description %></p>
