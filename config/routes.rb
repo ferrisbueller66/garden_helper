@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show]
-  resources :beds, only: [:index, :show, :new, :create]
+  resources :beds, only: [:index, :show, :new, :create] do
+    resources :plants, only: [:show]
+  end
   resources :plants, only: [:index, :show, :new, :create]
+  
 
   root 'application#welcome'
 end

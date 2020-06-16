@@ -7,7 +7,7 @@
 <h2>Plants in this Bed</h2>
 <% @bed.plants.each do |plant| %>
     <ol>
-    <li><%= link_to plant.variety, plant_path(plant) %> - </li>
+    <li><%= link_to plant.variety, bed_plant_path(@bed, plant) %> - </li>
     </ol>
 <% end %>
 
