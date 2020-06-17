@@ -8,7 +8,7 @@
 <p> <strong> Germination Date: </strong><%= @plant.germination_date if @plant.germination_date %></p>
 <p> <strong> Transplant Date: </strong><%= @plant.transplant_date if @plant.transplant_date %></p>
   
-
+<h3> <%= link_to "Edit #{@plant.variety}", edit_plant_path(@plant) %> </h3>
 <h5><%= link_to "Go to Your Grow Beds", beds_path %></h5>
 
 <h5><%= link_to "Back to Your Plants", plants_path %></h5>

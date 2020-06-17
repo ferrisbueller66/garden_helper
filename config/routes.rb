@@ -8,10 +8,10 @@ Rails.application.routes.draw do
 
   get 'user', to: 'users#show'
 
-  resources :beds, only: [:index, :show, :new, :create] do
+  resources :beds, only: [:index, :show, :new, :create, :edit, :update] do
     resources :plants, only: [:show]
   end
-  resources :plants, only: [:index, :show, :new, :create]
+  resources :plants, only: [:index, :show, :new, :create, :edit, :update]
   
 
   root 'application#welcome'

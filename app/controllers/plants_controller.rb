@@ -37,6 +37,19 @@ class PlantsController < ApplicationController
     end
   end
 
+  def edit
+    @plant = Plant.find_by(id: params[:id])
+  end
+
+  def update
+    @plant = Plant.find_by(id: params[:id])
+    if @plant.update(plant_params)
+      redirect_to plant_path(@plant)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def plant_params

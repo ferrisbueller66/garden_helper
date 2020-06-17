@@ -34,11 +34,11 @@ class BedsController < ApplicationController
 
   def update
     @bed = Bed.find_by(id: params[:id])
-      if @bed.update(bed_params)
-        redirect_to bed_path(@bed)
-      else
-        render :edit
-      end
+    if @bed.update(bed_params)
+      redirect_to bed_path(@bed)
+    else
+      render :edit
+    end
   end
 
   private
