@@ -1,7 +1,7 @@
 <h2>Add a New Grow Bed</h2>
 
 <%= form_for(@bed) do |f| %>
-     <%= flash.alert if flash[:alert]%>
+   
     <%= f.label :Name %><br>
     <%= f.text_field :name %><br>
 
@@ -15,17 +15,12 @@
     <%= f.collection_select :medium, Bed.select(:medium).distinct, :medium, :medium, {:include_blank => "Please select"} %>
     <br>
     <br>
-
-    <%= fields_for(@plant) do |pf| %>
-
+    <%= f.fields_for :plants do |pf| %>
+        <%= f.label :"Please Enter the First Plant for this Bed" %><br>
         <%= pf.hidden_field :user_id, value: current_user.id %>
-        
 
         <%= pf.label :"Varietal Name" %><br>
         <%= pf.text_field :variety %><br>
-
-       
-
     <% end %>
   
     <br>

@@ -7,13 +7,10 @@ Rails.application.routes.draw do
     
   end
 
-
-
   resources :beds, only: [:index, :show, :new, :create, :edit, :update] do
     resources :plants, only: [:show, :new]
   end
   resources :plants, only: [:index, :show, :new, :create, :edit, :update]
   
-
   root 'application#welcome'
 end

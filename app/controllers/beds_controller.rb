@@ -15,11 +15,10 @@ class BedsController < ApplicationController
 
   def new
     @bed = Bed.new
-    @plant = @bed.plants.build
+    @plant = @bed.plants.build(variety: 'First Plant')
   end
 
   def create
-    binding.pry
     @bed = Bed.create(bed_params)
     if @bed.valid?
       redirect_to @bed
