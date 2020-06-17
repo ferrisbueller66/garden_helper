@@ -11248,3 +11248,688 @@ Processing by PlantsController#show as HTML
 Completed 200 OK in 45ms (Views: 36.0ms | ActiveRecord: 0.9ms | Allocations: 7670)
 
 
+Started GET "/plants/8" for ::1 at 2020-06-17 16:47:56 -0400
+  
+SyntaxError (/Users/user/Development/projects/garden_helper/config/routes.rb:15: syntax error, unexpected end, expecting ']'
+  end
+  ^~~
+/Users/user/Development/projects/garden_helper/config/routes.rb:19: syntax error, unexpected end-of-input, expecting end):
+  
+config/routes.rb:15: syntax error, unexpected end, expecting ']'
+config/routes.rb:19: syntax error, unexpected end-of-input, expecting end
+config/routes.rb:15: syntax error, unexpected end, expecting ']'
+config/routes.rb:19: syntax error, unexpected end-of-input, expecting end
+config/routes.rb:15: syntax error, unexpected end, expecting ']'
+config/routes.rb:19: syntax error, unexpected end-of-input, expecting end
+Started GET "/plants/8" for ::1 at 2020-06-17 16:48:35 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:21:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.6ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  Rendered plants/show.html.erb within layouts/application (Duration: 58.5ms | Allocations: 7850)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 1.8ms | Allocations: 297)
+Completed 200 OK in 155ms (Views: 77.5ms | ActiveRecord: 4.3ms | Allocations: 31392)
+
+
+Started GET "/harvests" for ::1 at 2020-06-17 16:48:46 -0400
+  
+SyntaxError (/Users/user/Development/projects/garden_helper/app/controllers/harvests_controller.rb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+...st = Harvest.find_by(:id params[:id])
+...                         ^~~~~~
+/Users/user/Development/projects/garden_helper/app/controllers/harvests_controller.rb:7: syntax error, unexpected ')', expecting end
+...arvest.find_by(:id params[:id])
+...                              ^
+/Users/user/Development/projects/garden_helper/app/controllers/harvests_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+...lant = Plant.find_by(:id params[:id])
+...                         ^~~~~~
+/Users/user/Development/projects/garden_helper/app/controllers/harvests_controller.rb:11: syntax error, unexpected ')', expecting end
+... Plant.find_by(:id params[:id])
+...                              ^
+/Users/user/Development/projects/garden_helper/app/controllers/harvests_controller.rb:17: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/harvests_controller.rb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/harvests_controller.rb:7: syntax error, unexpected ')', expecting end
+app/controllers/harvests_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/harvests_controller.rb:11: syntax error, unexpected ')', expecting end
+app/controllers/harvests_controller.rb:17: syntax error, unexpected end-of-input, expecting end
+app/controllers/harvests_controller.rb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/harvests_controller.rb:7: syntax error, unexpected ')', expecting end
+app/controllers/harvests_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/harvests_controller.rb:11: syntax error, unexpected ')', expecting end
+app/controllers/harvests_controller.rb:17: syntax error, unexpected end-of-input, expecting end
+app/controllers/harvests_controller.rb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/harvests_controller.rb:7: syntax error, unexpected ')', expecting end
+app/controllers/harvests_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/harvests_controller.rb:11: syntax error, unexpected ')', expecting end
+app/controllers/harvests_controller.rb:17: syntax error, unexpected end-of-input, expecting end
+Started GET "/harvests" for ::1 at 2020-06-17 16:49:51 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/user/Development/projects/garden_helper/app/controllers/harvests_controller.rb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+...st = Harvest.find_by(:id params[:id])
+...                         ^~~~~~
+/Users/user/Development/projects/garden_helper/app/controllers/harvests_controller.rb:7: syntax error, unexpected ')', expecting end
+...arvest.find_by(:id params[:id])
+...                              ^
+/Users/user/Development/projects/garden_helper/app/controllers/harvests_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+...lant = Plant.find_by(:id params[:id])
+...                         ^~~~~~
+/Users/user/Development/projects/garden_helper/app/controllers/harvests_controller.rb:11: syntax error, unexpected ')', expecting end
+... Plant.find_by(:id params[:id])
+...                              ^
+/Users/user/Development/projects/garden_helper/app/controllers/harvests_controller.rb:17: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/harvests_controller.rb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/harvests_controller.rb:7: syntax error, unexpected ')', expecting end
+app/controllers/harvests_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/harvests_controller.rb:11: syntax error, unexpected ')', expecting end
+app/controllers/harvests_controller.rb:17: syntax error, unexpected end-of-input, expecting end
+app/controllers/harvests_controller.rb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/harvests_controller.rb:7: syntax error, unexpected ')', expecting end
+app/controllers/harvests_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/harvests_controller.rb:11: syntax error, unexpected ')', expecting end
+app/controllers/harvests_controller.rb:17: syntax error, unexpected end-of-input, expecting end
+app/controllers/harvests_controller.rb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/harvests_controller.rb:7: syntax error, unexpected ')', expecting end
+app/controllers/harvests_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/harvests_controller.rb:11: syntax error, unexpected ')', expecting end
+app/controllers/harvests_controller.rb:17: syntax error, unexpected end-of-input, expecting end
+Started GET "/harvests" for ::1 at 2020-06-17 16:50:25 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/user/Development/projects/garden_helper/app/controllers/harvests_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+...lant = Plant.find_by(:id params[:id])
+...                         ^~~~~~
+/Users/user/Development/projects/garden_helper/app/controllers/harvests_controller.rb:11: syntax error, unexpected ')', expecting end
+... Plant.find_by(:id params[:id])
+...                              ^):
+  
+app/controllers/harvests_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/harvests_controller.rb:11: syntax error, unexpected ')', expecting end
+app/controllers/harvests_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/harvests_controller.rb:11: syntax error, unexpected ')', expecting end
+app/controllers/harvests_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/harvests_controller.rb:11: syntax error, unexpected ')', expecting end
+Started POST "/__web_console/repl_sessions/551d730947027bdf281679f2866889d3/trace" for ::1 at 2020-06-17 16:50:35 -0400
+Started GET "/harvests" for ::1 at 2020-06-17 16:50:36 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HarvestsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:3:in `index'
+  Rendering harvests/index.html.erb within layouts/application
+  [1m[36mHarvest Load (1.2ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/harvests/index.html.erb:3
+  [1m[36mPlant Load (1.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/harvests/index.html.erb:6
+  [1m[36mBed Load (1.7ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/harvests/index.html.erb:6
+  Rendered harvests/index.html.erb within layouts/application (Duration: 105.7ms | Allocations: 21862)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.8ms | Allocations: 76)
+Completed 200 OK in 187ms (Views: 134.1ms | ActiveRecord: 9.5ms | Allocations: 38898)
+
+
+Started GET "/plants/8" for ::1 at 2020-06-17 16:51:15 -0400
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:21:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  Rendered plants/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 902)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 73)
+Completed 200 OK in 39ms (Views: 32.0ms | ActiveRecord: 0.8ms | Allocations: 6866)
+
+
+Started GET "/beds/5" for ::1 at 2020-06-17 16:51:19 -0400
+Processing by BedsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:8:in `show'
+  Rendering beds/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."bed_id" = ?[0m  [["bed_id", 5]]
+  ↳ app/views/beds/show.html.erb:10
+  Rendered beds/show.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2011)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 73)
+Completed 200 OK in 31ms (Views: 25.5ms | ActiveRecord: 1.2ms | Allocations: 8429)
+
+
+Started GET "/beds/5/plants/8" for ::1 at 2020-06-17 16:51:22 -0400
+Processing by PlantsController#show as HTML
+  Parameters: {"bed_id"=>"5", "id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:9:in `show'
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:11:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  Rendered plants/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 893)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 73)
+Completed 200 OK in 32ms (Views: 23.5ms | ActiveRecord: 1.2ms | Allocations: 7135)
+
+
+Started GET "/beds/5/plants/8" for ::1 at 2020-06-17 17:38:51 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlantsController#show as HTML
+  Parameters: {"bed_id"=>"5", "id"=>"8"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.8ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:9:in `show'
+  [1m[36mPlant Load (1.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:11:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.7ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (6.2ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 8]]
+  ↳ app/views/plants/show.html.erb:10
+  Rendered plants/show.html.erb within layouts/application (Duration: 33.7ms | Allocations: 2738)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 2.4ms | Allocations: 295)
+Completed 200 OK in 118ms (Views: 83.4ms | ActiveRecord: 9.7ms | Allocations: 10396)
+
+
+Started GET "/plants" for ::1 at 2020-06-17 17:38:58 -0400
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  Rendering plants/index.html.erb within layouts/application
+  [1m[36mPlant Load (0.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/plants/index.html.erb:2
+  [1m[36mBed Load (0.9ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  Rendered plants/index.html.erb within layouts/application (Duration: 29.0ms | Allocations: 4708)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.5ms | Allocations: 73)
+Completed 200 OK in 63ms (Views: 52.7ms | ActiveRecord: 4.5ms | Allocations: 10106)
+
+
+Started GET "/plants/3" for ::1 at 2020-06-17 17:39:00 -0400
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:21:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (0.2ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 3]]
+  ↳ app/views/plants/show.html.erb:10
+  Rendered plants/show.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1632)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.4ms | Allocations: 69)
+Completed 200 OK in 34ms (Views: 26.6ms | ActiveRecord: 1.1ms | Allocations: 7317)
+
+
+Started GET "/plants" for ::1 at 2020-06-17 17:39:03 -0400
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  Rendering plants/index.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/plants/index.html.erb:2
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  Rendered plants/index.html.erb within layouts/application (Duration: 20.0ms | Allocations: 3820)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.4ms | Allocations: 69)
+Completed 200 OK in 55ms (Views: 47.0ms | ActiveRecord: 1.4ms | Allocations: 9134)
+
+
+Started GET "/plants/8" for ::1 at 2020-06-17 17:39:04 -0400
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:21:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (0.2ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 8]]
+  ↳ app/views/plants/show.html.erb:10
+  Rendered plants/show.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1656)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 69)
+Completed 200 OK in 36ms (Views: 31.7ms | ActiveRecord: 0.7ms | Allocations: 7339)
+
+
+Started GET "/plants/8" for ::1 at 2020-06-17 17:39:55 -0400
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:21:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (0.2ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 8]]
+  ↳ app/views/plants/show.html.erb:11
+  Rendered plants/show.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1988)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.8ms | Allocations: 295)
+Completed 200 OK in 67ms (Views: 60.3ms | ActiveRecord: 1.0ms | Allocations: 9114)
+
+
+Started GET "/plants/8/harvests/new" for ::1 at 2020-06-17 17:39:59 -0400
+Processing by HarvestsController#new as HTML
+  Parameters: {"plant_id"=>"8"}
+  Rendering harvests/new.html.erb within layouts/application
+  Rendered harvests/new.html.erb within layouts/application (Duration: 31.5ms | Allocations: 1395)
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 0.0ms | Allocations: 2568)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h2>Add a New Harvest</h2>
+    2: <%= form_for(@plant) do |f| %>
+    3: 
+    4:     <%= f.hidden_field :plant_id, value: @plant.id %>
+    5: 
+  
+app/views/harvests/new.html.erb:2
+Started GET "/plants/8/harvests/new" for ::1 at 2020-06-17 17:46:31 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HarvestsController#new as HTML
+  Parameters: {"plant_id"=>"8"}
+  [1m[36mPlant Load (0.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:12:in `new'
+Redirected to http://localhost:3000/plants
+Completed 302 Found in 14ms (ActiveRecord: 0.6ms | Allocations: 2759)
+
+
+Started GET "/plants" for ::1 at 2020-06-17 17:46:31 -0400
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  Rendering plants/index.html.erb within layouts/application
+  [1m[36mPlant Load (0.7ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/plants/index.html.erb:2
+  [1m[36mBed Load (0.7ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  Rendered plants/index.html.erb within layouts/application (Duration: 68.3ms | Allocations: 17758)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 2.3ms | Allocations: 298)
+Completed 200 OK in 137ms (Views: 96.0ms | ActiveRecord: 2.7ms | Allocations: 33045)
+
+
+Started GET "/plants/8" for ::1 at 2020-06-17 17:46:36 -0400
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:21:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (2.1ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 8]]
+  ↳ app/views/plants/show.html.erb:11
+  Rendered plants/show.html.erb within layouts/application (Duration: 55.1ms | Allocations: 7410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.2ms | Allocations: 73)
+Completed 200 OK in 70ms (Views: 63.4ms | ActiveRecord: 2.9ms | Allocations: 13285)
+
+
+Started GET "/plants/8/harvests/new" for ::1 at 2020-06-17 17:46:38 -0400
+Processing by HarvestsController#new as HTML
+  Parameters: {"plant_id"=>"8"}
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:12:in `new'
+Redirected to http://localhost:3000/plants
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 1048)
+
+
+Started GET "/plants" for ::1 at 2020-06-17 17:46:38 -0400
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  Rendering plants/index.html.erb within layouts/application
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/plants/index.html.erb:2
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  Rendered plants/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 3822)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 69)
+Completed 200 OK in 35ms (Views: 27.4ms | ActiveRecord: 1.6ms | Allocations: 9151)
+
+
+Started GET "/plants/8" for ::1 at 2020-06-17 17:47:07 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:21:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (0.2ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 8]]
+  ↳ app/views/plants/show.html.erb:11
+  Rendered plants/show.html.erb within layouts/application (Duration: 62.2ms | Allocations: 14279)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.2ms | Allocations: 75)
+Completed 200 OK in 123ms (Views: 71.6ms | ActiveRecord: 5.3ms | Allocations: 37421)
+
+
+Started GET "/plants/8/harvests/new" for ::1 at 2020-06-17 17:47:12 -0400
+Processing by HarvestsController#new as HTML
+  Parameters: {"plant_id"=>"8"}
+  [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (pry):3:in `new'
+Started GET "/plants/8/harvests/new" for ::1 at 2020-06-17 17:48:12 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HarvestsController#new as HTML
+  Parameters: {"plant_id"=>"8"}
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (pry):4:in `new'
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/harvests_controller.rb:11:in `new'
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (pry):7:in `new'
+Started GET "/plants/8" for ::1 at 2020-06-17 17:50:42 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:21:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.6ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (0.3ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 8]]
+  ↳ app/views/plants/show.html.erb:11
+  Rendered plants/show.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1692)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 69)
+Completed 200 OK in 55ms (Views: 37.3ms | ActiveRecord: 1.9ms | Allocations: 7444)
+
+
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:13:in `new'
+Redirected to http://localhost:3000/plants
+Completed 302 Found in 173270ms (ActiveRecord: 0.6ms | Allocations: 52755)
+
+
+Started GET "/plants/8/harvests/new" for ::1 at 2020-06-17 17:51:05 -0400
+Processing by HarvestsController#new as HTML
+  Parameters: {"plant_id"=>"8"}
+Started GET "/plants" for ::1 at 2020-06-17 17:51:05 -0400
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  Rendering plants/index.html.erb within layouts/application
+  [1m[36mPlant Load (0.7ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/plants/index.html.erb:2
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  Rendered plants/index.html.erb within layouts/application (Duration: 23.8ms | Allocations: 4842)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 69)
+Completed 200 OK in 65ms (Views: 59.6ms | ActiveRecord: 1.4ms | Allocations: 17027)
+
+
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:13:in `new'
+Redirected to http://localhost:3000/plants
+Completed 302 Found in 1685ms (ActiveRecord: 0.2ms | Allocations: 23667)
+
+
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:13:in `new'
+Redirected to http://localhost:3000/plants
+Completed 302 Found in 236597ms (ActiveRecord: 0.5ms | Allocations: 104516)
+
+
+Started GET "/plants/8" for ::1 at 2020-06-17 17:51:38 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.7ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:21:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.6ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (0.9ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 8]]
+  ↳ app/views/plants/show.html.erb:11
+  Rendered plants/show.html.erb within layouts/application (Duration: 56.8ms | Allocations: 16888)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 9.0ms | Allocations: 310)
+Completed 200 OK in 250ms (Views: 162.0ms | ActiveRecord: 7.1ms | Allocations: 51670)
+
+
+Started GET "/plants/8/harvests/new" for ::1 at 2020-06-17 17:51:42 -0400
+Processing by HarvestsController#new as HTML
+  Parameters: {"plant_id"=>"8"}
+  [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:12:in `new'
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (pry):1:in `new'
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (pry):2:in `new'
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "plants"[0m
+  ↳ (pry):3:in `new'
+Started GET "/plants/8/harvests/new" for ::1 at 2020-06-17 17:52:42 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HarvestsController#new as HTML
+  Parameters: {"plant_id"=>"8"}
+  [1m[36mPlant Load (1.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:12:in `new'
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (pry):4:in `new'
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (pry):9:in `new'
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ (pry):10:in `new'
+Redirected to http://localhost:3000/plants
+Completed 302 Found in 274754ms (ActiveRecord: 1.4ms | Allocations: 33942)
+
+
+Started GET "/plants/8/harvests/new" for ::1 at 2020-06-17 17:57:17 -0400
+Redirected to http://localhost:3000/plants
+Completed 302 Found in 341804ms (ActiveRecord: 2.9ms | Allocations: 66698)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/plants" for ::1 at 2020-06-17 17:57:24 -0400
+Processing by HarvestsController#new as HTML
+  Parameters: {"plant_id"=>"8"}
+  [1m[36mPlant Load (0.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:12:in `new'
+  Rendering harvests/new.html.erb within layouts/application
+  Rendered harvests/new.html.erb within layouts/application (Duration: 30.4ms | Allocations: 5843)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 3.1ms | Allocations: 20787)
+
+
+  
+ActionView::Template::Error (undefined method `transplant_date' for #<Harvest:0x00007f8a98235c60>):
+     7:     <%= f.text_field :weight %><br>
+     8: 
+     9:     <%= f.label :"Transplant Date" %><br>
+    10:     <%= f.date_field :transplant_date %><br>
+    11:     
+    12:   
+    13:     <br>
+  
+app/views/harvests/new.html.erb:10
+app/views/harvests/new.html.erb:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  Rendering plants/index.html.erb within layouts/application
+  [1m[36mPlant Load (1.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/plants/index.html.erb:2
+  [1m[36mBed Load (0.8ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  Rendered plants/index.html.erb within layouts/application (Duration: 71.9ms | Allocations: 18253)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 75)
+Completed 200 OK in 157ms (Views: 108.2ms | ActiveRecord: 5.8ms | Allocations: 34840)
+
+
+Started GET "/plants/8" for ::1 at 2020-06-17 17:57:40 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:21:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.5ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (1.1ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 8]]
+  ↳ app/views/plants/show.html.erb:11
+  Rendered plants/show.html.erb within layouts/application (Duration: 75.5ms | Allocations: 17142)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 2.2ms | Allocations: 310)
+Completed 200 OK in 209ms (Views: 117.0ms | ActiveRecord: 7.3ms | Allocations: 49904)
+
+
+Started GET "/plants/8/harvests/new" for ::1 at 2020-06-17 17:57:41 -0400
+Processing by HarvestsController#new as HTML
+  Parameters: {"plant_id"=>"8"}
+  [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:12:in `new'
+  Rendering harvests/new.html.erb within layouts/application
+  Rendered harvests/new.html.erb within layouts/application (Duration: 49.7ms | Allocations: 5870)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.5ms | Allocations: 7680)
+
+
+  
+ActionView::Template::Error (undefined method `transplant_date' for #<Harvest:0x00007f8e9f67edc0>):
+     7:     <%= f.text_field :weight %><br>
+     8: 
+     9:     <%= f.label :"Transplant Date" %><br>
+    10:     <%= f.date_field :transplant_date %><br>
+    11:     
+    12:   
+    13:     <br>
+  
+app/views/harvests/new.html.erb:10
+app/views/harvests/new.html.erb:2
+Started GET "/plants/8/harvests/new" for ::1 at 2020-06-17 17:58:43 -0400
+Processing by HarvestsController#new as HTML
+  Parameters: {"plant_id"=>"8"}
+  [1m[36mPlant Load (0.7ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:12:in `new'
+  Rendering harvests/new.html.erb within layouts/application
+  Rendered harvests/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1157)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/_nav.html.erb:4
+  Rendered layouts/_nav.html.erb (Duration: 6.2ms | Allocations: 1197)
+Completed 200 OK in 54ms (Views: 48.3ms | ActiveRecord: 1.1ms | Allocations: 8412)
+
+
+Started POST "/harvests" for ::1 at 2020-06-17 17:59:03 -0400
+Processing by HarvestsController#create as HTML
+  Parameters: {"authenticity_token"=>"D10Nz4nTxnD0uOsqJRrcHkN+tob3sVGzz+fnWVZ7eR7cNsfmM4NdRC3XdWxQ19pvdEJWshvnMg09XIMKobZ4RQ==", "harvest"=>{"plant_id"=>"8", "weight"=>"1", "harvest_date"=>"2020-06-16"}, "commit"=>"Create Harvest"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/harvests_controller.rb:24:in `create'
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:24:in `create'
+  [1m[36mHarvest Create (5.1ms)[0m  [1m[32mINSERT INTO "harvests" ("weight", "harvest_date", "plant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["weight", 1.0], ["harvest_date", "2020-06-16"], ["plant_id", 8], ["created_at", "2020-06-17 21:59:03.062408"], ["updated_at", "2020-06-17 21:59:03.062408"]]
+  ↳ app/controllers/harvests_controller.rb:24:in `create'
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/harvests_controller.rb:24:in `create'
+Redirected to http://localhost:3000/plants/8
+Completed 302 Found in 13400ms (ActiveRecord: 10.0ms | Allocations: 27058)
+
+
+Started GET "/plants/8" for ::1 at 2020-06-17 17:59:16 -0400
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:21:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (0.3ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 8]]
+  ↳ app/views/plants/show.html.erb:11
+  Rendered plants/show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2011)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.5ms | Allocations: 73)
+Completed 200 OK in 32ms (Views: 25.9ms | ActiveRecord: 1.0ms | Allocations: 8369)
+
+
+Started GET "/plants/8/harvests/new" for ::1 at 2020-06-17 17:59:33 -0400
+Processing by HarvestsController#new as HTML
+  Parameters: {"plant_id"=>"8"}
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:12:in `new'
+  Rendering harvests/new.html.erb within layouts/application
+  Rendered harvests/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 825)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/_nav.html.erb:4
+  Rendered layouts/_nav.html.erb (Duration: 5.4ms | Allocations: 975)
+Completed 200 OK in 35ms (Views: 28.9ms | ActiveRecord: 0.6ms | Allocations: 6638)
+
+

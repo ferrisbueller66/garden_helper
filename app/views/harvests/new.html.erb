@@ -1,2 +1,19 @@
-<h1>Harvests#new</h1>
-<p>Find me in app/views/harvests/new.html.erb</p>
+<h2>Add a New Harvest</h2>
+<%= form_for(@harvest) do |f| %>
+
+    <%= f.hidden_field :plant_id, value: @plant.id %>
+
+    <%= f.label :"Weight (in ounces)" %><br>
+    <%= f.text_field :weight %><br>
+
+    <%= f.label :"Harvest Date" %><br>
+    <%= f.date_field :harvest_date %><br>
+    
+    <br>
+    <br>
+    <%= f.submit %>
+
+<% end %>
+
+<p>Change Your Mind?</p>
+<h5><%= link_to "Back to Your Plants", plants_path %></h5>
