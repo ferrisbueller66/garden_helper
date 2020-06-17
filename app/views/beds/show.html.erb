@@ -12,7 +12,7 @@
     <li><%= link_to plant.variety, bed_plant_path(@bed, plant) %> - </li>
     </ol>
 <% end %>
-
+<h5><%= link_to "Add a New Plant to this Bed", new_bed_plant_path(@bed) %></h5>
 
 <h5><%= link_to "Back to Your Beds", beds_path %></h5>
 

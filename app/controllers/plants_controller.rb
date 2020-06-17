@@ -15,7 +15,7 @@ class PlantsController < ApplicationController
           redirect_to plants_path
         end
       else
-        redirect_to beds_path
+        redirect_to beds_path    #DO I WANT THIS TO BE THE REDIRECT ROUTE?
       end
     else
       @plant = Plant.find_by(id: params[:id])
@@ -24,7 +24,16 @@ class PlantsController < ApplicationController
   end
 
   def new
-    @plant = Plant.new
+    if params[:bed_id]
+      @bed = Bed.find_by(id: params[:bed_id])
+      if @bed
+        @plant = Plant.new
+      else
+        redirect_to beds_path
+      end
+    else
+      @plant = Plant.new
+    end
   end
 
   def create
