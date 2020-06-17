@@ -15,9 +15,11 @@ class BedsController < ApplicationController
 
   def new
     @bed = Bed.new
+    @plant = @bed.plants.build
   end
 
   def create
+    binding.pry
     @bed = Bed.create(bed_params)
     if @bed.valid?
       redirect_to @bed
@@ -30,6 +32,7 @@ class BedsController < ApplicationController
 
   def edit
     @bed = Bed.find_by(id: params[:id])
+   
   end
 
   def update
@@ -44,6 +47,6 @@ class BedsController < ApplicationController
   private
 
   def bed_params
-    params.require(:bed).permit(:name, :location, :size, :medium)
+    params.require(:bed).permit(:name, :location, :size, :medium, plants_attributes: [:variety, :user_id])
   end
 end

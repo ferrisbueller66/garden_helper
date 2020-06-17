@@ -1,2 +1,41 @@
 <h2>Add a New Grow Bed</h2>
-<%= render 'form' %>
+
+<%= form_for(@bed) do |f| %>
+     <%= flash.alert if flash[:alert]%>
+    <%= f.label :Name %><br>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :Location %><br>
+    <%= f.text_field :location %><br>
+
+    <%= f.label :"Size (sq ft)" %><br>
+    <%= f.text_field :size %><br>
+  
+    <%= f.label :"Grow Medium" %><br>
+    <%= f.collection_select :medium, Bed.select(:medium).distinct, :medium, :medium, {:include_blank => "Please select"} %>
+    <br>
+    <br>
+
+    <%= fields_for(@plant) do |pf| %>
+
+        <%= pf.hidden_field :user_id, value: current_user.id %>
+        
+
+        <%= pf.label :"Varietal Name" %><br>
+        <%= pf.text_field :variety %><br>
+
+       
+
+    <% end %>
+  
+    <br>
+    <br>
+    <%= f.submit %>
+
+<% end %>
+
+
+
+<p>Change Your Mind?</p>
+<h5><%= link_to "Back to Your Beds", beds_path %></h5>
+
