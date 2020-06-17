@@ -7,9 +7,11 @@
 <p> <strong> Description: </strong><%= @plant.description if @plant.description %></p>
 <p> <strong> Germination Date: </strong><%= @plant.germination_date if @plant.germination_date %></p>
 <p> <strong> Transplant Date: </strong><%= @plant.transplant_date if @plant.transplant_date %></p>
+
+
 <p> <strong> Harvests: </strong>
 <P><% @plant.harvests.each do |harvest| %>
-    <li><%= harvest.weight %></li>
+    <li><%= harvest.weight %> (<%=harvest.harvest_date%>)</li>
 <% end  %>
 <p> <strong> <%= link_to "Add a Harvest", new_plant_harvest_path(@plant) %></p>
   
