@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_203537) do
+ActiveRecord::Schema.define(version: 2020_06_17_195625) do
 
   create_table "beds", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 2020_06_15_203537) do
     t.string "medium"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "harvests", force: :cascade do |t|
+    t.float "weight"
+    t.date "harvest_date"
+    t.integer "plant_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plant_id"], name: "index_harvests_on_plant_id"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -53,6 +62,7 @@ ActiveRecord::Schema.define(version: 2020_06_15_203537) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "harvests", "plants"
   add_foreign_key "plants", "beds"
   add_foreign_key "plants", "users"
 end

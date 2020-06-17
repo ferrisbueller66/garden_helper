@@ -11,7 +11,8 @@
     <% else  %>
     <%= f.label :"Grow Bed" %><br>
     <%= f.collection_select :bed_id, Bed.all, :id, :name, {:include_blank => "Please select"} %><br>
-
+        <br>
+    <%= link_to "Or start a New Bed", new_bed_path %><br>
     <% end  %>
 
     <%= f.label :Nickname %><br>

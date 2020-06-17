@@ -1,0 +1,11 @@
+<h1>Here are Your Harvests</h1>
+
+<% @harvests.each do |harvest|  %>
+<ul>
+<li> <%= harvest.weight %></li>
+<%end  %>
+
+
+<h5><%= link_to "Add a New harvest", new_bed_path %></h5>
+
+<h5><%= link_to "Go to Your Plants", plants_path %></h5>
