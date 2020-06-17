@@ -1,9 +1,7 @@
-<h1>Plants#index</h1>
-<p>Find me in app/views/plants/index.html.erb</p>
-
+<h1>Here Are All Your Plants</h1>
 <% @plants.each do |plant|  %>
 <ul>
-<li> <%= link_to plant.variety, plant_path(plant) %></li>
+<li> <%= link_to plant.variety, plant_path(plant) %> (Grow Bed: <%=link_to plant.bed.name, bed_path(plant.bed)%>)</li>
 </ul>
 <%end  %>
 

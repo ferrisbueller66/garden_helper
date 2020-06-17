@@ -5,6 +5,11 @@ class BedsController < ApplicationController
 
   def show
     @bed = Bed.find_by(id: params[:id])
+    if @bed
+      render :show
+    else
+      redirect_to beds_path
+    end
   end
 
   def new

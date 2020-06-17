@@ -4,7 +4,18 @@ class PlantsController < ApplicationController
   end
 
   def show
-    @plant = Plant.find_by(id: params[:id])
+    
+    @bed = Bed.find_by(id: params[:bed_id])
+    if @bed
+      @plant = Plant.find_by(id: params[:id])
+      if @plant
+        render :show
+      else
+        redirect_to plants_path
+      end
+    else
+      redirect_to beds_path
+    end
   end
 
   def new
