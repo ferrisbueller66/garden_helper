@@ -10939,3 +10939,312 @@ Processing by HarvestsController#index as HTML
 Completed 200 OK in 62ms (Views: 52.7ms | ActiveRecord: 2.9ms | Allocations: 13011)
 
 
+Started GET "/harvests" for ::1 at 2020-06-17 16:33:39 -0400
+Processing by HarvestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:3:in `index'
+  Rendering harvests/index.html.erb within layouts/application
+  [1m[36mHarvest Load (0.3ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/harvests/index.html.erb:3
+  Rendered harvests/index.html.erb within layouts/application (Duration: 575.8ms | Allocations: 164390)
+Completed 500 Internal Server Error in 590ms (ActiveRecord: 0.6ms | Allocations: 166609)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `harvest' for #<#<Class:0x00007fdfae8b4aa8>:0x00007fdfaad170e0>
+Did you mean?  @harvests):
+     6: <%end  %>
+     7: 
+     8: 
+     9: <h5><% link_to "Add a New harvest for #{harvest.plant.name}", new_bed_path %></h5>
+    10: 
+    11: <h5><%= link_to "Go to Your Plants", plants_path %></h5>
+  
+app/views/harvests/index.html.erb:9
+Started GET "/harvests" for ::1 at 2020-06-17 16:34:09 -0400
+Processing by HarvestsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:3:in `index'
+  Rendering harvests/index.html.erb within layouts/application
+  Rendered harvests/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1110)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms | Allocations: 3333)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Here are Your Harvests</h1>
+
+<% @harvests.each do |harvest|  %>
+<ul>
+<li> <%= harvest.weight %></li>
+<%end  %>
+
+
+<h5><% link_to "Add a New harvest for "#{harvest.plant.name}", new_bed_path %></h5>
+
+<h5><%= link_to "Go to Your Plants", plants_path %></h5>
+):
+1:    <h1>Here are Your Harvests</h1>
+2:    
+3:    <% @harvests.each do |harvest|  %>
+4:    <ul>
+5:    <li> <%= harvest.weight %></li>
+6:    <%end  %>
+7:    
+8:    
+9:    <h5><% link_to "Add a New harvest for "#{harvest.plant.name}", new_bed_path %></h5>
+10:    
+11:    <h5><%= link_to "Go to Your Plants", plants_path %></h5>
+  
+app/views/harvests/index.html.erb:11: syntax error, unexpected '<', expecting end
+app/views/harvests/index.html.erb:13: unterminated regexp meets end of file
+app/views/harvests/index.html.erb:13: syntax error, unexpected end-of-input, expecting end
+app/views/harvests/index.html.erb:11: syntax error, unexpected '<', expecting end
+app/views/harvests/index.html.erb:13: unterminated regexp meets end of file
+app/views/harvests/index.html.erb:13: syntax error, unexpected end-of-input, expecting end
+app/views/harvests/index.html.erb:11: syntax error, unexpected '<', expecting end
+app/views/harvests/index.html.erb:13: unterminated regexp meets end of file
+app/views/harvests/index.html.erb:13: syntax error, unexpected end-of-input, expecting end
+app/views/harvests/index.html.erb:11: syntax error, unexpected '<', expecting end
+app/views/harvests/index.html.erb:13: unterminated regexp meets end of file
+app/views/harvests/index.html.erb:13: syntax error, unexpected end-of-input, expecting end
+app/views/harvests/index.html.erb:11: syntax error, unexpected '<', expecting end
+app/views/harvests/index.html.erb:13: unterminated regexp meets end of file
+app/views/harvests/index.html.erb:13: syntax error, unexpected end-of-input, expecting end
+app/views/harvests/index.html.erb:11: syntax error, unexpected '<', expecting end
+app/views/harvests/index.html.erb:13: unterminated regexp meets end of file
+app/views/harvests/index.html.erb:13: syntax error, unexpected end-of-input, expecting end
+Started GET "/harvests" for ::1 at 2020-06-17 16:34:26 -0400
+Processing by HarvestsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:3:in `index'
+  Rendering harvests/index.html.erb within layouts/application
+  Rendered harvests/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1108)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms | Allocations: 3331)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Here are Your Harvests</h1>
+
+<% @harvests.each do |harvest|  %>
+<ul>
+<li> <%= harvest.weight %></li>
+<%end  %>
+
+
+<h5><% link_to "Add a New harvest for "#{harvest.plant.name}"", new_bed_path %></h5>
+
+<h5><%= link_to "Go to Your Plants", plants_path %></h5>
+):
+1:    <h1>Here are Your Harvests</h1>
+2:    
+3:    <% @harvests.each do |harvest|  %>
+4:    <ul>
+5:    <li> <%= harvest.weight %></li>
+6:    <%end  %>
+7:    
+8:    
+9:    <h5><% link_to "Add a New harvest for "#{harvest.plant.name}"", new_bed_path %></h5>
+10:    
+11:    <h5><%= link_to "Go to Your Plants", plants_path %></h5>
+  
+app/views/harvests/index.html.erb:11: syntax error, unexpected '<', expecting end
+app/views/harvests/index.html.erb:13: unterminated regexp meets end of file
+app/views/harvests/index.html.erb:13: syntax error, unexpected end-of-input, expecting end
+app/views/harvests/index.html.erb:11: syntax error, unexpected '<', expecting end
+app/views/harvests/index.html.erb:13: unterminated regexp meets end of file
+app/views/harvests/index.html.erb:13: syntax error, unexpected end-of-input, expecting end
+app/views/harvests/index.html.erb:11: syntax error, unexpected '<', expecting end
+app/views/harvests/index.html.erb:13: unterminated regexp meets end of file
+app/views/harvests/index.html.erb:13: syntax error, unexpected end-of-input, expecting end
+app/views/harvests/index.html.erb:11: syntax error, unexpected '<', expecting end
+app/views/harvests/index.html.erb:13: unterminated regexp meets end of file
+app/views/harvests/index.html.erb:13: syntax error, unexpected end-of-input, expecting end
+app/views/harvests/index.html.erb:11: syntax error, unexpected '<', expecting end
+app/views/harvests/index.html.erb:13: unterminated regexp meets end of file
+app/views/harvests/index.html.erb:13: syntax error, unexpected end-of-input, expecting end
+app/views/harvests/index.html.erb:11: syntax error, unexpected '<', expecting end
+app/views/harvests/index.html.erb:13: unterminated regexp meets end of file
+app/views/harvests/index.html.erb:13: syntax error, unexpected end-of-input, expecting end
+Started GET "/harvests" for ::1 at 2020-06-17 16:34:43 -0400
+Processing by HarvestsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:3:in `index'
+  Rendering harvests/index.html.erb within layouts/application
+  [1m[36mHarvest Load (0.3ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/harvests/index.html.erb:3
+  Rendered harvests/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1124)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 1.3ms | Allocations: 295)
+Completed 200 OK in 46ms (Views: 41.6ms | ActiveRecord: 0.5ms | Allocations: 7774)
+
+
+Started GET "/harvests" for ::1 at 2020-06-17 16:35:09 -0400
+Processing by HarvestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:3:in `index'
+  Rendering harvests/index.html.erb within layouts/application
+  [1m[36mHarvest Load (0.3ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/harvests/index.html.erb:3
+  Rendered harvests/index.html.erb within layouts/application (Duration: 525.0ms | Allocations: 164348)
+Completed 500 Internal Server Error in 534ms (ActiveRecord: 0.6ms | Allocations: 166563)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `harvest' for #<#<Class:0x00007fdfae0d7cb8>:0x00007fdfae0d62c8>
+Did you mean?  @harvests):
+     6: <%end  %>
+     7: 
+     8: 
+     9: <h5><% link_to "Add a New harvest for #{harvest.plant.name}", new_bed_path %></h5>
+    10: 
+    11: <h5><%= link_to "Go to Your Plants", plants_path %></h5>
+  
+app/views/harvests/index.html.erb:9
+Started GET "/harvests" for ::1 at 2020-06-17 16:36:57 -0400
+Processing by HarvestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:3:in `index'
+  Rendering harvests/index.html.erb within layouts/application
+  Rendered harvests/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1115)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms | Allocations: 3334)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Here are Your Harvests</h1>
+
+<% @harvests.each do |harvest|  %>
+<ul>
+<li> <%= harvest.weight %></li>
+<p>(Source Plant: <%=link_to harvest.plant.name, plant_path(harvest.plant) (Grow Bed: <%=link_to harvest.plant.bed.name, bed_path(harvest.plant.bed) </p>
+<%end  %>
+
+
+<h5><% link_to "Add a New harvest for this plant", new_harvest_path %></h5>
+
+<h5><%= link_to "Go to Your Plants", plants_path %></h5>
+):
+1:    <h1>Here are Your Harvests</h1>
+2:    
+3:    <% @harvests.each do |harvest|  %>
+4:    <ul>
+5:    <li> <%= harvest.weight %></li>
+6:    <p>(Source Plant: <%=link_to harvest.plant.name, plant_path(harvest.plant) (Grow Bed: <%=link_to harvest.plant.bed.name, bed_path(harvest.plant.bed) </p>
+7:    <%end  %>
+8:    
+9:    
+10:    <h5><% link_to "Add a New harvest for this plant", new_harvest_path %></h5>
+11:    
+12:    <h5><%= link_to "Go to Your Plants", plants_path %></h5>
+  
+app/views/harvests/index.html.erb:6: syntax error, unexpected '(', expecting ')'
+app/views/harvests/index.html.erb:14: syntax error, unexpected end, expecting ')'
+app/views/harvests/index.html.erb:6: syntax error, unexpected '(', expecting ')'
+app/views/harvests/index.html.erb:14: syntax error, unexpected end, expecting ')'
+app/views/harvests/index.html.erb:6: syntax error, unexpected '(', expecting ')'
+app/views/harvests/index.html.erb:14: syntax error, unexpected end, expecting ')'
+app/views/harvests/index.html.erb:6: syntax error, unexpected '(', expecting ')'
+app/views/harvests/index.html.erb:14: syntax error, unexpected end, expecting ')'
+app/views/harvests/index.html.erb:6: syntax error, unexpected '(', expecting ')'
+app/views/harvests/index.html.erb:14: syntax error, unexpected end, expecting ')'
+app/views/harvests/index.html.erb:6: syntax error, unexpected '(', expecting ')'
+app/views/harvests/index.html.erb:14: syntax error, unexpected end, expecting ')'
+Started GET "/harvests" for ::1 at 2020-06-17 16:37:52 -0400
+Processing by HarvestsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:3:in `index'
+  Rendering harvests/index.html.erb within layouts/application
+  [1m[36mHarvest Load (0.2ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/harvests/index.html.erb:3
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/harvests/index.html.erb:6
+  Rendered harvests/index.html.erb within layouts/application (Duration: 34.7ms | Allocations: 11438)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.6ms | Allocations: 13656)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Plant:0x00007fdfae94df28>):
+    3: <% @harvests.each do |harvest|  %>
+    4: <ul>
+    5: <li> <%= harvest.weight %></li>
+    6: <p>(Source Plant: <%=link_to harvest.plant.name, plant_path(harvest.plant)%>) - (Grow Bed: <%=link_to harvest.plant.bed.name, bed_path(harvest.plant.bed)%>) </p>
+    7: <%end  %>
+    8: 
+    9: 
+  
+app/views/harvests/index.html.erb:6
+app/views/harvests/index.html.erb:3
+Started GET "/harvests" for ::1 at 2020-06-17 16:38:23 -0400
+Processing by HarvestsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:3:in `index'
+  Rendering harvests/index.html.erb within layouts/application
+  [1m[36mHarvest Load (0.3ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/harvests/index.html.erb:3
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/harvests/index.html.erb:6
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/harvests/index.html.erb:6
+  Rendered harvests/index.html.erb within layouts/application (Duration: 547.2ms | Allocations: 174945)
+Completed 500 Internal Server Error in 559ms (ActiveRecord: 1.3ms | Allocations: 177165)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `harvest' for #<#<Class:0x00007fdfaad66e10>:0x00007fdfaad64f70>
+Did you mean?  @harvests):
+     7: <%end  %>
+     8: 
+     9: 
+    10: <h5><% link_to "Add a New harvest for #{harvest.plant.variety}", new_harvest_path %></h5>
+    11: 
+    12: <h5><%= link_to "Go to Your Plants", plants_path %></h5>
+  
+app/views/harvests/index.html.erb:10
+Started GET "/harvests" for ::1 at 2020-06-17 16:39:01 -0400
+Processing by HarvestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:3:in `index'
+  Rendering harvests/index.html.erb within layouts/application
+  [1m[36mHarvest Load (0.3ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/harvests/index.html.erb:3
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/harvests/index.html.erb:6
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/harvests/index.html.erb:6
+  Rendered harvests/index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 2696)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 2.4ms | Allocations: 295)
+Completed 200 OK in 72ms (Views: 65.9ms | ActiveRecord: 1.2ms | Allocations: 9342)
+
+
+Started GET "/beds/5" for ::1 at 2020-06-17 16:39:03 -0400
+Processing by BedsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:8:in `show'
+  Rendering beds/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."bed_id" = ?[0m  [["bed_id", 5]]
+  ↳ app/views/beds/show.html.erb:10
+  Rendered beds/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1956)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.2ms | Allocations: 73)
+Completed 200 OK in 59ms (Views: 50.0ms | ActiveRecord: 1.1ms | Allocations: 8376)
+
+
+Started GET "/plants/8" for ::1 at 2020-06-17 16:39:07 -0400
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:21:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  Rendered plants/show.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1154)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 73)
+Completed 200 OK in 45ms (Views: 36.0ms | ActiveRecord: 0.9ms | Allocations: 7670)
+
+
