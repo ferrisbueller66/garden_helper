@@ -19,19 +19,18 @@
     <%= f.label :"Transplant Date" %><br>
     <%= f.date_field :transplant_date %><br>
     <br>
-   <% if @bed  %>
-    <%= f.hidden_field :bed_id, value: @bed.id %>
+    <% if @bed  %>
+        <%= f.hidden_field :bed_id, value: @bed.id %>
     <% else  %>
-    <%= f.label :"Select a Grow Bed" %><br>
-    <%= f.collection_select :bed_id, Bed.all, :id, :name, {:include_blank => "Please select"} %><br>
-        <br>
-        OR
-        <br>
-
-        <%= f.fields_for :bed, @newbed do |bf| %>
-            <%= bf.label "Create a New Grow Bed" %><br>
-            <%= bf.text_field :name %><br>
-        <% end  %>
+        <%= f.label :"Select a Grow Bed" %><br>
+        <%= f.collection_select :bed_id, Bed.all, :id, :name, {:include_blank => "Please select"} %><br>
+            <br>
+            OR
+            <br>
+            <%= f.fields_for :bed, @newbed do |bf| %>
+                <%= bf.label "Create a New Grow Bed" %><br>
+                <%= bf.text_field :name %><br>
+            <% end  %>
 
     <% end  %>
     <br>

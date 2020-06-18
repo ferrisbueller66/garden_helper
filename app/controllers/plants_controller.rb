@@ -29,25 +29,23 @@ class PlantsController < ApplicationController
 
   def new
     if params[:bed_id]
-      @bed = Bed.find_by(id: params[:bed_id])
+      @bed = current_user.beds.find_by(id: params[:bed_id])
       if @bed
-        @plant = Plant.new                #correct this to current_user.plants.build
+        @plant = current_user.plants.build
       else
         redirect_to beds_path
       end
     else
-      @plant = Plant.new
-      @newbed = Bed.new
+      @plant = current_user.plants.build
+      @newbed = @plant.build_bed
     end
   end
 
   def create
-    @plant = current_user.plants.build(plant_params)
-    @plant.save
+    @plant = current_user.plants.create(plant_params)
     if @plant.valid?
       redirect_to @plant
     else
-      flash[:alert] = @plant.errors.full_messages
       render :new
     end
   end
