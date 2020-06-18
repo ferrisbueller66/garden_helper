@@ -4,7 +4,23 @@ class HarvestsController < ApplicationController
   end
 
   def show
-    @harvest = Harvest.find_by(id: params[:id])
+    if params[:plant_id]
+      @plant = Plant.find_by(id: params[:plant_id])
+        if @plant
+          @harvest = Harvest.find_by(id: params[:id])
+          if @harvest
+            render :show
+          else
+            redirect_to @plant
+          end
+        else
+          redirect_to plants_path    #DO I WANT THIS TO BE THE REDIRECT ROUTE?
+        end
+      else
+        @harvest = Harvest.find_by(id: params[:id])
+          render :show
+      end
+    
   end
 
   def new

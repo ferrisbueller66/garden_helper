@@ -38,6 +38,7 @@ class PlantsController < ApplicationController
   end
 
   def create
+    #@plant = current_user.plants.build(plant_params)
     @plant = Plant.create(plant_params)
     # newbed = @plant.build_bed(plant_params[:bed_attributes]) 
     # newbed.save
