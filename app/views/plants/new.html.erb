@@ -1,8 +1,6 @@
 <h2>Add a New Plant</h2>
 <%= form_for(@plant) do |f| %>
 
-    <%= f.hidden_field :user_id, value: current_user.id %>
-
     <%= f.label :"Varietal Name" %><br>
     <%= f.text_field :variety %><br>
 

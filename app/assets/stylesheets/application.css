@@ -52,12 +52,26 @@
  }
 
 h1 {
-    color:#0A2342;
+    color:#FFAD05;
 }
 
 
  h2 {
-    color:pink;
+    color: #0A2342;
+}
+
+.field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: table;
+}
+
+#error_explanation {
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px 7px 0;
+    margin-bottom: 20px; 
+    background-color: #f0f0f0;
 }
 
 /* I want text-decoration: none;} and border-radius: 25px; on the footer links*/
