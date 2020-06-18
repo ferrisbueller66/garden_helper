@@ -1,11 +1,13 @@
 class BedsController < ApplicationController
+
   before_action :log
+
   def index
     @beds = current_user.beds.uniq {|b| b.id}
   end
 
   def show
-    @bed = Bed.find_by(id: params[:id])
+    @bed = current_user.beds.find_by(id: params[:id])
     if @bed
       render :show
     else

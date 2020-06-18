@@ -1,5 +1,6 @@
 class PlantsController < ApplicationController
   before_action :log
+  
   def index
     @plants = current_user.plants.all
   end

@@ -1,5 +1,7 @@
 class HarvestsController < ApplicationController
 
+  before_action :log
+  
   def show
     if params[:plant_id]
       @plant = Plant.find_by(id: params[:plant_id])
