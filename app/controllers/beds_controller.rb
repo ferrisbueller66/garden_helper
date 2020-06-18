@@ -32,16 +32,25 @@ class BedsController < ApplicationController
   end
 
   def edit
-    @bed = Bed.find_by(id: params[:id])
+    @bed = current_user.beds.find_by(id: params[:id])
+    if @bed  
+      render :edit
+    else
+      redirect_to beds_path
+    end
    
   end
 
   def update
-    @bed = Bed.find_by(id: params[:id])
-    if @bed.update(bed_params)
-      redirect_to bed_path(@bed)
+    @bed = current_user.beds.find_by(id: params[:id])
+    if @bed
+      if@bed.update(bed_params)
+        redirect_to bed_path(@bed)
+      else
+        render :edit
+      end
     else
-      render :edit
+      redirect_to beds_path
     end
   end
 

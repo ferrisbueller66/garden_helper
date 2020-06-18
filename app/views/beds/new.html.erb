@@ -15,9 +15,9 @@
     <%= f.collection_select :medium, Bed.select(:medium).distinct, :medium, :medium, {:include_blank => "Please select"} %>
     <br>
     <br>
-    <%= f.fields_for :plants do |pf| %>
-        <%= f.label :"Please enter the varietal name of the first plant for this Bed:" %><br><br>
-        <%= pf.hidden_field :user_id, value: current_user.id %>
+    <%= f.fields_for @plant do |pf| %>
+        <%= pf.label :"Please enter the varietal name of the first plant for this Bed:" %><br><br>
+        
 
         <%= pf.label :"Varietal Name" %><br>
         <%= pf.text_field :variety %><br>
