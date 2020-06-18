@@ -34,13 +34,23 @@ class HarvestsController < ApplicationController
   end
 
   def create
-    @harvest = Harvest.create(harvest_params)
-    if @harvest.valid?
-      @harvest.plant.harvest_status
-      redirect_to plant_path(@harvest.plant)
+    
+    if params[:harvest][:plant_id]
+      @plant = Plant.find_by(id: params[:harvest][:plant_id])
+      if @plant
+      @harvest = @plant.harvests.build(harvest_params)
+      @harvest.save
+        if @harvest.valid?
+          @plant.harvest_status
+          redirect_to plant_harvest_path(@plant, @harvest)
+        else
+          render :new
+        end
+      else
+        redirect_to plants_path
+      end
     else
-      flash[:alert] = @plant.errors.full_messages
-      render :new
+      redirect_to plants_path
     end
   end
 

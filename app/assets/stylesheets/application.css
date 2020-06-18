@@ -74,6 +74,16 @@ h1 {
     background-color: #f0f0f0;
 }
 
+input[type="date" i] {
+    align-items: center;
+    display: -webkit-inline-flex;
+    font-family: monospace;
+    padding-inline-start: 1px;
+    cursor: default;
+    overflow: hidden;
+    padding: 0px;
+}
+
 /* I want text-decoration: none;} and border-radius: 25px; on the footer links*/
 /*  Middle Green: 4C956C; Maximum Yellow: FCFF4B; Chinese Yellow: FFAD05; Thistle: D7C0D0; Oxford Blue: 0A2342*/
 

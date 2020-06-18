@@ -5,7 +5,7 @@
 <p> Source Plant: <%= @harvest.plant.variety %></p>
 
 
-<h5><% link_to "Add a New harvest for a plant", new_harvest_path %></h5>
+<h5><% link_to "Add a New harvest for a plant", new_plant_harvest_path(@harvest.plant) %></h5>
 <section class = "footer">
 <h5><%= link_to "Go Back to #{@plant.variety}", @plant %></h5>
 <h5><%= link_to "Go to Your Beds", beds_path %></h5>
