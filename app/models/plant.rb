@@ -10,6 +10,7 @@ class Plant < ApplicationRecord
     def harvest_status
         unless self.harvests.count == 0
         self.harvested = true
+        self.save
         end
     end
 end

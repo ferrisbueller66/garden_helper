@@ -1,7 +1,4 @@
 class HarvestsController < ApplicationController
-  def index
-    @harvests = current_user.harvests
-  end
 
   def show
     if params[:plant_id]
@@ -14,7 +11,7 @@ class HarvestsController < ApplicationController
             redirect_to @plant
           end
         else
-          redirect_to plants_path    #DO I WANT THIS TO BE THE REDIRECT ROUTE?
+          redirect_to plants_path
         end
       else
         @harvest = Harvest.find_by(id: params[:id])
@@ -40,7 +37,6 @@ class HarvestsController < ApplicationController
     @harvest = Harvest.create(harvest_params)
     if @harvest.valid?
       @harvest.plant.harvest_status
-      binding.pry
       redirect_to plant_path(@harvest.plant)
     else
       flash[:alert] = @plant.errors.full_messages
