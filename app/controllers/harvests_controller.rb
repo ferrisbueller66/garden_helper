@@ -22,7 +22,6 @@ class HarvestsController < ApplicationController
 
   def create
     @harvest = Harvest.create(harvest_params)
-    binding.pry
     if @harvest.valid?
       redirect_to plant_path(@harvest.plant)
     else

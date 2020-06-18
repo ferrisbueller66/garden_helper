@@ -33,11 +33,14 @@ class PlantsController < ApplicationController
       end
     else
       @plant = Plant.new
+      @newbed = Bed.new
     end
   end
 
   def create
     @plant = Plant.create(plant_params)
+    # newbed = @plant.build_bed(plant_params[:bed_attributes]) 
+    # newbed.save
     if @plant.valid?
       redirect_to @plant
     else
@@ -62,7 +65,7 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:user_id, :variety, :nickname, :species, :description, :germination_date, :transplant_date, :bed_id)
+    params.require(:plant).permit(:user_id, :variety, :nickname, :species, :description, :germination_date, :transplant_date, :bed_id, :bed_attributes => [:name])
   end
 
 

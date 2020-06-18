@@ -1,12 +1,10 @@
 <nav>
-    <ul>
-    <li><%= link_to "Home", root_path %></li>
+    <%= link_to "Home", root_path %>
     <% if !user_signed_in? %>
-        <li><%= link_to "SignUp", new_user_registration_path %></li>
-        <li><%= link_to "Sign In", new_user_session_path %></li>
+        <%= link_to "SignUp", new_user_registration_path %>
+        <%= link_to "Sign In", new_user_session_path %>
     <% else  %>
-        <li><%= link_to "Logout", destroy_user_session_path, method: "delete" %></li>
+        <%= link_to "Logout", destroy_user_session_path, method: "delete" %>
         Signed in as <%= current_user.email %>
     <% end  %>
-    </ul>
 </nav>

@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+
+/*Global Styles
+-------------------------------*/
+ body {
+     color: #D7C0D0;
+     background: #4C956C;
+     text-align: center;
+ }
+ 
+ a {
+    padding: 5px;
+    text-align: center;
+    background: #0A2342;
+    color: #D7C0D0;
+    font-size: 20px; 
+}
+
+ /* Header Styles
+-------------------------------*/
+
+ .header {
+    padding: 40px;
+    text-align: center;
+    background: #0A2342;
+    color: D7C0D0;
+    font-size: 30px; 
+ }
+
+ .footer {
+    padding: 40px;
+    text-align: center;
+    background: #FFAD05;
+    color: #0A2342;
+    font-size: 20px; 
+ }
+
+h1 {
+    color:#0A2342;
+}
+
+
+ h2 {
+    color:pink;
+}
+
+/* I want text-decoration: none;} and border-radius: 25px; on the footer links*/
+/*  Middle Green: 4C956C; Maximum Yellow: FCFF4B; Chinese Yellow: FFAD05; Thistle: D7C0D0; Oxford Blue: 0A2342*/
+
+/* classes can be */
