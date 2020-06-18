@@ -6,20 +6,24 @@ class PlantsController < ApplicationController
 
   def show
     if params[:bed_id]
-    @bed = Bed.find_by(id: params[:bed_id])
+    @bed = current_user.beds.find_by(id: params[:bed_id])
       if @bed
-        @plant = Plant.find_by(id: params[:id])
+        @plant = current_user.plants.find_by(id: params[:id])
         if @plant
           render :show
         else
           redirect_to plants_path
         end
       else
-        redirect_to beds_path    #DO I WANT THIS TO BE THE REDIRECT ROUTE?
+        redirect_to beds_path    
       end
     else
-      @plant = Plant.find_by(id: params[:id])
+      @plant = current_user.plants.find_by(id: params[:id])
+      if @plant  
         render :show
+      else
+        redirect_to plants_path
+      end
     end
   end
 
@@ -27,7 +31,7 @@ class PlantsController < ApplicationController
     if params[:bed_id]
       @bed = Bed.find_by(id: params[:bed_id])
       if @bed
-        @plant = Plant.new
+        @plant = Plant.new                #correct this to current_user.plants.build
       else
         redirect_to beds_path
       end

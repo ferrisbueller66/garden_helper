@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   end
   resources :plants, only: [:index, :show, :new, :create, :edit, :update]
-  
+  resources :harvests, only: [:show, :new, :create]
 
   root 'application#welcome'
 end
