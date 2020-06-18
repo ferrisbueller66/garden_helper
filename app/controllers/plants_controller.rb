@@ -51,11 +51,16 @@ class PlantsController < ApplicationController
   end
 
   def edit
-    @plant = Plant.find_by(id: params[:id])
+    @plant = current_user.plants.find_by(id: params[:id])
+    if @plant  
+      render :edit
+    else
+      redirect_to plants_path
+    end
   end
 
   def update
-    @plant = Plant.find_by(id: params[:id])
+    @plant = current_user.plants.find_by(id: params[:id])
     if @plant.update(plant_params)
       redirect_to plant_path(@plant)
     else
