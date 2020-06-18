@@ -8,12 +8,15 @@
 
 <h2>Plants in this Bed</h2>
 <% @bed.plants.each do |plant| %>
-    <ol>
-    <li><%= link_to plant.variety, bed_plant_path(@bed, plant) %> - </li>
-    </ol>
+  
+    <p><%= link_to plant.variety, bed_plant_path(@bed, plant) %> </p>
+
 <% end %>
 <h5><%= link_to "Add a New Plant to this Bed", new_bed_plant_path(@bed) %></h5>
 
+<h2>Total Harvest Produced by This Bed:</h2>
+<section class = "footer">
 <h5><%= link_to "Back to Your Beds", beds_path %></h5>
 
 <h5><%= link_to "Go to Your Plants", plants_path %></h5> 
+</section>

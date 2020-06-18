@@ -23,6 +23,8 @@ class HarvestsController < ApplicationController
   def create
     @harvest = Harvest.create(harvest_params)
     if @harvest.valid?
+      @harvest.plant.harvest_status
+      binding.pry
       redirect_to plant_path(@harvest.plant)
     else
       flash[:alert] = @plant.errors.full_messages

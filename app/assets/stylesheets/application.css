@@ -23,6 +23,8 @@
  }
  
  a {
+    text-decoration: none;
+    border-radius: 25px;
     padding: 5px;
     text-align: center;
     background: #0A2342;

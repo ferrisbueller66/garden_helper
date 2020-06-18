@@ -1,10 +1,11 @@
 <h1>Here Are All Your Plants</h1>
 <% @plants.each do |plant|  %>
-<ul>
-<li> <%= link_to plant.variety, plant_path(plant) %> (Grow Bed: <%=link_to plant.bed.name, bed_path(plant.bed)%>)</li>
-</ul>
-<%end  %>
 
+<p> <%= link_to plant.variety, plant_path(plant) %> (Grow Bed: <%=link_to plant.bed.name, bed_path(plant.bed)%>)</p>
+
+<%end  %>
+<section class = "footer">
 <h5><%= link_to "Grow a New Plant!", new_plant_path %></h5>
 
 <h5><%= link_to "Go to Your Beds", beds_path %></h5>
+</section>

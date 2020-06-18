@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_17_195625) do
+ActiveRecord::Schema.define(version: 2020_06_18_132950) do
 
   create_table "beds", force: :cascade do |t|
     t.string "name"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_06_17_195625) do
     t.integer "bed_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "harvested", default: false, null: false
     t.index ["bed_id"], name: "index_plants_on_bed_id"
     t.index ["user_id"], name: "index_plants_on_user_id"
   end
