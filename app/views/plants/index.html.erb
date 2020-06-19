@@ -4,6 +4,17 @@
 <p> <%= link_to plant.variety, plant_path(plant) %> (Grow Bed: <%=link_to plant.bed.name, bed_path(plant.bed)%>)</p>
 
 <%end  %>
+
+<h2>Your 3 Most Recent Harvests</h2>
+
+<% @plants.been_harvested.each do |plant|  %>
+
+<p> <%= link_to plant.variety, plant_path(plant) %></p>
+
+<%end  %>
+
+
+
 <section class = "footer">
 <h5><%= link_to "Grow a New Plant!", new_plant_path %></h5>
 

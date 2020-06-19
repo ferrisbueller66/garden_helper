@@ -1,5 +1,5 @@
 class PlantsController < ApplicationController
-  before_action :log
+  before_action :log, :plant_finder, only: [:edit, :update]
 
   def index
     @plants = current_user.plants.all
@@ -52,7 +52,6 @@ class PlantsController < ApplicationController
   end
 
   def edit
-    @plant = current_user.plants.find_by(id: params[:id])
     if @plant  
       render :edit
     else
@@ -61,7 +60,6 @@ class PlantsController < ApplicationController
   end
 
   def update
-    @plant = current_user.plants.find_by(id: params[:id])
     if @plant.update(plant_params)
       redirect_to plant_path(@plant)
     else
@@ -74,5 +72,9 @@ class PlantsController < ApplicationController
   def plant_params
     params.require(:plant).permit(:user_id, :variety, :nickname, :species, :description, :germination_date, :transplant_date, :bed_id, :bed_attributes => [:name])
   end
-  
+
+  def plant_finder
+    @plant = current_user.plants.find_by(id: params[:id])
+  end
+
 end

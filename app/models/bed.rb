@@ -5,4 +5,6 @@ class Bed < ApplicationRecord
     accepts_nested_attributes_for :plants, reject_if: :all_blank
 
     validates :name, presence: true
+
+    scope :grow_medium, -> { where(harvested: true)}
 end

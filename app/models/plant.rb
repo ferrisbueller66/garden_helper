@@ -5,7 +5,7 @@ class Plant < ApplicationRecord
     accepts_nested_attributes_for :bed, reject_if: :all_blank
     validates :variety, presence: true
 
-    #scope: :harvested, -> { where(harvested: true)}
+    scope :been_harvested, -> { where(harvested: true) }
 
     def harvest_status
         unless self.harvests.count == 0
