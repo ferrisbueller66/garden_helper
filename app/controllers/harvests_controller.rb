@@ -1,47 +1,45 @@
 class HarvestsController < ApplicationController
 
   before_action :log
-  
+
   def show
     if params[:plant_id]
-      @plant = Plant.find_by(id: params[:plant_id])
-        if @plant
-          @harvest = Harvest.find_by(id: params[:id])
-          if @harvest
-            render :show
-          else
-            redirect_to @plant
-          end
+      @plant = current_user.plants.find_by(id: params[:plant_id])
+      if @plant
+        @harvest = current_user.harvests.find_by(id: params[:id])
+        if @harvest
+          render :show
         else
-          redirect_to plants_path
+          redirect_to @plant
         end
       else
-        @harvest = Harvest.find_by(id: params[:id])
-          render :show
+        redirect_to plants_path
       end
-    
+    else
+      @harvest = current_user.harvests.find_by(id: params[:id])
+        render :show
+    end
   end
 
   def new
     if params[:plant_id]
-      @plant = Plant.find_by(id: params[:plant_id])
+      @plant = current_user.plants.find_by(id: params[:plant_id])
         if @plant
-          @harvest = Harvest.new
+          @harvest = @plant.harvests.build
         else
           redirect_to plants_path
         end
     else
-      @harvest = Harvest.new
+      redirect_to plants_path
     end
   end
 
   def create
     
     if params[:harvest][:plant_id]
-      @plant = Plant.find_by(id: params[:harvest][:plant_id])
+      @plant = current_user.plants.find_by(id: params[:harvest][:plant_id])
       if @plant
-      @harvest = @plant.harvests.build(harvest_params)
-      @harvest.save
+      @harvest = @plant.harvests.create(harvest_params)
         if @harvest.valid?
           @plant.harvest_status
           redirect_to plant_harvest_path(@plant, @harvest)

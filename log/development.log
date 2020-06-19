@@ -22755,3 +22755,468 @@ Processing by BedsController#show as HTML
 Completed 200 OK in 105ms (Views: 93.5ms | ActiveRecord: 4.0ms | Allocations: 18196)
 
 
+Started GET "/beds/15/plants/21" for ::1 at 2020-06-18 21:29:51 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlantsController#show as HTML
+  Parameters: {"bed_id"=>"15", "id"=>"21"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (1.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:10:in `show'
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:12:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (0.6ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 21]]
+  ↳ app/views/plants/show.html.erb:13
+  Rendered plants/show.html.erb within layouts/application (Duration: 37.6ms | Allocations: 3901)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 6.2ms | Allocations: 310)
+Completed 200 OK in 264ms (Views: 89.7ms | ActiveRecord: 7.9ms | Allocations: 46807)
+
+
+Started GET "/plants" for ::1 at 2020-06-18 21:29:56 -0400
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  Rendering plants/index.html.erb within layouts/application
+  [1m[36mPlant Load (1.8ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/plants/index.html.erb:2
+  [1m[36mBed Load (0.5ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mBed Load (0.6ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mCACHE Bed Load (0.0ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/plants/index.html.erb:4
+  Rendered plants/index.html.erb within layouts/application (Duration: 87.8ms | Allocations: 14216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.2ms | Allocations: 73)
+Completed 200 OK in 118ms (Views: 106.9ms | ActiveRecord: 5.1ms | Allocations: 19692)
+
+
+Started GET "/plants/13" for ::1 at 2020-06-18 21:29:58 -0400
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:22:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (0.5ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 13]]
+  ↳ app/views/plants/show.html.erb:13
+  Rendered plants/show.html.erb within layouts/application (Duration: 32.5ms | Allocations: 6275)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.2ms | Allocations: 69)
+Completed 200 OK in 78ms (Views: 62.2ms | ActiveRecord: 5.3ms | Allocations: 12121)
+
+
+Started GET "/plants/13/harvests/10" for ::1 at 2020-06-18 21:30:34 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HarvestsController#show as HTML
+  Parameters: {"plant_id"=>"13", "id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:7:in `show'
+  [1m[36mHarvest Load (0.2ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:9:in `show'
+  Rendering harvests/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/harvests/show.html.erb:4
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/harvests/show.html.erb:4
+  Rendered harvests/show.html.erb within layouts/application (Duration: 32.2ms | Allocations: 9469)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.2ms | Allocations: 75)
+Completed 200 OK in 127ms (Views: 43.6ms | ActiveRecord: 6.5ms | Allocations: 39911)
+
+
+Started GET "/plants/13" for ::1 at 2020-06-18 21:30:36 -0400
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:22:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (0.5ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 13]]
+  ↳ app/views/plants/show.html.erb:13
+  Rendered plants/show.html.erb within layouts/application (Duration: 11.1ms | Allocations: 2656)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.2ms | Allocations: 73)
+Completed 200 OK in 52ms (Views: 42.2ms | ActiveRecord: 1.3ms | Allocations: 8723)
+
+
+Started GET "/plants/13/harvests/10" for ::1 at 2020-06-18 21:31:04 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HarvestsController#show as HTML
+  Parameters: {"plant_id"=>"13", "id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:7:in `show'
+  [1m[36mHarvest Load (0.3ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? AND "harvests"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:9:in `show'
+  Rendering harvests/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/harvests/show.html.erb:4
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/harvests/show.html.erb:4
+  Rendered harvests/show.html.erb within layouts/application (Duration: 24.0ms | Allocations: 8819)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 75)
+Completed 200 OK in 151ms (Views: 43.7ms | ActiveRecord: 5.4ms | Allocations: 39819)
+
+
+Started GET "/plants/13" for ::1 at 2020-06-18 21:31:05 -0400
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:22:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (0.3ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 13]]
+  ↳ app/views/plants/show.html.erb:13
+  Rendered plants/show.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2637)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 73)
+Completed 200 OK in 27ms (Views: 19.7ms | ActiveRecord: 1.0ms | Allocations: 8684)
+
+
+Started GET "/plants/13/harvests/10" for ::1 at 2020-06-18 21:31:28 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HarvestsController#show as HTML
+  Parameters: {"plant_id"=>"13", "id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:7:in `show'
+  [1m[36mHarvest Load (0.4ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? AND "harvests"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:9:in `show'
+  Rendering harvests/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/harvests/show.html.erb:4
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/harvests/show.html.erb:4
+  Rendered harvests/show.html.erb within layouts/application (Duration: 42.3ms | Allocations: 8818)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 75)
+Completed 200 OK in 166ms (Views: 50.7ms | ActiveRecord: 7.0ms | Allocations: 39798)
+
+
+Started GET "/harvests/10" for ::1 at 2020-06-18 21:31:33 -0400
+Processing by HarvestsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mHarvest Load (0.9ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? AND "harvests"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:19:in `show'
+  Rendering harvests/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/harvests/show.html.erb:4
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/harvests/show.html.erb:4
+  Rendered harvests/show.html.erb within layouts/application (Duration: 12.4ms | Allocations: 3124)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.7ms | Allocations: 5450)
+
+
+  
+ActionView::Template::Error (undefined method `variety' for nil:NilClass):
+     7: 
+     8: <h5><% link_to "Add a New harvest for a plant", new_plant_harvest_path(@harvest.plant) %></h5>
+     9: <section class = "footer">
+    10: <h5><%= link_to "Go Back to #{@plant.variety}", @plant %></h5>
+    11: <h5><%= link_to "Go to Your Beds", beds_path %></h5>
+    12: </section>
+  
+app/views/harvests/show.html.erb:10
+app/controllers/harvests_controller.rb:20:in `show'
+Started GET "/plants/13" for ::1 at 2020-06-18 21:33:36 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:22:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (0.5ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 13]]
+  ↳ app/views/plants/show.html.erb:13
+  Rendered plants/show.html.erb within layouts/application (Duration: 55.5ms | Allocations: 14438)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 75)
+Completed 200 OK in 169ms (Views: 92.7ms | ActiveRecord: 6.6ms | Allocations: 39299)
+
+
+Started GET "/plants/13/harvests/new" for ::1 at 2020-06-18 21:33:38 -0400
+Processing by HarvestsController#new as HTML
+  Parameters: {"plant_id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:26:in `new'
+  Rendering harvests/new.html.erb within layouts/application
+  Rendered harvests/new.html.erb within layouts/application (Duration: 44.5ms | Allocations: 3632)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.4ms | Allocations: 73)
+Completed 200 OK in 71ms (Views: 61.8ms | ActiveRecord: 0.5ms | Allocations: 10165)
+
+
+Started POST "/harvests" for ::1 at 2020-06-18 21:33:44 -0400
+Processing by HarvestsController#create as HTML
+  Parameters: {"authenticity_token"=>"8LqiQn79iZF8m1BBddGdVSSzP4easNbvofCjQi0dtyl3BTO2EWyw+2rP8KmRHVrs4qFDL0A6gURNmgcwBwnK7A==", "harvest"=>{"plant_id"=>"13", "weight"=>"0.2", "harvest_date"=>"2020-06-18"}, "commit"=>"Create Harvest"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:40:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/harvests_controller.rb:43:in `create'
+  [1m[36mHarvest Create (1.6ms)[0m  [1m[32mINSERT INTO "harvests" ("weight", "harvest_date", "plant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["weight", 0.2], ["harvest_date", "2020-06-18"], ["plant_id", 13], ["created_at", "2020-06-19 01:33:44.140731"], ["updated_at", "2020-06-19 01:33:44.140731"]]
+  ↳ app/controllers/harvests_controller.rb:43:in `create'
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/harvests_controller.rb:43:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 13]]
+  ↳ app/models/plant.rb:11:in `harvest_status'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/plant.rb:13:in `harvest_status'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/plant.rb:13:in `harvest_status'
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/plant.rb:13:in `harvest_status'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/plant.rb:13:in `harvest_status'
+Redirected to http://localhost:3000/plants/13/harvests/14
+Completed 302 Found in 40ms (ActiveRecord: 6.5ms | Allocations: 9659)
+
+
+Started GET "/plants/13/harvests/14" for ::1 at 2020-06-18 21:33:44 -0400
+Processing by HarvestsController#show as HTML
+  Parameters: {"plant_id"=>"13", "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:7:in `show'
+  [1m[36mHarvest Load (0.4ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? AND "harvests"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:9:in `show'
+  Rendering harvests/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/harvests/show.html.erb:4
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/harvests/show.html.erb:4
+  Rendered harvests/show.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1799)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.4ms | Allocations: 69)
+Completed 200 OK in 33ms (Views: 19.7ms | ActiveRecord: 1.4ms | Allocations: 9076)
+
+
+Started GET "/plants/13" for ::1 at 2020-06-18 21:33:45 -0400
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:22:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (0.2ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 13]]
+  ↳ app/views/plants/show.html.erb:13
+  Rendered plants/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1934)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 73)
+Completed 200 OK in 40ms (Views: 30.1ms | ActiveRecord: 1.0ms | Allocations: 7861)
+
+
+Started GET "/plants/13/harvests/new" for ::1 at 2020-06-18 21:34:23 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HarvestsController#new as HTML
+  Parameters: {"plant_id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:26:in `new'
+  Rendering harvests/new.html.erb within layouts/application
+  Rendered harvests/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 877)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.2ms | Allocations: 75)
+Completed 200 OK in 99ms (Views: 12.4ms | ActiveRecord: 3.6ms | Allocations: 31134)
+
+
+Started POST "/harvests" for ::1 at 2020-06-18 21:34:28 -0400
+Processing by HarvestsController#create as HTML
+  Parameters: {"authenticity_token"=>"RrX6kTc8FEiYZnssAQ3QJ9mns9cS3RhrG2RPZG88ViLBCmtlWK0tIo4y28TlwReeH7XPf8hXT8D3DusWRSgr5w==", "harvest"=>{"plant_id"=>"13", "weight"=>"1", "harvest_date"=>"2020-06-08"}, "commit"=>"Create Harvest"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (1.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:40:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/harvests_controller.rb:43:in `create'
+  [1m[36mHarvest Create (1.2ms)[0m  [1m[32mINSERT INTO "harvests" ("weight", "harvest_date", "plant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["weight", 1.0], ["harvest_date", "2020-06-08"], ["plant_id", 13], ["created_at", "2020-06-19 01:34:28.152473"], ["updated_at", "2020-06-19 01:34:28.152473"]]
+  ↳ app/controllers/harvests_controller.rb:43:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/harvests_controller.rb:43:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 13]]
+  ↳ app/models/plant.rb:11:in `harvest_status'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/plant.rb:13:in `harvest_status'
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/plant.rb:13:in `harvest_status'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/plant.rb:13:in `harvest_status'
+Redirected to http://localhost:3000/plants/13/harvests/15
+Completed 302 Found in 63ms (ActiveRecord: 6.0ms | Allocations: 15431)
+
+
+Started GET "/plants/13/harvests/15" for ::1 at 2020-06-18 21:34:28 -0400
+Processing by HarvestsController#show as HTML
+  Parameters: {"plant_id"=>"13", "id"=>"15"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:7:in `show'
+  [1m[36mHarvest Load (0.4ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? AND "harvests"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:9:in `show'
+  Rendering harvests/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/harvests/show.html.erb:4
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/harvests/show.html.erb:4
+  Rendered harvests/show.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1830)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.4ms | Allocations: 69)
+Completed 200 OK in 40ms (Views: 24.7ms | ActiveRecord: 1.6ms | Allocations: 11126)
+
+
+Started GET "/plants/13" for ::1 at 2020-06-18 21:34:29 -0400
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:22:in `show'
+  Rendering plants/show.html.erb within layouts/application
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/plants/show.html.erb:4
+  [1m[36mHarvest Load (0.4ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 13]]
+  ↳ app/views/plants/show.html.erb:13
+  Rendered plants/show.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2177)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 73)
+Completed 200 OK in 39ms (Views: 31.1ms | ActiveRecord: 1.1ms | Allocations: 8324)
+
+
+Started GET "/plants/13/harvests/new" for ::1 at 2020-06-18 21:35:30 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HarvestsController#new as HTML
+  Parameters: {"plant_id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:26:in `new'
+  Rendering harvests/new.html.erb within layouts/application
+  Rendered harvests/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 877)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 1.9ms | Allocations: 75)
+Completed 200 OK in 111ms (Views: 19.2ms | ActiveRecord: 4.8ms | Allocations: 31124)
+
+
+Started POST "/harvests" for ::1 at 2020-06-18 21:35:39 -0400
+Processing by HarvestsController#create as HTML
+  Parameters: {"authenticity_token"=>"nvcV/GJe4NgEXUJ/w7c1u7t+AOuPmStII18Isd8N42AZSIQIDc/ZshIJ4pcne/ICfWx8Q1UTfOPPNazD9RmepQ==", "harvest"=>{"plant_id"=>"13", "weight"=>"0.7", "harvest_date"=>"2020-06-18"}, "commit"=>"Create Harvest"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:40:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/harvests_controller.rb:42:in `create'
+  [1m[36mHarvest Create (0.8ms)[0m  [1m[32mINSERT INTO "harvests" ("weight", "harvest_date", "plant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["weight", 0.7], ["harvest_date", "2020-06-18"], ["plant_id", 13], ["created_at", "2020-06-19 01:35:39.756132"], ["updated_at", "2020-06-19 01:35:39.756132"]]
+  ↳ app/controllers/harvests_controller.rb:42:in `create'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/harvests_controller.rb:42:in `create'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "harvests" WHERE "harvests"."plant_id" = ?[0m  [["plant_id", 13]]
+  ↳ app/models/plant.rb:11:in `harvest_status'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/plant.rb:13:in `harvest_status'
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/plant.rb:13:in `harvest_status'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/plant.rb:13:in `harvest_status'
+Redirected to http://localhost:3000/plants/13/harvests/16
+Completed 302 Found in 67ms (ActiveRecord: 5.4ms | Allocations: 15730)
+
+
+Started GET "/plants/13/harvests/16" for ::1 at 2020-06-18 21:35:39 -0400
+Processing by HarvestsController#show as HTML
+  Parameters: {"plant_id"=>"13", "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? AND "plants"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:7:in `show'
+  [1m[36mHarvest Load (0.6ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? AND "harvests"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/harvests_controller.rb:9:in `show'
+  Rendering harvests/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/harvests/show.html.erb:4
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/harvests/show.html.erb:4
+  Rendered harvests/show.html.erb within layouts/application (Duration: 14.3ms | Allocations: 1830)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.9ms | Allocations: 69)
+Completed 200 OK in 48ms (Views: 31.3ms | ActiveRecord: 1.7ms | Allocations: 9115)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mHarvest Load (0.2ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" ORDER BY "harvests"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHarvest Load (0.3ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" ORDER BY "harvests"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHarvest Load (0.6ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? ORDER BY "harvests"."id" DESC LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mHarvest Load (0.2ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" ORDER BY "harvests"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mHarvest Load (0.3ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" ORDER BY "harvests"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mHarvest Load (0.2ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" ORDER BY "harvests"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]

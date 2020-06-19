@@ -16,8 +16,8 @@ class BedsController < ApplicationController
   end
 
   def new
-    @bed = Bed.new
-    @plant = @bed.plants.build(variety: 'First Plant')
+    @plant = current_user.plants.build
+    @bed = @plant.build_bed
   end
 
   def create
