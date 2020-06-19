@@ -26726,3 +26726,341 @@ Completed 200 OK in 40ms (Views: 32.6ms | ActiveRecord: 2.3ms | Allocations: 978
 
 
   [1m[36mPlant Load (0.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants" ORDER BY "plants"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/beds" for ::1 at 2020-06-19 13:49:20 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BedsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:6:in `index'
+  [1m[36mBed Load (2.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/beds_controller.rb:6:in `uniq'
+  Rendering beds/index.html.erb within layouts/application
+  Rendered beds/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.4ms | Allocations: 76)
+Completed 200 OK in 92ms (Views: 22.2ms | ActiveRecord: 4.0ms | Allocations: 24491)
+
+
+Started GET "/beds/1" for ::1 at 2020-06-19 13:49:22 -0400
+Processing by BedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.9ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:65:in `bed_finder'
+  Rendering beds/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."bed_id" = ?[0m  [["bed_id", 1]]
+  ↳ app/views/beds/show.html.erb:10
+  Rendered beds/show.html.erb within layouts/application (Duration: 71.3ms | Allocations: 8524)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.6ms | Allocations: 69)
+Completed 200 OK in 104ms (Views: 89.9ms | ActiveRecord: 1.9ms | Allocations: 14633)
+
+
+Started GET "/beds/1/edit" for ::1 at 2020-06-19 13:50:23 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BedsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+  Rendering beds/edit.html.erb within layouts/application
+  [1m[36mBed Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "beds"."medium" FROM "beds"[0m
+  ↳ app/views/beds/_form.html.erb:14
+  Rendered beds/_form.html.erb (Duration: 17.0ms | Allocations: 2399)
+  Rendered beds/edit.html.erb within layouts/application (Duration: 21.2ms | Allocations: 2702)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 74)
+Completed 200 OK in 162ms (Views: 57.3ms | ActiveRecord: 3.5ms | Allocations: 27582)
+
+
+Started PATCH "/beds/1" for ::1 at 2020-06-19 13:50:29 -0400
+Processing by BedsController#update as HTML
+  Parameters: {"authenticity_token"=>"AwkIFHcLenrtrPaHiUI+1+1EUdqf8XfxY/iS7EZS8W1vXAvyniu4Spmm4vhQ5/9upfxVP5OZPX4N9AkEkk3WZw==", "bed"=>{"name"=>"Outside 1", "location"=>"South wall of house (easternmost)", "size"=>"4", "medium"=>"Soil"}, "commit"=>"Update Bed", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+Redirected to http://localhost:3000/beds/1
+Completed 302 Found in 10ms (ActiveRecord: 0.5ms | Allocations: 2764)
+
+
+Started GET "/beds/1" for ::1 at 2020-06-19 13:50:29 -0400
+Processing by BedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+  Rendering beds/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."bed_id" = ?[0m  [["bed_id", 1]]
+  ↳ app/views/beds/show.html.erb:10
+  Rendered beds/show.html.erb within layouts/application (Duration: 45.1ms | Allocations: 8686)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 69)
+Completed 200 OK in 67ms (Views: 58.2ms | ActiveRecord: 2.2ms | Allocations: 14781)
+
+
+Started GET "/beds" for ::1 at 2020-06-19 13:50:32 -0400
+Processing by BedsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:6:in `index'
+  [1m[36mBed Load (0.7ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/beds_controller.rb:6:in `uniq'
+  Rendering beds/index.html.erb within layouts/application
+  Rendered beds/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 372)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.7ms | Allocations: 69)
+Completed 200 OK in 36ms (Views: 21.9ms | ActiveRecord: 0.9ms | Allocations: 6998)
+
+
+Started GET "/beds/25" for ::1 at 2020-06-19 13:50:33 -0400
+Processing by BedsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.5ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+  Rendering beds/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."bed_id" = ?[0m  [["bed_id", 25]]
+  ↳ app/views/beds/show.html.erb:10
+  Rendered beds/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 891)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.6ms | Allocations: 69)
+Completed 200 OK in 41ms (Views: 31.9ms | ActiveRecord: 0.8ms | Allocations: 6977)
+
+
+Started GET "/beds/25/edit" for ::1 at 2020-06-19 13:50:36 -0400
+Processing by BedsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+  Rendering beds/edit.html.erb within layouts/application
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "beds"."medium" FROM "beds"[0m
+  ↳ app/views/beds/_form.html.erb:14
+  Rendered beds/_form.html.erb (Duration: 5.1ms | Allocations: 1987)
+  Rendered beds/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2051)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 68)
+Completed 200 OK in 46ms (Views: 33.0ms | ActiveRecord: 1.0ms | Allocations: 8134)
+
+
+Started GET "/beds" for ::1 at 2020-06-19 13:51:11 -0400
+Processing by BedsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:6:in `index'
+  [1m[36mBed Load (0.5ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/beds_controller.rb:6:in `uniq'
+  Rendering beds/index.html.erb within layouts/application
+  Rendered beds/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 370)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 69)
+Completed 200 OK in 32ms (Views: 21.2ms | ActiveRecord: 0.9ms | Allocations: 6684)
+
+
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" ORDER BY "beds"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" ORDER BY "beds"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBed Update (0.6ms)[0m  [1m[33mUPDATE "beds" SET "medium" = ?, "updated_at" = ? WHERE "beds"."id" = ?[0m  [["medium", "Aquaponic"], ["updated_at", "2020-06-19 17:53:08.571872"], ["id", 29]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBed Load (0.5ms)[0m  [1m[34mSELECT "beds".* FROM "beds"[0m
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds"[0m
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds"[0m
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/beds/25" for ::1 at 2020-06-19 13:54:03 -0400
+Processing by BedsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+  Rendering beds/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."bed_id" = ?[0m  [["bed_id", 25]]
+  ↳ app/views/beds/show.html.erb:10
+  Rendered beds/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 891)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 69)
+Completed 200 OK in 63ms (Views: 45.4ms | ActiveRecord: 1.3ms | Allocations: 6983)
+
+
+Started GET "/beds/25/edit" for ::1 at 2020-06-19 13:54:07 -0400
+Processing by BedsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+  Rendering beds/edit.html.erb within layouts/application
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "beds"."medium" FROM "beds"[0m
+  ↳ app/views/beds/_form.html.erb:14
+  Rendered beds/_form.html.erb (Duration: 8.1ms | Allocations: 2017)
+  Rendered beds/edit.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2081)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 68)
+Completed 200 OK in 43ms (Views: 34.5ms | ActiveRecord: 0.8ms | Allocations: 8154)
+
+
+Started PATCH "/beds/25" for ::1 at 2020-06-19 13:54:14 -0400
+Processing by BedsController#update as HTML
+  Parameters: {"authenticity_token"=>"f+iPEOXEsHfllxd+iYGzZ+pu9pN0nnDgEPmmlJdKOpTPqFSWcFlJua2NA1jqmAJIjeW56ltEehAjJSVk5Rz3Gg==", "bed"=>{"name"=>"Area 51", "location"=>"", "size"=>"", "medium"=>""}, "commit"=>"Update Bed", "id"=>"25"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beds_controller.rb:43:in `update'
+  [1m[36mBed Update (0.6ms)[0m  [1m[33mUPDATE "beds" SET "location" = ?, "medium" = ?, "updated_at" = ? WHERE "beds"."id" = ?[0m  [["location", ""], ["medium", ""], ["updated_at", "2020-06-19 17:54:14.624700"], ["id", 25]]
+  ↳ app/controllers/beds_controller.rb:43:in `update'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beds_controller.rb:43:in `update'
+Redirected to http://localhost:3000/beds/25
+Completed 302 Found in 18ms (ActiveRecord: 3.3ms | Allocations: 4839)
+
+
+Started GET "/beds/25" for ::1 at 2020-06-19 13:54:14 -0400
+Processing by BedsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+  Rendering beds/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."bed_id" = ?[0m  [["bed_id", 25]]
+  ↳ app/views/beds/show.html.erb:10
+  Rendered beds/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.2ms | Allocations: 69)
+Completed 200 OK in 24ms (Views: 15.7ms | ActiveRecord: 0.9ms | Allocations: 6985)
+
+
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBed Update (0.5ms)[0m  [1m[33mUPDATE "beds" SET "medium" = ?, "updated_at" = ? WHERE "beds"."id" = ?[0m  [["medium", "Hydroponic"], ["updated_at", "2020-06-19 17:55:27.806143"], ["id", 25]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/beds" for ::1 at 2020-06-19 13:55:32 -0400
+Processing by BedsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:6:in `index'
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/beds_controller.rb:6:in `uniq'
+  Rendering beds/index.html.erb within layouts/application
+  Rendered beds/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 370)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.2ms | Allocations: 69)
+Completed 200 OK in 32ms (Views: 26.1ms | ActiveRecord: 0.5ms | Allocations: 6683)
+
+
+Started GET "/beds/25" for ::1 at 2020-06-19 13:55:33 -0400
+Processing by BedsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (3.8ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+  Rendering beds/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."bed_id" = ?[0m  [["bed_id", 25]]
+  ↳ app/views/beds/show.html.erb:10
+  Rendered beds/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 69)
+Completed 200 OK in 54ms (Views: 36.3ms | ActiveRecord: 4.5ms | Allocations: 6980)
+
+
+Started GET "/beds/25/edit" for ::1 at 2020-06-19 13:55:35 -0400
+Processing by BedsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+  Rendering beds/edit.html.erb within layouts/application
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "beds"."medium" FROM "beds"[0m
+  ↳ app/views/beds/_form.html.erb:14
+  Rendered beds/_form.html.erb (Duration: 12.4ms | Allocations: 2057)
+  Rendered beds/edit.html.erb within layouts/application (Duration: 13.0ms | Allocations: 2121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 68)
+Completed 200 OK in 37ms (Views: 29.5ms | ActiveRecord: 0.8ms | Allocations: 8198)
+
+
+Started PATCH "/beds/25" for ::1 at 2020-06-19 13:55:36 -0400
+Processing by BedsController#update as HTML
+  Parameters: {"authenticity_token"=>"GhjsNVw5MF6kLOm6TCbJGsGtiMzurUT5h0T7NAbcumKqWDezyaTJkOw2/ZwvP3g1pibHtcF3Tgm0mHjEdIp37A==", "bed"=>{"name"=>"Area 51", "location"=>"", "size"=>"", "medium"=>"Hydroponic"}, "commit"=>"Update Bed", "id"=>"25"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.7ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+Redirected to http://localhost:3000/beds/25
+Completed 302 Found in 12ms (ActiveRecord: 1.0ms | Allocations: 2615)
+
+
+Started GET "/beds/25" for ::1 at 2020-06-19 13:55:36 -0400
+Processing by BedsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+  Rendering beds/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."bed_id" = ?[0m  [["bed_id", 25]]
+  ↳ app/views/beds/show.html.erb:10
+  Rendered beds/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 69)
+Completed 200 OK in 26ms (Views: 15.6ms | ActiveRecord: 0.9ms | Allocations: 6989)
+
+
+Started GET "/beds/25/edit" for ::1 at 2020-06-19 13:55:37 -0400
+Processing by BedsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+  Rendering beds/edit.html.erb within layouts/application
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "beds"."medium" FROM "beds"[0m
+  ↳ app/views/beds/_form.html.erb:14
+  Rendered beds/_form.html.erb (Duration: 5.2ms | Allocations: 2057)
+  Rendered beds/edit.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 68)
+Completed 200 OK in 34ms (Views: 25.7ms | ActiveRecord: 0.6ms | Allocations: 8200)
+
+
+Started PATCH "/beds/25" for ::1 at 2020-06-19 13:57:04 -0400
+Processing by BedsController#update as HTML
+  Parameters: {"authenticity_token"=>"14b/V/ucpzPBOcb9t3Xtm4lBU0yixyAA2bQYT+sOM2tnxiTRbgFe/Ykj0tvUbFy07socNY0dKvDqaJu/mVj+5Q==", "bed"=>{"name"=>"Area 51", "location"=>"", "size"=>"800", "medium"=>""}, "commit"=>"Update Bed", "id"=>"25"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beds_controller.rb:43:in `update'
+  [1m[36mBed Update (0.7ms)[0m  [1m[33mUPDATE "beds" SET "size" = ?, "medium" = ?, "updated_at" = ? WHERE "beds"."id" = ?[0m  [["size", 800], ["medium", ""], ["updated_at", "2020-06-19 17:57:04.987374"], ["id", 25]]
+  ↳ app/controllers/beds_controller.rb:43:in `update'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beds_controller.rb:43:in `update'
+Redirected to http://localhost:3000/beds/25
+Completed 302 Found in 18ms (ActiveRecord: 3.4ms | Allocations: 4822)
+
+
+Started GET "/beds/25" for ::1 at 2020-06-19 13:57:05 -0400
+Processing by BedsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `log'
+  [1m[36mBed Load (0.6ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? AND "beds"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/beds_controller.rb:60:in `bed_finder'
+  Rendering beds/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."bed_id" = ?[0m  [["bed_id", 25]]
+  ↳ app/views/beds/show.html.erb:10
+  Rendered beds/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 897)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_nav.html.erb (Duration: 0.2ms | Allocations: 69)
+Completed 200 OK in 43ms (Views: 32.4ms | ActiveRecord: 1.1ms | Allocations: 6984)
+
+

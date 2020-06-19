@@ -1,13 +1,12 @@
 class BedsController < ApplicationController
 
-  before_action :log
+  before_action :log, :bed_finder, only: [:show, :edit, :update]
 
   def index
     @beds = current_user.beds.uniq {|b| b.id}
   end
 
   def show
-    @bed = current_user.beds.find_by(id: params[:id])
     if @bed
       render :show
     else
@@ -22,7 +21,6 @@ class BedsController < ApplicationController
 
   def create
     @bed = Bed.create(bed_params)
-    binding.pry
     if @bed.valid?
       redirect_to @bed
     else
@@ -33,17 +31,14 @@ class BedsController < ApplicationController
   end
 
   def edit
-    @bed = current_user.beds.find_by(id: params[:id])
     if @bed  
       render :edit
     else
       redirect_to beds_path
     end
-   
   end
 
   def update
-    @bed = current_user.beds.find_by(id: params[:id])
     if @bed
       if@bed.update(bed_params)
         redirect_to bed_path(@bed)
@@ -59,5 +54,9 @@ class BedsController < ApplicationController
 
   def bed_params
     params.require(:bed).permit(:name, :location, :size, :medium, plant_ids: [], plants_attributes: [:variety, :user_id])
+  end
+
+  def bed_finder
+    @bed = current_user.beds.find_by(id: params[:id])
   end
 end
