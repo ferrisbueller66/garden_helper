@@ -24,8 +24,6 @@ class BedsController < ApplicationController
     if @bed.valid?
       redirect_to @bed
     else
-      flash[:alert] = @bed.errors.full_messages
-      
       render :new
     end
   end

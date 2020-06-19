@@ -1,7 +1,17 @@
 <h2>Add a New Grow Bed</h2>
 
 <%= form_for(@bed) do |f| %>
-   
+   <% if @bed.errors.any? %>
+        <div id="error_explanation">
+        <h2><%= pluralize(@bed.errors.count, "error") %> prohibited this Bed from being saved:</h2>
+        <ul>
+            <% @bed.errors.full_messages.each do |message| %>
+            <p><%= message %></p>
+            <% end %>
+        </ul>
+        </div>
+    <% end %>
+
     <%= f.label :Name %><br>
     <%= f.text_field :name %><br>
 
@@ -15,22 +25,19 @@
     <%= f.collection_select :medium, Bed.select(:medium).distinct, :medium, :medium, {:include_blank => "Please select"} %>
     <br>
     <br>
-    <%= f.fields_for :plants, @plant do |pf| %>
-        <%= pf.label :"Please enter the varietal name of the first plant for this Bed:" %><br><br>
-        <%= pf.hidden_field :user_id, value: current_user.id %>
 
-        <%= pf.label :"Varietal Name" %><br>
-        <%= pf.text_field :variety %><br>
-    <% end %>
-  
-    <br>
-    <br>
-    <%= f.submit %>
+<%= f.fields_for :plants, @plant do |pf| %>
+    <%= pf.label :"Please enter the varietal name of the first plant for this Bed:" %><br><br>
+    <%= pf.hidden_field :user_id, value: current_user.id %>
+
+    <%= pf.label :"Varietal Name" %><br>
+    <%= pf.text_field :variety %><br>
+<% end %>
+
+<br>
+<br>
+<%= f.submit %>
 
 <% end %>
 
-
-
-<p>Change Your Mind?</p>
-<h5><%= link_to "Back to Your Beds", beds_path %></h5>
-
+<%= render 'footer' %>
