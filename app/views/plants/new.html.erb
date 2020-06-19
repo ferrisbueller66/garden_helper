@@ -1,4 +1,7 @@
 <h2>Add a New Plant</h2>
+
+<%= render 'warning' %>
+
 <%= form_for(@plant) do |f| %>
 
     <%= f.label :"Varietal Name*" %><br>
@@ -23,7 +26,7 @@
         <%= f.hidden_field :bed_id, value: @bed.id %>
     <% else  %>
         <%= f.label :"Select a Grow Bed" %><br>
-        <%= f.collection_select :bed_id, Bed.all, :id, :name, {:include_blank => "Please select"} %><br>
+        <%= f.collection_select :bed_id, current_user.beds, :id, :name, {:include_blank => "Please select"} %><br>
             <br>
             OR
             <br>
@@ -39,5 +42,4 @@
 
 <% end %>
 
-<p>Change Your Mind?</p>
-<h5><%= link_to "Back to Your Plants", plants_path %></h5>
+<%= render 'footer' %>

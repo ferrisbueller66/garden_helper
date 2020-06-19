@@ -1,5 +1,7 @@
 <h2>Edit <%= @plant.variety %></h2>
 
+<%= render 'warning' %>
+
 <%= form_for(@plant) do |f| %>
 
     <%= f.hidden_field :user_id, value: current_user.id %>
@@ -32,5 +34,4 @@
 
 <% end %>
 
-<p>Change Your Mind?</p>
-<h5><%= link_to "Back to Your Plants", plants_path %></h5>
+<%= render 'footer' %>
