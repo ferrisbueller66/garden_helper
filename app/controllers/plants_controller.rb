@@ -1,23 +1,23 @@
 class PlantsController < ApplicationController
   before_action :log
-  
+
   def index
     @plants = current_user.plants.all
   end
 
   def show
     if params[:bed_id]
-    @bed = current_user.beds.find_by(id: params[:bed_id])
-      if @bed
-        @plant = current_user.plants.find_by(id: params[:id])
-        if @plant
-          render :show
-        else
-          redirect_to plants_path
-        end
+      @bed = current_user.beds.find_by(id: params[:bed_id])
+    if @bed
+      @plant = current_user.plants.find_by(id: params[:id])
+      if @plant
+        render :show
       else
-        redirect_to beds_path    
+        redirect_to plants_path
       end
+    else
+      redirect_to beds_path    
+    end
     else
       @plant = current_user.plants.find_by(id: params[:id])
       if @plant  
@@ -74,6 +74,5 @@ class PlantsController < ApplicationController
   def plant_params
     params.require(:plant).permit(:user_id, :variety, :nickname, :species, :description, :germination_date, :transplant_date, :bed_id, :bed_attributes => [:name])
   end
-
-
+  
 end
