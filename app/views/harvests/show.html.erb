@@ -3,7 +3,8 @@
 <p> Harvest Yield in Ounces: <%= @harvest.weight %></p>
 <p> Grow Bed: <%= @harvest.plant.bed.name %></p>
 <p> Source Plant: <%= @harvest.plant.variety %></p>
-
+<br>
+<p><%= link_to "Edit This Harvest", edit_plant_harvest_path(@plant, @harvest) %></p>
 
 <h5><% link_to "Add a New harvest for a plant", new_plant_harvest_path(@harvest.plant) %></h5>
 <section class = "footer">

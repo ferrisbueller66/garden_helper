@@ -56,40 +56,32 @@ class HarvestsController < ApplicationController
 
   def edit
     if params[:plant_id]
-      @plant = Plant.find_by(id: params[:plant_id])
+      @plant = current_user.plants.find_by(id: params[:plant_id])
       if @plant
-        @harvest = Harvest.find_by(id: params[:id])
-    
+        @harvest = current_user.harvests.find_by(id: params[:id])
           if @harvest
             render :edit
           else
             redirect_to @plant
           end
       else
-        redirect_to @plants
-      end
-    else
-      @harvest = Harvest.find_by(id: params[:id])
-      if @harvest
-        render :edit
-      else
         redirect_to plants_path
       end
+    else
+      redirect_to plants_path
     end
   end
 
   def update
-
-    if params[:plant_id]
-      @plant = Plant.find_by(id: params[:plant_id])
+    if params[:harvest][:plant_id]
+      @plant = current_user.plants.find_by(id: params[:harvest][:plant_id])
       if @plant
-        @harvest = Harvest.find_by(id: params[:id])
+        @harvest = current_user.harvests.find_by(id: params[:id])
           if @harvest
-            @harvest = Harvest.update(harvest_params)
+            @harvest.update(harvest_params)
               if @harvest.valid?
-                redirect_to plant_path(@harvest.plant) #@plant
+                redirect_to plant_harvest_path(@plant, @harvest)
               else
-                flash[:alert] = @plant.errors.full_messages
                 render :edit
               end
           else
