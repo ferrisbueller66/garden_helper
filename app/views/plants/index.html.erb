@@ -14,7 +14,7 @@
                 <td><%= link_to plant.variety, plant_path(plant)  %></td>
                 <td><%= link_to plant.bed.name, bed_path(plant.bed) %></td>
                 <% if plant.harvests.count > 0 %>
-                    <td><%= plant.harvests.last.weight %></td>
+                    <td><%= plant.yield_amount %> oz.</td>
                 <% else %>
                     <td><%= "0 oz." %></td>
                 <% end %>

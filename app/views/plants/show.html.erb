@@ -7,7 +7,6 @@
         <tr>
             <th>Nickname</th>
             <th>Bed</th>
-            <th>Location</th>
             <th>Species</th>
             <th>Description</th>
             <th>Germination Date</th>
@@ -18,7 +17,6 @@
             <tr>
                 <td><%= @plant.nickname if @plant.nickname %></td>
                 <td><%= link_to @plant.bed.name, bed_path(@plant.bed) if @plant.bed %></td>
-                <td><%= @plant.bed.location if @plant.bed %></td>
                 <td><%= @plant.species if @plant.species %></td>
                 <td><%= @plant.description if @plant.description %></td>
                 <td><%= @plant.germination_date if @plant.germination_date %></td>
@@ -34,7 +32,7 @@
     <p><%= link_to "#{harvest.weight} ounces", plant_harvest_path(@plant, @harvest) %> (<%=harvest.harvest_date%>)</p>
 <% end  %>
 
-<p> <strong> Total Yield: </strong><%= @plant.yield_amount %>
+<p> <strong> Total Yield: </strong><%= @plant.yield_amount %> oz.
 
 <p> <strong> <%= link_to "Add a Harvest", new_plant_harvest_path(@plant) %></p>
   

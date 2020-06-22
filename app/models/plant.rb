@@ -17,9 +17,8 @@ class Plant < ApplicationRecord
     def yield_amount
         if self.harvests.count > 0
             amount = []
-            amount << self.harvests.each {|harvest| harvest.weight}
-            amount.sum
-            binding.pry
+            amount << self.harvests.map {|harvest| harvest.weight}
+            return amount.last.sum
         else
             return "0 oz."
         end
