@@ -18,7 +18,7 @@ class Plant < ApplicationRecord
         if self.harvests.count > 0
             amount = []
             amount << self.harvests.map {|harvest| harvest.weight}
-            return amount.last.sum
+            amount.last.sum
         else
             return "0 oz."
         end
