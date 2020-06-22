@@ -3,6 +3,7 @@ class PlantsController < ApplicationController
 
   def index
     @plants = current_user.plants.all
+    @harvested_plants = @plants.been_harvested
   end
 
   def show
