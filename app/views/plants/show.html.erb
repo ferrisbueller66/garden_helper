@@ -1,20 +1,41 @@
 <h1><%= @plant.variety %></h1>
 <h2> Plant Details</h2>
-<p> <strong> Nickname: </strong><%= @plant.nickname if @plant.nickname %></p>
-<p> <strong> Bed: </strong><%= link_to @plant.bed.name, bed_path(@plant.bed) if @plant.bed %></p>
-<p> <strong> Location: </strong><%= @plant.bed.location if @plant.bed %></p>
-<p> <strong> Species: </strong><%= @plant.species if @plant.species %></p>
-<p> <strong> Description: </strong><%= @plant.description if @plant.description %></p>
-<p> <strong> Germination Date: </strong><%= @plant.germination_date if @plant.germination_date %></p>
-<p> <strong> Transplant Date: </strong><%= @plant.transplant_date if @plant.transplant_date %></p>
+
+
+<table class="center">
+    <thead>
+        <tr>
+            <th>Nickname</th>
+            <th>Bed</th>
+            <th>Location</th>
+            <th>Species</th>
+            <th>Description</th>
+            <th>Germination Date</th>
+            <th>Transplant Date</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td><%= @plant.nickname if @plant.nickname %></td>
+                <td><%= link_to @plant.bed.name, bed_path(@plant.bed) if @plant.bed %></td>
+                <td><%= @plant.bed.location if @plant.bed %></td>
+                <td><%= @plant.species if @plant.species %></td>
+                <td><%= @plant.description if @plant.description %></td>
+                <td><%= @plant.germination_date if @plant.germination_date %></td>
+                <td><%= @plant.transplant_date if @plant.transplant_date %></td>
+            </tr>
+    </tbody>
+</table>
 
 
 <p> <strong> Harvests: </strong>
 <P><% @plant.harvests.each do |harvest| %>
-<% @harvest = harvest  %>
+    <% @harvest = harvest  %>
     <p><%= link_to "#{harvest.weight} ounces", plant_harvest_path(@plant, @harvest) %> (<%=harvest.harvest_date%>)</p>
 <% end  %>
-<p> <strong> Total Yield: </strong>
+
+<p> <strong> Total Yield: </strong><%= @plant.yield_amount %>
+
 <p> <strong> <%= link_to "Add a Harvest", new_plant_harvest_path(@plant) %></p>
   
 <h3> <%= link_to "Edit #{@plant.variety}", edit_plant_path(@plant) %> </h3>

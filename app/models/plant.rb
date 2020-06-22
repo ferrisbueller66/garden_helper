@@ -13,4 +13,15 @@ class Plant < ApplicationRecord
         self.save
         end
     end
+
+    def yield_amount
+        if self.harvests.count > 0
+            amount = []
+            amount << self.harvests.each {|harvest| harvest.weight}
+            amount.sum
+            binding.pry
+        else
+            return "0 oz."
+        end
+    end
 end
