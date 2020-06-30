@@ -6,5 +6,5 @@ class Bed < ApplicationRecord
 
     validates :name, presence: true
 
-    scope :grow_medium, -> { where(harvested: true)}
+    scope :medium_soil, -> { where(medium: "soil")}
 end
