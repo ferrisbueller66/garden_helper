@@ -1,15 +1,6 @@
 <%= form_for(@bed) do |f| %>
 
-   <% if @bed.errors.any? %>
-        <div id="error_explanation">
-        <h2><%= pluralize(@bed.errors.count, "error") %> prohibited this Bed from being saved:</h2>
-        <ul>
-            <% @bed.errors.full_messages.each do |message| %>
-            <p><%= message %></p>
-            <% end %>
-        </ul>
-        </div>
-    <% end %>
+ <%= render 'error' %>
 
     <%= f.label :Name %><br>
     <%= f.text_field :name %><br>
