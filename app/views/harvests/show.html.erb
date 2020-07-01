@@ -6,7 +6,12 @@
 <br>
 <p><%= link_to "Edit This Harvest", edit_plant_harvest_path(@plant, @harvest) %></p>
 
-<h5><% link_to "Add a New harvest for a plant", new_plant_harvest_path(@harvest.plant) %></h5>
+<br>
+<br>
+
+<p><%= link_to "Delete This Harvest", delete_plant_harvest_path(@plant, @harvest), method: :delete, data: { confirm: "Do You Really Want to Delete This Harvest?" } %></p>
+
+<h5><% link_to "Add a New harvest for a plant", delete_plant_harvest_path(@harvest.plant) %></h5>
 <section class = "footer">
 <h5><%= link_to "Go Back to #{@plant.variety}", @plant %></h5>
 <h5><%= link_to "Go to Your Beds", beds_path %></h5>

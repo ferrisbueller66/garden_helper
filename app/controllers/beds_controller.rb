@@ -1,30 +1,42 @@
 class BedsController < ApplicationController
 
-  before_action :log, :bed_finder, only: [:show, :edit, :update]
+  before_action :bed_finder, only: [:show, :edit, :update]
 
   def index
-    @beds = current_user.beds.uniq {|b| b.id}
-  end
-
-  def show
-    if @bed
-      render :show
+    if user_signed_in?
+      @beds = current_user.beds.uniq {|b| b.id}
     else
-      redirect_to beds_path
+      redirect_to root_path
     end
   end
 
+  def show
+      if @bed
+        render :show
+      else
+        redirect_to beds_path
+      end
+  end
+
   def new
-    @plant = current_user.plants.build
-    @bed = @plant.build_bed
+    if user_signed_in?
+      @plant = current_user.plants.build
+      @bed = @plant.build_bed
+    else
+      redirect_to root_path
+    end
   end
 
   def create
-    @bed = Bed.create(bed_params)
-    if @bed.valid?
-      redirect_to @bed
+    if user_signed_in?
+      @bed = Bed.create(bed_params)
+      if @bed.valid?
+        redirect_to @bed
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to root_path
     end
   end
 
@@ -55,6 +67,11 @@ class BedsController < ApplicationController
   end
 
   def bed_finder
-    @bed = current_user.beds.find_by(id: params[:id])
+    if user_signed_in?
+      @bed = current_user.beds.find_by(id: params[:id])
+    else
+      redirect_to root_path
+    end
   end
+
 end

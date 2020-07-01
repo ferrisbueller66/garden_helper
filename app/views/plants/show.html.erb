@@ -32,7 +32,13 @@
     <p><%= link_to "#{harvest.weight} ounces", plant_harvest_path(@plant, @harvest) %> (<%=harvest.harvest_date%>)</p>
 <% end  %>
 
-<p> <strong> Total Yield: </strong><%= @plant.yield_amount %>
+<p> <strong> Total Yield: 
+    <% if @plant.yield_amount  %>
+    </strong><%= @plant.yield_amount %> oz.
+    <% else %>
+    0 oz.
+    <%end %>
+</p>
 
 <p> <strong> <%= link_to "Add a Harvest", new_plant_harvest_path(@plant) %></p>
   

@@ -1,71 +1,87 @@
 class PlantsController < ApplicationController
-  before_action :log, :plant_finder, only: [:edit, :update]
+  before_action :plant_finder, only: [:edit, :update]
 
   def index
-    @plants = current_user.plants.all
-    @harvested_plants = @plants.been_harvested
-  end
-
-  def show
-    if params[:bed_id]
-      @bed = current_user.beds.find_by(id: params[:bed_id])
-    if @bed
-      @plant = current_user.plants.find_by(id: params[:id])
-      if @plant
-        render :show
-      else
-        redirect_to plants_path
-      end
-    else
-      redirect_to beds_path    
-    end
-    else
-      @plant = current_user.plants.find_by(id: params[:id])
-      if @plant  
-        render :show
-      else
-        redirect_to plants_path
-      end
-    end
-  end
-
-  def new
-    if params[:bed_id]
-      @bed = current_user.beds.find_by(id: params[:bed_id])
-      if @bed
-        @plant = current_user.plants.build
-      else
-        redirect_to beds_path
-      end
-    else
-      @plant = current_user.plants.build
-      @newbed = @plant.build_bed
-    end
-  end
-
-  def create
-    @plant = current_user.plants.create(plant_params)
-    if @plant.valid?
-      redirect_to @plant
-    else
-      render :new
-    end
-  end
-
-  def edit
-    if @plant  
-      render :edit
+    if user_signed_in?
+      @plants = current_user.plants.all
+      @harvested_plants = @plants.been_harvested
     else
       redirect_to plants_path
     end
   end
 
-  def update
-    if @plant.update(plant_params)
-      redirect_to plant_path(@plant)
+  def show
+    if user_signed_in?
+      if params[:bed_id]
+        @bed = current_user.beds.find_by(id: params[:bed_id])
+        if @bed
+          @plant = current_user.plants.find_by(id: params[:id])
+          if @plant
+            render :show
+          else
+            redirect_to plants_path
+          end
+        else
+          redirect_to beds_path    
+        end
+      else
+        @plant = current_user.plants.find_by(id: params[:id])
+        if @plant  
+          render :show
+        else
+          redirect_to plants_path
+        end
+      end
     else
-      render :edit
+      redirect_to root_path
     end
+  end
+
+  def new
+    if user_signed_in?
+      if params[:bed_id]
+        @bed = current_user.beds.find_by(id: params[:bed_id])
+        if @bed
+          @plant = current_user.plants.build
+        else
+          redirect_to beds_path
+        end
+      else
+        @plant = current_user.plants.build
+        @newbed = @plant.build_bed
+      end
+    else
+      redirect_to root_path
+    end
+  end
+
+  def create
+    if user_signed_in?
+      @plant = current_user.plants.create(plant_params)
+      if @plant.valid?
+        redirect_to @plant
+      else
+        render :new
+      end
+    else
+      redirect_to root_path
+    end
+  end
+
+  def edit
+      if @plant  
+        render :edit
+      else
+        redirect_to plants_path
+      end
+  end
+
+  def update
+      if @plant.update(plant_params)
+        redirect_to plant_path(@plant)
+      else
+        render :edit
+      end
   end
 
   private
@@ -75,7 +91,11 @@ class PlantsController < ApplicationController
   end
 
   def plant_finder
-    @plant = current_user.plants.find_by(id: params[:id])
+    if user_signed_in?
+      @plant = current_user.plants.find_by(id: params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
 end

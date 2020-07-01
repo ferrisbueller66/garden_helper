@@ -12,10 +12,10 @@ class ApplicationController < ActionController::Base
     
     private
 
-    def log
-        unless user_signed_in?
-        redirect_to root_path
-        end
-    end
+    # def log
+    #     unless user_signed_in?
+    #     redirect_to root_path
+    #     end
+    # end
     
 end
