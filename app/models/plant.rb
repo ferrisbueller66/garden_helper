@@ -6,7 +6,9 @@ class Plant < ApplicationRecord
     validates :variety, presence: true
 
     scope :been_harvested, -> { where(harvested: true) }
-
+    scope :alpha_sort, -> {(self.all.order(variety: :asc))}
+    #review what sorting method
+    # plants index view, implement
     def harvest_status
         unless self.harvests.count == 0
         self.harvested = true

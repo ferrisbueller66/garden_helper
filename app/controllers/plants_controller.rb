@@ -5,6 +5,7 @@ class PlantsController < ApplicationController
     if user_signed_in?
       @plants = current_user.plants.all
       @harvested_plants = @plants.been_harvested
+      @ordered_plants = current_user.plants.alpha_sort
     else
       redirect_to plants_path
     end

@@ -9,6 +9,7 @@
         </tr>
     </thead>
     <tbody>
+
         <% @plants.each do |plant|%>
             <tr>
                 <td><%= link_to plant.variety, plant_path(plant)  %></td>
@@ -33,7 +34,13 @@
 
 <%end  %>
 
+<h2>Plants Alphabetically</h2>
 
+<% @ordered_plants.each do |plant|  %>
+
+<p> <%= link_to plant.variety, plant_path(plant) %></p>
+
+<%end  %>
 
 <section class = "footer">
 <p><%= link_to "Grow a New Plant!", new_plant_path %></p>

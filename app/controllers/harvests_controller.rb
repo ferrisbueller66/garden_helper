@@ -120,7 +120,6 @@ class HarvestsController < ApplicationController
         if @plant
           @harvest = current_user.harvests.find_by(id: params[:format])
           if @harvest
-            binding.pry
             @harvest.destroy
             redirect_to @plant
           else
