@@ -16,11 +16,13 @@
                     </li>
                 <% else %>
                     <li class="nav-item">
+                        <a class="nav-link" href="/plants">Signed in as: <%= current_user.email %></a>
+                    </li>
+                    <span>
+                    <li class="nav-item">
                         <%= link_to "Logout", destroy_user_session_path, method: "delete", class: "a nav-link" %>
                     </li>
-                <li class="nav-item">
-                        <a class="nav-link" href="/plants">Signed in as <%= current_user.email %></a>
-                    </li>
+                
                 <% end %>
             </ul>
         </div>
