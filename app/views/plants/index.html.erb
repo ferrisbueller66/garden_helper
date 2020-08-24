@@ -47,13 +47,15 @@
             <div class="container-fluid p-0">
                 <div class="row no-gutters">
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg">
-                            <img class="img-fluid" src="/images/basil.jpg" alt="" />
+                        <div class="portfolio-box">
+                        <!-- style="background-image: url(/images/basil.jpg) -->
+                            
                             <div class="portfolio-box-caption">
+                                <img class="img-fluid" src="/images/basil.jpg" alt="" />
                                 <div class="project-category text-white-50">Total Plants</div>
                                 <div class="project-name"><%= @plants.count%></div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg">
