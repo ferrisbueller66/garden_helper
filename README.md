@@ -19,6 +19,8 @@ The navbar and footer of this project were adapted from the html of their "One P
 
 The CSS for the body of this project was adapted from the html of their "Creative" template, found here: https://startbootstrap.com/themes/creative/ and repo here: https://github.com/StartBootstrap/startbootstrap-creative.
 
+Specials thanks Francesco Gallarotti @ https://unsplash.com/@gallarotti for the photo "Selectd Focus of Green Leaf Plant"; Rob Pumphrey @ https://unsplash.com/@robpumphrey for "Young basil leaves"; Dan Gold @ https://unsplash.com/@danielcgold for "Tomatoes on the Vine"; Jon Sailor @ https://unsplash.com/@eyefish73 for "Green Bell Pepper"; Russ Ward @ https://unsplash.com/@rssemfam for "Juannis' Microgreens"; and Christian Joudrey @ https://unsplash.com/@cjoudrey for "Row of Bean Sprout".
+
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/ferrisbueller66/garden_helper. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
