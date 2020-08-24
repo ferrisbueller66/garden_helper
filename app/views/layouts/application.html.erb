@@ -22,11 +22,16 @@
   </head>
 
   <body>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-       <div class = "header">
-  <%= render '/layouts/nav' %>
-  </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= render '/layouts/nav' %>
     <%= yield %>
+    
+    <footer class="py-5 bg-black">
+      <div class="container">
+        <p class="m-0 text-center text-white small">Copyright &copy; Trevor Tarpinian 2020</p>
+      </div>
+    </footer>
+
   </body>
 </html>
