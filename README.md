@@ -53,12 +53,12 @@ The close the program, logout of your account, exit your web browser, and type '
 
 ## Resources
 
-The structure of the applications's routes and nested routes [can be viewed here](./app/config/routes.rb#L3-L21).
+The structure of the applications's routes and nested routes [can be viewed here](./config/routes.rb#L3-L21).
 
 ### Application
 | route | method | description | Docs |
 |---|---|---|---|
-|  '/' | GET | renders welcome page |  [Rdoc](./app/config/application_controller.rb#L1-L13) |
+|  '/' | GET | renders welcome page |  [Rdoc](./app/controllers/application_controller.rb#L1-L13) |
 ---
 
 ### Users
@@ -103,16 +103,27 @@ The navbar and footer of this project were adapted from the html of their "One P
 
 The CSS for the body of this project was adapted from the html of their "Creative" template, found here: https://startbootstrap.com/themes/creative/ and repo here: https://github.com/StartBootstrap/startbootstrap-creative.
 
-Specials thanks Francesco Gallarotti @ https://unsplash.com/@gallarotti for the photo "Selectd Focus of Green Leaf Plant"; Rob Pumphrey @ https://unsplash.com/@robpumphrey for "Young basil leaves"; Dan Gold @ https://unsplash.com/@danielcgold for "Tomatoes on the Vine"; Jon Sailor @ https://unsplash.com/@eyefish73 for "Green Bell Pepper"; Russ Ward @ https://unsplash.com/@rssemfam for "Juannis' Microgreens"; and Christian Joudrey @ https://unsplash.com/@cjoudrey for "Row of Bean Sprout".
+#### Special thanks to:
+---
+[Francesco Gallarotti](https://unsplash.com/@gallarotti) for the photo "Selected Focus of Green Leaf Plant"
+---
+[Rob Pumphrey](https://unsplash.com/@robpumphrey) for "Young basil leaves"
+---
+[Dan Gold](https://unsplash.com/@danielcgold) for "Tomatoes on the Vine"
+---
+[Jon Sailor](https://unsplash.com/@eyefish73) for "Green Bell Pepper"
+---
+[Russ Ward](https://unsplash.com/@rssemfam) for "Juannis' Microgreens"
+---
+[Christian Joudrey](https://unsplash.com/@cjoudrey) for "Row of Bean Sprout"
+---
 
 ## Contributing
-Bug reports and pull requests are welcome on GitHub at https://github.com/ferrisbueller66/garden_helper. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant Rdoc
- of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ferrisbueller66/garden_helper. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant Code of conduct.
 
 ## Conduct
 Everyone using and interacting in Garden Helper's code
-bases, issue trackers, chat rooms and/or mailing lists is expected to follow the [Code
- of conduct](./CODE_OF_CONDUCT.md).
+bases, issue trackers, chat rooms and/or mailing lists is expected to follow the [Code of conduct](./CODE_OF_CONDUCT.md).
 
 ## Maintainer(s)
 ---
