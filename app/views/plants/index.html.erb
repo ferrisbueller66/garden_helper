@@ -5,7 +5,7 @@
 		<tr>
 			<th>Varietal Name</th>
 			<th>Bed</th>
-			<th>Harvests</th>
+			<th>Total Harvested</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -13,11 +13,7 @@
 			<tr>
 				<td><%= link_to plant.variety, plant_path(plant)  %></td>
 				<td><%= link_to plant.bed.name, bed_path(plant.bed) %></td>
-				<% if plant.harvests.count > 0 %>
-					<td><%= plant.yield_amount %> oz.</td>
-				<% else %>
-					<td><%= "0.0 oz." %></td>
-				<% end %>
+				<td><%= plant.yield_amount %> oz.</td>
 			</tr>
 		<% end %>
 	</tbody>
