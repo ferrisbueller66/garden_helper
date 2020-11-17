@@ -11,6 +11,45 @@ class PlantsController < ApplicationController
     end
   end
 
+  def create
+    if user_signed_in?
+      @plant = current_user.plants.create(plant_params)
+      if @plant.valid?
+        redirect_to @plant
+      else
+        render :new
+      end
+    else
+      redirect_to root_path
+    end
+  end
+
+  def new
+    if user_signed_in?
+      if params[:bed_id]
+        @bed = current_user.beds.find_by(id: params[:bed_id])
+        if @bed
+          @plant = current_user.plants.build
+        else
+          redirect_to beds_path
+        end
+      else
+        @plant = current_user.plants.build
+        @newbed = @plant.build_bed
+      end
+    else
+      redirect_to root_path
+    end
+  end
+
+  def edit
+    if @plant  
+      render :edit
+    else
+      redirect_to plants_path
+    end
+  end
+
   def show
     if user_signed_in?
       if params[:bed_id]
@@ -38,52 +77,22 @@ class PlantsController < ApplicationController
     end
   end
 
-  def new
-    if user_signed_in?
-      if params[:bed_id]
-        @bed = current_user.beds.find_by(id: params[:bed_id])
-        if @bed
-          @plant = current_user.plants.build
-        else
-          redirect_to beds_path
-        end
-      else
-        @plant = current_user.plants.build
-        @newbed = @plant.build_bed
-      end
-    else
-      redirect_to root_path
-    end
-  end
-
-  def create
-    if user_signed_in?
-      @plant = current_user.plants.create(plant_params)
-      if @plant.valid?
-        redirect_to @plant
-      else
-        render :new
-      end
-    else
-      redirect_to root_path
-    end
-  end
-
-  def edit
-      if @plant  
-        render :edit
-      else
-        redirect_to plants_path
-      end
-  end
-
   def update
-      if @plant.update(plant_params)
-        redirect_to plant_path(@plant)
-      else
-        render :edit
-      end
+    if @plant.update(plant_params)
+      redirect_to plant_path(@plant)
+    else
+      render :edit
+    end
   end
+
+  # TODO: Build out DELETE ACTION
+  # def delete
+  #   if @plant.update(plant_params)
+  #     redirect_to plants_path
+  #   else
+  #     render :edit
+  #   end
+  # end
 
   private
 

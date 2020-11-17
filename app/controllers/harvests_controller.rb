@@ -1,28 +1,5 @@
 class HarvestsController < ApplicationController
 
-  def show
-    if user_signed_in?
-      if params[:plant_id]
-        @plant = current_user.plants.find_by(id: params[:plant_id])
-        if @plant
-          @harvest = current_user.harvests.find_by(id: params[:id])
-          if @harvest
-            render :show
-          else
-            redirect_to @plant
-          end
-        else
-          redirect_to plants_path
-        end
-      else
-        @harvest = current_user.harvests.find_by(id: params[:id])
-        render :show
-      end
-    else
-      redirect_to root_path
-    end
-  end
-
   def new
     if user_signed_in?
       if params[:plant_id]
@@ -84,6 +61,29 @@ class HarvestsController < ApplicationController
       redirect_to root_path
     end
   end
+  
+  def show
+    if user_signed_in?
+      if params[:plant_id]
+        @plant = current_user.plants.find_by(id: params[:plant_id])
+        if @plant
+          @harvest = current_user.harvests.find_by(id: params[:id])
+          if @harvest
+            render :show
+          else
+            redirect_to @plant
+          end
+        else
+          redirect_to plants_path
+        end
+      else
+        @harvest = current_user.harvests.find_by(id: params[:id])
+        render :show
+      end
+    else
+      redirect_to root_path
+    end
+  end
 
   def update
     if user_signed_in?
@@ -112,7 +112,6 @@ class HarvestsController < ApplicationController
     end
   end
 
-
   def destroy
     if user_signed_in?
       if params[:id]
@@ -134,7 +133,6 @@ class HarvestsController < ApplicationController
     else
       redirect_to root_path
     end
-
   end
 
   private
