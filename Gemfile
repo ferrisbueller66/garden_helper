@@ -1,13 +1,12 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'pry'
 ruby '2.6.1'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+gem 'pg', "~> 0.21"
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -34,7 +33,9 @@ gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+   gem "pry"
+  #comment out sqlite gem if using postgresql for test and development database
+  gem 'sqlite3', '~> 1.3.6'
 end
 
 group :development do
@@ -48,7 +49,10 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
+  gem 'rspec'
   gem 'capybara', '>= 2.15'
+  gem 'rack-test'
+  gem 'database_cleaner'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'

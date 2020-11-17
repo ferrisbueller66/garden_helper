@@ -41,7 +41,7 @@ You can also use [the Garden Helper app here on Heroku.](https://garden-helper.h
 - OmniAuth
 
 ## Deploy
-To use Garden Helper, download a zipped file from Github (https://github.com/ferrisbueller66/garden_helper). Please have ruby and rails installed prior to running this application.
+To use Garden Helper, download a zipped file from Github (https://github.com/tmtarpinian/garden_helper). Please have ruby and rails installed prior to running this application.
 
 After unzipping and saving the contents to the desired directory, and run 'bundle install' to install all the gems required for this program.
 
@@ -58,7 +58,7 @@ The structure of the applications's routes and nested routes [can be viewed here
 ### Application
 | route | method | description | Docs |
 |---|---|---|---|
-|  '/' | GET | renders welcome page |  [Rdoc](./app/controllers/application_controller.rb#L1-L13) |
+|  '/' | GET | renders welcome page |  [Rdoc](./app/controllers/application_controller.rb#L5-L11) |
 ---
 
 ### Users
