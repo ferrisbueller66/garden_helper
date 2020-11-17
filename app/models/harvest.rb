@@ -1,4 +1,4 @@
 class Harvest < ApplicationRecord
-    belongs_to :plant
-    validates :weight, :harvest_date, presence: true
+  belongs_to :plant
+  validates :weight, :harvest_date, presence: true
 end

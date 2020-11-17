@@ -1,32 +1,31 @@
 <h1>Here Are All Your Plants</h1>
 
 <table class="center">
-    <thead>
-        <tr>
-            <th>Varietal Name</th>
-            <th>Bed</th>
-            <th>Harvests</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        <% @plants.each do |plant|%>
-            <tr>
-                <td><%= link_to plant.variety, plant_path(plant)  %></td>
-                <td><%= link_to plant.bed.name, bed_path(plant.bed) %></td>
-                <% if plant.harvests.count > 0 %>
-                    <td><%= plant.yield_amount %> oz.</td>
-                <% else %>
-                    <td><%= "0.0 oz." %></td>
-                <% end %>
-            </tr>
-        <% end %>
-    </tbody>
+	<thead>
+		<tr>
+			<th>Varietal Name</th>
+			<th>Bed</th>
+			<th>Harvests</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @plants.each do |plant|%>
+			<tr>
+				<td><%= link_to plant.variety, plant_path(plant)  %></td>
+				<td><%= link_to plant.bed.name, bed_path(plant.bed) %></td>
+				<% if plant.harvests.count > 0 %>
+					<td><%= plant.yield_amount %> oz.</td>
+				<% else %>
+					<td><%= "0.0 oz." %></td>
+				<% end %>
+			</tr>
+		<% end %>
+	</tbody>
 </table>
 
 <section class = "footer">
-<p>
-    <%= link_to "Grow a New Plant!", new_plant_path %>  
-    <%= link_to "Go to Your Beds", beds_path %>
-</p>
+	<p>
+		<%= link_to "Grow a New Plant!", new_plant_path %>  
+		<%= link_to "Go to Your Beds", beds_path %>
+	</p>
 </section>

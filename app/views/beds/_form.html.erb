@@ -1,19 +1,19 @@
 <%= form_for(@bed) do |f| %>
 
- <%= render 'error' %>
+  <%= render 'error' %>
 
-    <%= f.label :Name %><br>
-    <%= f.text_field :name %><br>
+	<%= f.label :Name %><br>
+	<%= f.text_field :name %><br>
 
-    <%= f.label :Location %><br>
-    <%= f.text_field :location %><br>
+	<%= f.label :Location %><br>
+	<%= f.text_field :location %><br>
 
-    <%= f.label :"Size (sq ft)" %><br>
-    <%= f.text_field :size %><br>
-  
-    <%= f.label :"Grow Medium" %><br>
-    <%= f.collection_select :medium, Bed.select(:medium).distinct, :medium, :medium, {:include_blank => "Please select"} %>
-    <br>
-    <br>
-    <%= f.submit %>
+	<%= f.label :"Size (sq ft)" %><br>
+	<%= f.text_field :size %><br>
+
+	<%= f.label :"Grow Medium" %><br>
+	<%= f.collection_select :medium, Bed.select(:medium).distinct, :medium, :medium, {:include_blank => "Please select"} %>
+	<br>
+	<br>
+	<%= f.submit %>
 <% end %>

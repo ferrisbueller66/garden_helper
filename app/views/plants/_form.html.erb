@@ -1,25 +1,24 @@
 <%= form_for(@plant) do |f| %>
 
-    <%= f.hidden_field :user_id, value: current_user.id %>
+	<%= f.hidden_field :user_id, value: current_user.id %>
 
-    <%= f.label :"Varietal Name" %><br>
-    <%= f.text_field :variety %><br>
+	<%= f.label :"Varietal Name" %><br>
+	<%= f.text_field :variety %><br>
 
-    <%= f.label :"Grow Bed" %><br>
-    <%= f.collection_select :bed_id, Bed.all, :id, :name, {:include_blank => "Please select"} %><br>
+	<%= f.label :"Grow Bed" %><br>
+	<%= f.collection_select :bed_id, Bed.all, :id, :name, {:include_blank => "Please select"} %><br>
 
-    <%= f.label :Nickname %><br>
-    <%= f.text_field :nickname %><br>
+	<%= f.label :Nickname %><br>
+	<%= f.text_field :nickname %><br>
 
-    <%= f.label :Species %><br>
-    <%= f.text_field :species %><br>
-  
-    <%= f.label :Description %><br>
-    <%= f.text_area :description %><br>
+	<%= f.label :Species %><br>
+	<%= f.text_field :species %><br>
 
-    <%= f.label :"Germination Date" %><br>
-    <%= f.date_field :germination_date %><br>
+	<%= f.label :Description %><br>
+	<%= f.text_area :description %><br>
 
-    <%= f.label :"Transplant Date" %><br>
-    <%= f.date_field :transplant_date %><br>
-    
+	<%= f.label :"Germination Date" %><br>
+	<%= f.date_field :germination_date %><br>
+
+	<%= f.label :"Transplant Date" %><br>
+	<%= f.date_field :transplant_date %><br>

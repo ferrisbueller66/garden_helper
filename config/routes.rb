@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :plants, only: [:index, :show, :new, :create, :edit, :update]
-  resources :harvests, only: [:show, :new, :create, :update]
+    resources :harvests, only: [:show, :new, :create, :update]
   delete "plants/plant_id/authors/:id", to: "harvests#destroy", as: "delete_plant_harvest"
 
   root 'application#welcome'

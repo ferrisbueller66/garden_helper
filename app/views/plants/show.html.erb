@@ -1,50 +1,46 @@
 <h1><%= @plant.variety %></h1>
 <h2> Plant Details</h2>
 
-
 <table class="center">
-    <thead>
-        <tr>
-            <th>Nickname</th>
-            <th>Bed</th>
-            <th>Species</th>
-            <th>Description</th>
-            <th>Germination Date</th>
-            <th>Transplant Date</th>
-        </tr>
-    </thead>
-    <tbody>
-            <tr>
-                <td><%= @plant.nickname if @plant.nickname %></td>
-                <td><%= link_to @plant.bed.name, bed_path(@plant.bed) if @plant.bed %></td>
-                <td><%= @plant.species if @plant.species %></td>
-                <td><%= @plant.description if @plant.description %></td>
-                <td><%= @plant.germination_date if @plant.germination_date %></td>
-                <td><%= @plant.transplant_date if @plant.transplant_date %></td>
-            </tr>
-    </tbody>
+	<thead>
+		<tr>
+			<th>Nickname</th>
+			<th>Bed</th>
+			<th>Species</th>
+			<th>Description</th>
+			<th>Germination Date</th>
+			<th>Transplant Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @plant.nickname if @plant.nickname %></td>
+			<td><%= link_to @plant.bed.name, bed_path(@plant.bed) if @plant.bed %></td>
+			<td><%= @plant.species if @plant.species %></td>
+			<td><%= @plant.description if @plant.description %></td>
+			<td><%= @plant.germination_date if @plant.germination_date %></td>
+			<td><%= @plant.transplant_date if @plant.transplant_date %></td>
+		</tr>
+	</tbody>
 </table>
-
 
 <p> <strong> Harvests: </strong>
 <P><% @plant.harvests.each do |harvest| %>
-    <% @harvest = harvest  %>
-    <p><%= link_to "#{harvest.weight} ounces", plant_harvest_path(@plant, @harvest) %> (<%=harvest.harvest_date%>)</p>
+	<% @harvest = harvest  %>
+	<p><%= link_to "#{harvest.weight} ounces", plant_harvest_path(@plant, @harvest) %> (<%=harvest.harvest_date%>)</p>
 <% end  %>
 
 <p> <strong> Total Yield: 
-    <% if @plant.yield_amount  %>
-    </strong><%= @plant.yield_amount %> oz.
-    <% else %>
-    0 oz.
-    <%end %>
+	<% if @plant.yield_amount  %>
+		</strong><%= @plant.yield_amount %> oz.
+	<% else %>
+		0 oz.
+	<%end %>
 </p>
 
 <p> <strong> <%= link_to "Add a Harvest", new_plant_harvest_path(@plant) %></p>
-  
 <h3> <%= link_to "Edit #{@plant.variety}", edit_plant_path(@plant) %> </h3>
 
-
 <section class = "footer">
-<div class = "footer_link"><p><%= link_to "Go to Your Grow Beds", beds_path %></p></div> <div class = "footer_link"><%= link_to "Back to Your Plants", plants_path %></div>
+	<div class = "footer_link"><p><%= link_to "Go to Your Grow Beds", beds_path %></p></div> <div class = "footer_link"><%= link_to "Back to Your Plants", plants_path %></div>
 </section>

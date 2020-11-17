@@ -1,13 +1,11 @@
 <h1>Here are Your Grow Beds</h1>
 
 <% @beds.each do |bed|  %>
-
-<p> <%= link_to bed.name, bed_path(bed) %></p>
-
+  <p> <%= link_to bed.name, bed_path(bed) %></p>
 <%end  %>
 
-
 <h5><%= link_to "Add a New Bed", new_bed_path %></h5>
+
 <section class = "footer">
-<h5><%= link_to "Go to Your Plants", plants_path %></h5>
+  <h5><%= link_to "Go to Your Plants", plants_path %></h5>
 </section>
