@@ -119,7 +119,7 @@ The CSS for the body of this project was adapted from the html of their "Creativ
 ---
 
 ## Contributing
-Bug reports and pull requests are welcome on GitHub at https://github.com/ferrisbueller66/garden_helper. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant Code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/tmtarpinian/garden_helper. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant Code of conduct.
 
 ## Conduct
 Everyone using and interacting in Garden Helper's code
