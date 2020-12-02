@@ -27,8 +27,7 @@
 ---
 
 ## Description
-This program was created to help local farmers track the plants, grow beds, and harvests from their gardens. The app allows a user to create objects representing a grow bed and the plants growing in each respective bed. Additionally, harvests from each plant can be created as objects, relating to both an individual grow bed and plant. The data is persisted in a Postgresql database, which users can access in their account dashboard. The program can be expanded in the future, both allowing for more specific filtering and querying of data as well as implementation of hardware, such as a bar Rdoc
- scanner, improve the speed and accuracy of data input for each plant.
+This program was created to help local farmers track the plants, grow beds, and harvests from their gardens. The app allows a user to create objects representing a grow bed and the plants growing in each respective bed. Additionally, harvests from each plant can be created as objects, relating to both an individual grow bed and plant. The data is persisted in a Postgresql database, which users can access in their account dashboard. The program can be expanded in the future, both allowing for more specific filtering and querying of data as well as implementation of hardware, such as a bar code scanner, improve the speed and accuracy of data input for each plant.
 
 ### Technologies
 - Ruby
