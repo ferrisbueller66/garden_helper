@@ -493,3 +493,1107 @@ FOREIGN KEY ("user_id")
   [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
   [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
   [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$eU1vCX4tbEqAG8s45cNSReljETS1QWzUZpbcLj6uy9mMiZL5WJEHO"], ["created_at", "2020-12-04 22:23:54.338080"], ["updated_at", "2020-12-04 22:23:54.338080"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (3.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$Rrj.g/6M2qFQoXsBIn9v6.EQDV8q6pViJVbQDmYQWU4eKmBDV2ihC"], ["created_at", "2020-12-04 22:23:54.419006"], ["updated_at", "2020-12-04 22:23:54.419006"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.7ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-04 22:23:54.462368"], ["updated_at", "2020-12-04 22:23:54.462368"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (1.4ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-04 22:23:54.498236"], ["updated_at", "2020-12-04 22:23:54.498236"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-04 22:23:54.501142"], ["updated_at", "2020-12-04 22:23:54.501142"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-04 22:23:54.504284"], ["updated_at", "2020-12-04 22:23:54.504284"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$TKJlCxjZda6S3mdZi1.V8uTyMHEyq9P6Qer8UtkTqaUvOMa1Qu7ry"], ["created_at", "2020-12-04 22:23:54.521882"], ["updated_at", "2020-12-04 22:23:54.521882"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.3ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-04 22:23:54.532919"], ["updated_at", "2020-12-04 22:23:54.532919"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-04 22:23:54.538579"], ["updated_at", "2020-12-04 22:23:54.538579"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$5aknSoL3n1Hu80agEOMCt.o0i2iK3ZqkkUjl4sPwnAR48i9YL1cy."], ["created_at", "2020-12-04 22:27:53.161142"], ["updated_at", "2020-12-04 22:27:53.161142"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$Wf/k9aB9bhQVIXl5nq4.r.Ud3dSnZOlCKgFn8yH1J2P6qFp.twR4O"], ["created_at", "2020-12-04 22:27:53.217129"], ["updated_at", "2020-12-04 22:27:53.217129"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.9ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-04 22:27:53.275940"], ["updated_at", "2020-12-04 22:27:53.275940"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (1.7ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-04 22:27:53.310563"], ["updated_at", "2020-12-04 22:27:53.310563"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.4ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-04 22:27:53.313820"], ["updated_at", "2020-12-04 22:27:53.313820"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-04 22:27:53.319402"], ["updated_at", "2020-12-04 22:27:53.319402"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$sGlkuATJEHKQm6X5G6vebOn9CgFVexLWbC6ibxrIICzMO.iUdtB5G"], ["created_at", "2020-12-04 22:27:53.337700"], ["updated_at", "2020-12-04 22:27:53.337700"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-04 22:27:53.340302"], ["updated_at", "2020-12-04 22:27:53.340302"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.8ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-04 22:27:53.347578"], ["updated_at", "2020-12-04 22:27:53.347578"]]
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.3ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-04 22:27:53.352863"], ["updated_at", "2020-12-04 22:27:53.352863"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-04 22:27:53.360016"], ["updated_at", "2020-12-04 22:27:53.360016"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$kVcUq.klIdktL87Oig3.o.jhbLydADPAa8f6RVZsO8D9OKnnM5qMG"], ["created_at", "2020-12-04 22:30:57.490006"], ["updated_at", "2020-12-04 22:30:57.490006"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$7lsqW44Oz659ZjRdH.3KLuCfAdbFnUA0WwlxgyI1PgQ/1Dqms.nHu"], ["created_at", "2020-12-04 22:30:57.558471"], ["updated_at", "2020-12-04 22:30:57.558471"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.5ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-04 22:30:57.581868"], ["updated_at", "2020-12-04 22:30:57.581868"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (1.4ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-04 22:30:57.629238"], ["updated_at", "2020-12-04 22:30:57.629238"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-04 22:30:57.632173"], ["updated_at", "2020-12-04 22:30:57.632173"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-04 22:30:57.636678"], ["updated_at", "2020-12-04 22:30:57.636678"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$KUsJrVtZMndj67V04rfaPeRNeX9Oc7lfuxCowgEvF6K88hRyBT7z."], ["created_at", "2020-12-04 22:30:57.653009"], ["updated_at", "2020-12-04 22:30:57.653009"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-04 22:30:57.655155"], ["updated_at", "2020-12-04 22:30:57.655155"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.6ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-04 22:30:57.675721"], ["updated_at", "2020-12-04 22:30:57.675721"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-04 22:30:57.678542"], ["updated_at", "2020-12-04 22:30:57.678542"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-04 22:30:57.682099"], ["updated_at", "2020-12-04 22:30:57.682099"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$ZAsAAv.H0XP/An/mJ02LQOgbKIV/Xgx7EM/ZMGJWdVcZVg2XVA7uO"], ["created_at", "2020-12-05 02:34:07.536148"], ["updated_at", "2020-12-05 02:34:07.536148"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$7AcAmFJ/S7EzFmF5oZ3Hx.sugRa9WixWWgiopCQ3Nr/GZPZPQRm8K"], ["created_at", "2020-12-05 02:34:07.615156"], ["updated_at", "2020-12-05 02:34:07.615156"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.9ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:34:07.636696"], ["updated_at", "2020-12-05 02:34:07.636696"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (1.7ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:34:07.670761"], ["updated_at", "2020-12-05 02:34:07.670761"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:34:07.673973"], ["updated_at", "2020-12-05 02:34:07.673973"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:34:07.677309"], ["updated_at", "2020-12-05 02:34:07.677309"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$GmOQ94.HZ0NHUhhBrNsKVuBkaHoCVCIDmxds/ZnVibFvueLoOFzHy"], ["created_at", "2020-12-05 02:34:07.693089"], ["updated_at", "2020-12-05 02:34:07.693089"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:34:07.695205"], ["updated_at", "2020-12-05 02:34:07.695205"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:34:07.698573"], ["updated_at", "2020-12-05 02:34:07.698573"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:34:07.701231"], ["updated_at", "2020-12-05 02:34:07.701231"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:34:07.704436"], ["updated_at", "2020-12-05 02:34:07.704436"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$m1dNEEf29cEPgGmshWvBr.VW8ZE1OgFbUMB0KV7YFF5UGHuqssoSK"], ["created_at", "2020-12-05 02:34:21.716900"], ["updated_at", "2020-12-05 02:34:21.716900"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$udkZ7UAl5wxc4kJW3NjYxuqtZxxpSOEjbLiY6YiIbk/.A3Pd8vcWW"], ["created_at", "2020-12-05 02:34:21.801990"], ["updated_at", "2020-12-05 02:34:21.801990"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.6ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:34:21.832112"], ["updated_at", "2020-12-05 02:34:21.832112"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (1.5ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:34:21.871604"], ["updated_at", "2020-12-05 02:34:21.871604"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:34:21.874481"], ["updated_at", "2020-12-05 02:34:21.874481"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:34:21.878377"], ["updated_at", "2020-12-05 02:34:21.878377"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$08WtMIE6rGMDItcjkhZmR.4wOzU0aRoWA66.CuG0TAb3vE0XI2P2a"], ["created_at", "2020-12-05 02:34:21.894211"], ["updated_at", "2020-12-05 02:34:21.894211"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:34:21.896395"], ["updated_at", "2020-12-05 02:34:21.896395"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:34:21.900683"], ["updated_at", "2020-12-05 02:34:21.900683"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:34:21.904488"], ["updated_at", "2020-12-05 02:34:21.904488"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.7ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:34:21.907907"], ["updated_at", "2020-12-05 02:34:21.907907"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$FiJ5sTVWuifrd6Q4iFXXSemWI0R6qDoxmwJyNIzZclkuLri8afiDW"], ["created_at", "2020-12-05 02:34:32.961465"], ["updated_at", "2020-12-05 02:34:32.961465"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$N4CuCG60keNRFCW9og2RHOUCvCeGIMgEEcKTR5MLAREUJrjDCxMMm"], ["created_at", "2020-12-05 02:34:33.026550"], ["updated_at", "2020-12-05 02:34:33.026550"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.6ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:34:33.071011"], ["updated_at", "2020-12-05 02:34:33.071011"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (1.3ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:34:33.101981"], ["updated_at", "2020-12-05 02:34:33.101981"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:34:33.104953"], ["updated_at", "2020-12-05 02:34:33.104953"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:34:33.108014"], ["updated_at", "2020-12-05 02:34:33.108014"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$aspwFBrv7YwtPpjh1l8xy.gcmJ7q6SyOfb47te8elcgDgGHcIOqyC"], ["created_at", "2020-12-05 02:34:33.125854"], ["updated_at", "2020-12-05 02:34:33.125854"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:34:33.128153"], ["updated_at", "2020-12-05 02:34:33.128153"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:34:33.133748"], ["updated_at", "2020-12-05 02:34:33.133748"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:34:33.135504"], ["updated_at", "2020-12-05 02:34:33.135504"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.4ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:34:33.142962"], ["updated_at", "2020-12-05 02:34:33.142962"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$VpJ4s3ca1GZYGU5mENLhHuIp59almJKz9Xwrk7parwzEYnmlEirzC"], ["created_at", "2020-12-05 02:35:18.064402"], ["updated_at", "2020-12-05 02:35:18.064402"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$0VhTIAXlJbkqn8AUJEhFBOTT2kLXjwWZ3/7aOuHvD3LerOKwQM.cy"], ["created_at", "2020-12-05 02:35:18.116065"], ["updated_at", "2020-12-05 02:35:18.116065"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.6ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:35:18.140841"], ["updated_at", "2020-12-05 02:35:18.140841"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (1.7ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:35:18.174152"], ["updated_at", "2020-12-05 02:35:18.174152"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:35:18.177424"], ["updated_at", "2020-12-05 02:35:18.177424"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:35:18.181253"], ["updated_at", "2020-12-05 02:35:18.181253"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$mHyXv/X.FbmjGRISNEQC3uCSL.NRLtELXXwdGcJzJMw5dhFMBcP8a"], ["created_at", "2020-12-05 02:35:18.197862"], ["updated_at", "2020-12-05 02:35:18.197862"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:35:18.199817"], ["updated_at", "2020-12-05 02:35:18.199817"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:35:18.205243"], ["updated_at", "2020-12-05 02:35:18.205243"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:35:18.207555"], ["updated_at", "2020-12-05 02:35:18.207555"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:35:18.217302"], ["updated_at", "2020-12-05 02:35:18.217302"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$tJ96yVrlBPQQTXY837Hq9u2y4bu1vZU8BhVP9azFrA0QhSknE7xaS"], ["created_at", "2020-12-05 02:36:19.103292"], ["updated_at", "2020-12-05 02:36:19.103292"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$2CaKvn7Ic3WK2elFFQ9aCe7nKP0mZjwIoAV4T9fzYL6eLYmf2vS4i"], ["created_at", "2020-12-05 02:36:19.167839"], ["updated_at", "2020-12-05 02:36:19.167839"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.7ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:36:19.191303"], ["updated_at", "2020-12-05 02:36:19.191303"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (1.5ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:36:19.220874"], ["updated_at", "2020-12-05 02:36:19.220874"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:36:19.223743"], ["updated_at", "2020-12-05 02:36:19.223743"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:36:19.227536"], ["updated_at", "2020-12-05 02:36:19.227536"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.5ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:36:19.239381"], ["updated_at", "2020-12-05 02:36:19.239381"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:36:19.242676"], ["updated_at", "2020-12-05 02:36:19.242676"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$BdUJ6uyO0r7kIZt29alWCuiWEf7TcVZ.BD6ZrHx.43MjUNNmQKyIO"], ["created_at", "2020-12-05 02:36:19.247006"], ["updated_at", "2020-12-05 02:36:19.247006"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (4.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$.3e5ZAQMAw9/m080uAf1sOPgna1KFuqULiL85NsCcA1.y9OXQkzG6"], ["created_at", "2020-12-05 02:36:57.677699"], ["updated_at", "2020-12-05 02:36:57.677699"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$FxxTv73XdwNs6yfMQCfiiODKZUF1SrUEmbPlBF37VOT2ErRRF7dTu"], ["created_at", "2020-12-05 02:36:57.734749"], ["updated_at", "2020-12-05 02:36:57.734749"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.7ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:36:57.758246"], ["updated_at", "2020-12-05 02:36:57.758246"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (1.5ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:36:57.792505"], ["updated_at", "2020-12-05 02:36:57.792505"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:36:57.795371"], ["updated_at", "2020-12-05 02:36:57.795371"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:36:57.798415"], ["updated_at", "2020-12-05 02:36:57.798415"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$WSHoyX..2XTkYP/K9n7El.4/zmN3JPm8dzqf1piMRoN7NQavJwpKa"], ["created_at", "2020-12-05 02:36:57.813568"], ["updated_at", "2020-12-05 02:36:57.813568"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:36:57.817418"], ["updated_at", "2020-12-05 02:36:57.817418"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (2.3ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:36:57.821285"], ["updated_at", "2020-12-05 02:36:57.821285"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:36:57.826434"], ["updated_at", "2020-12-05 02:36:57.826434"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:36:57.830056"], ["updated_at", "2020-12-05 02:36:57.830056"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBed Load (1.6ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? ORDER BY "beds"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? ORDER BY "beds"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$ZAC/wCBOv9DVHPUKFLRypel99mPOt8WprOC8ZqfuHb0z4eqd/tn7q"], ["created_at", "2020-12-05 02:40:30.044205"], ["updated_at", "2020-12-05 02:40:30.044205"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$ea7nOoplmvycIDVDOxQYLubMLsw/qX4Z3pBk19jyfILGZDhjqsIia"], ["created_at", "2020-12-05 02:40:30.096420"], ["updated_at", "2020-12-05 02:40:30.096420"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.7ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:40:30.118614"], ["updated_at", "2020-12-05 02:40:30.118614"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (1.3ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:40:30.149219"], ["updated_at", "2020-12-05 02:40:30.149219"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:40:30.152185"], ["updated_at", "2020-12-05 02:40:30.152185"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:40:30.155157"], ["updated_at", "2020-12-05 02:40:30.155157"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$OOupo6TD3MMScZj5hiYmE.ZZYGVh3OXqkPDf9tjW1n/5Sb6gmFXDu"], ["created_at", "2020-12-05 02:40:30.170727"], ["updated_at", "2020-12-05 02:40:30.170727"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:40:30.172613"], ["updated_at", "2020-12-05 02:40:30.172613"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.4ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:40:30.175870"], ["updated_at", "2020-12-05 02:40:30.175870"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:40:30.177972"], ["updated_at", "2020-12-05 02:40:30.177972"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:40:30.181059"], ["updated_at", "2020-12-05 02:40:30.181059"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? ORDER BY "beds"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? ORDER BY "beds"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$u6eDuYx24cuWnKzrEvgm/.4IdohE46X753.BgMsfk2tQFgaQ1hGsq"], ["created_at", "2020-12-05 02:40:30.199540"], ["updated_at", "2020-12-05 02:40:30.199540"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.3ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:40:30.202754"], ["updated_at", "2020-12-05 02:40:30.202754"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:40:30.206591"], ["updated_at", "2020-12-05 02:40:30.206591"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:40:30.207937"], ["updated_at", "2020-12-05 02:40:30.207937"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:40:30.212824"], ["updated_at", "2020-12-05 02:40:30.212824"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mHarvest Load (0.6ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? ORDER BY "harvests"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$61hjl26qVwgZW6bOnbJ.4Oimgr9j47hjuQRJWPT7vjp2qGa4C2OBW"], ["created_at", "2020-12-05 02:41:15.699180"], ["updated_at", "2020-12-05 02:41:15.699180"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$W/xepJS4z5AwoP/NDeD38.vv9G7P0hSCMJ0EXh5xNcAuJ7op/IZQi"], ["created_at", "2020-12-05 02:41:15.738468"], ["updated_at", "2020-12-05 02:41:15.738468"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:41:15.771482"], ["updated_at", "2020-12-05 02:41:15.771482"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:41:15.801398"], ["updated_at", "2020-12-05 02:41:15.801398"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:41:15.802934"], ["updated_at", "2020-12-05 02:41:15.802934"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:41:15.805448"], ["updated_at", "2020-12-05 02:41:15.805448"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$QPhDnXQ8F.kbC4tIuuMGb.xZG/0m.JGb/te78OZcgNLp47q5/adVq"], ["created_at", "2020-12-05 02:41:15.820947"], ["updated_at", "2020-12-05 02:41:15.820947"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:41:15.823153"], ["updated_at", "2020-12-05 02:41:15.823153"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:41:15.826887"], ["updated_at", "2020-12-05 02:41:15.826887"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:41:15.828745"], ["updated_at", "2020-12-05 02:41:15.828745"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:41:15.835260"], ["updated_at", "2020-12-05 02:41:15.835260"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBed Load (0.6ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? ORDER BY "beds"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.5ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? ORDER BY "beds"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$rrCGn95tB0YpSUV/6.81F.CysCJIzi2YhXMyS4hm0.hc4Gmfi5VVm"], ["created_at", "2020-12-05 02:41:15.853417"], ["updated_at", "2020-12-05 02:41:15.853417"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.3ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:41:15.855222"], ["updated_at", "2020-12-05 02:41:15.855222"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.4ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:41:15.861127"], ["updated_at", "2020-12-05 02:41:15.861127"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:41:15.863446"], ["updated_at", "2020-12-05 02:41:15.863446"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:41:15.870986"], ["updated_at", "2020-12-05 02:41:15.870986"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mHarvest Create (0.8ms)[0m  [1m[32mINSERT INTO "harvests" ("weight", "harvest_date", "plant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["weight", 1.2], ["harvest_date", 20201201], ["plant_id", 1], ["created_at", "2020-12-05 02:41:15.893593"], ["updated_at", "2020-12-05 02:41:15.893593"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mHarvest Create (0.2ms)[0m  [1m[32mINSERT INTO "harvests" ("weight", "harvest_date", "plant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["weight", 2.0], ["harvest_date", 20201201], ["plant_id", 2], ["created_at", "2020-12-05 02:41:15.897889"], ["updated_at", "2020-12-05 02:41:15.897889"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mHarvest Load (0.3ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? ORDER BY "harvests"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$z4cOdi6SJblz.COGReZbZOhJg3TJLRThxa.WBdx9MGu5BLpZyu/k."], ["created_at", "2020-12-05 02:42:02.161420"], ["updated_at", "2020-12-05 02:42:02.161420"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$RnLTK8iKB/BkT0QfR5y0du6oeimQv28Olbu.cI84RM/Fd.WcSLidW"], ["created_at", "2020-12-05 02:42:02.218519"], ["updated_at", "2020-12-05 02:42:02.218519"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.7ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:42:02.243851"], ["updated_at", "2020-12-05 02:42:02.243851"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (1.5ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:42:02.276262"], ["updated_at", "2020-12-05 02:42:02.276262"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:42:02.279175"], ["updated_at", "2020-12-05 02:42:02.279175"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:42:02.283130"], ["updated_at", "2020-12-05 02:42:02.283130"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$Z.BqVZV4h.tocDcNBFXb6.1MvO5C0MxunXMMsHx3.nTJdDmdnTzxu"], ["created_at", "2020-12-05 02:42:02.300688"], ["updated_at", "2020-12-05 02:42:02.300688"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:42:02.302805"], ["updated_at", "2020-12-05 02:42:02.302805"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.4ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:42:02.309317"], ["updated_at", "2020-12-05 02:42:02.309317"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:42:02.311176"], ["updated_at", "2020-12-05 02:42:02.311176"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.6ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:42:02.316189"], ["updated_at", "2020-12-05 02:42:02.316189"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? ORDER BY "beds"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? ORDER BY "beds"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$1HeyM/xGjoeP7AbJdcc7BOeZVhyh4d5DkeTAwvU.GbenW9KHjHZsO"], ["created_at", "2020-12-05 02:42:02.335550"], ["updated_at", "2020-12-05 02:42:02.335550"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.3ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:42:02.337687"], ["updated_at", "2020-12-05 02:42:02.337687"]]
+  [1m[35m (1.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:42:02.344639"], ["updated_at", "2020-12-05 02:42:02.344639"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:42:02.346257"], ["updated_at", "2020-12-05 02:42:02.346257"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:42:02.352993"], ["updated_at", "2020-12-05 02:42:02.352993"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$QxWdpeVrNlC.7AagbTnyYuKnHLNRLyfI5IrHyGjlyrESdNKcR2VO."], ["created_at", "2020-12-05 02:42:28.509415"], ["updated_at", "2020-12-05 02:42:28.509415"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$0s/Lx9d2/1alZxl1LfeDhuthRXjipHzoB5r11vjnOQ0orU4NGgpF2"], ["created_at", "2020-12-05 02:42:28.561215"], ["updated_at", "2020-12-05 02:42:28.561215"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.8ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:42:28.584981"], ["updated_at", "2020-12-05 02:42:28.584981"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (1.3ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:42:28.614308"], ["updated_at", "2020-12-05 02:42:28.614308"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:42:28.617185"], ["updated_at", "2020-12-05 02:42:28.617185"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:42:28.620276"], ["updated_at", "2020-12-05 02:42:28.620276"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$FKGAM4Jk.gybgBQ423LQoOZ1pPpcqiw2zEqQPAbbawC/Zk3PDes1y"], ["created_at", "2020-12-05 02:42:28.635134"], ["updated_at", "2020-12-05 02:42:28.635134"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:42:28.637071"], ["updated_at", "2020-12-05 02:42:28.637071"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.5ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:42:28.640517"], ["updated_at", "2020-12-05 02:42:28.640517"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:42:28.643023"], ["updated_at", "2020-12-05 02:42:28.643023"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:42:28.648071"], ["updated_at", "2020-12-05 02:42:28.648071"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBed Load (0.6ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? ORDER BY "beds"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? ORDER BY "beds"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$cl5R2.K3P1m9uZkcfMjuTOKHPr0DrpowkyTVj.iJwBRZh2OuZFv.y"], ["created_at", "2020-12-05 02:42:28.663744"], ["updated_at", "2020-12-05 02:42:28.663744"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:42:28.666472"], ["updated_at", "2020-12-05 02:42:28.666472"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.6ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:42:28.670978"], ["updated_at", "2020-12-05 02:42:28.670978"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:42:28.674845"], ["updated_at", "2020-12-05 02:42:28.674845"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:42:28.679437"], ["updated_at", "2020-12-05 02:42:28.679437"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mHarvest Create (1.3ms)[0m  [1m[32mINSERT INTO "harvests" ("weight", "harvest_date", "plant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["weight", 1.2], ["harvest_date", 20201201], ["plant_id", 1], ["created_at", "2020-12-05 02:42:28.693763"], ["updated_at", "2020-12-05 02:42:28.693763"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mHarvest Create (0.1ms)[0m  [1m[32mINSERT INTO "harvests" ("weight", "harvest_date", "plant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["weight", 2.0], ["harvest_date", 20201201], ["plant_id", 2], ["created_at", "2020-12-05 02:42:28.697415"], ["updated_at", "2020-12-05 02:42:28.697415"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mHarvest Load (0.3ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? ORDER BY "harvests"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$kVbW/scG0/T9KZWTOCFgBOsycYR2H6tL4rvccxz/h01EA8lrJiOd."], ["created_at", "2020-12-05 02:43:05.596662"], ["updated_at", "2020-12-05 02:43:05.596662"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$zu7V6uVYwJ/vvrQyWa1HNOWylXzflHF21Z.DRQu1JljAuNWP6wr9e"], ["created_at", "2020-12-05 02:43:05.649445"], ["updated_at", "2020-12-05 02:43:05.649445"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.6ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:43:05.670961"], ["updated_at", "2020-12-05 02:43:05.670961"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (1.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:43:05.702584"], ["updated_at", "2020-12-05 02:43:05.702584"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:43:05.707519"], ["updated_at", "2020-12-05 02:43:05.707519"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:43:05.711278"], ["updated_at", "2020-12-05 02:43:05.711278"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$ayrzNASeGFzXxQfFVD7qgO7CA1t7BFV7aHHNY3MbtSFokYujZnw9G"], ["created_at", "2020-12-05 02:43:05.725389"], ["updated_at", "2020-12-05 02:43:05.725389"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:43:05.727279"], ["updated_at", "2020-12-05 02:43:05.727279"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.5ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:43:05.730930"], ["updated_at", "2020-12-05 02:43:05.730930"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:43:05.733240"], ["updated_at", "2020-12-05 02:43:05.733240"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:43:05.737910"], ["updated_at", "2020-12-05 02:43:05.737910"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBed Load (0.5ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? ORDER BY "beds"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? ORDER BY "beds"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (4.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$iX6X/puAqceCyNNtE0ToeO3RWxuMx0C0PagjvaX.kYIIz8sjzcg8e"], ["created_at", "2020-12-05 02:43:05.761301"], ["updated_at", "2020-12-05 02:43:05.761301"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.3ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:43:05.764316"], ["updated_at", "2020-12-05 02:43:05.764316"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.4ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:43:05.769803"], ["updated_at", "2020-12-05 02:43:05.769803"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.3ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:43:05.772450"], ["updated_at", "2020-12-05 02:43:05.772450"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:43:05.780467"], ["updated_at", "2020-12-05 02:43:05.780467"]]
+  [1m[35m (1.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mHarvest Create (4.1ms)[0m  [1m[32mINSERT INTO "harvests" ("weight", "harvest_date", "plant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["weight", 1.2], ["harvest_date", 20201201], ["plant_id", 1], ["created_at", "2020-12-05 02:43:05.808961"], ["updated_at", "2020-12-05 02:43:05.808961"]]
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mHarvest Create (0.2ms)[0m  [1m[32mINSERT INTO "harvests" ("weight", "harvest_date", "plant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["weight", 2.0], ["harvest_date", 20201201], ["plant_id", 2], ["created_at", "2020-12-05 02:43:05.818055"], ["updated_at", "2020-12-05 02:43:05.818055"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mHarvest Load (0.4ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? ORDER BY "harvests"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mHarvest Load (0.4ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? ORDER BY "harvests"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$BxFavOt/O3.o6T278xb/6uXy4.j3lre1G6h/FHa/aCjuhbkEkUpwe"], ["created_at", "2020-12-05 02:45:32.460139"], ["updated_at", "2020-12-05 02:45:32.460139"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$Hq47b/UqYaajPM1yS/TT8eaqpzfiCcD348Ox2WFEVHi.I9NtV4Z.K"], ["created_at", "2020-12-05 02:45:32.502844"], ["updated_at", "2020-12-05 02:45:32.502844"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.7ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:45:32.544397"], ["updated_at", "2020-12-05 02:45:32.544397"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (1.2ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:45:32.569149"], ["updated_at", "2020-12-05 02:45:32.569149"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$LvVJX6nQgKYjQrpqVwQuY.SdjpzIgJXadoBjp.zJkmyo460FXXaZu"], ["created_at", "2020-12-05 02:45:32.589458"], ["updated_at", "2020-12-05 02:45:32.589458"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBed Load (0.4ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? ORDER BY "beds"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:45:32.598912"], ["updated_at", "2020-12-05 02:45:32.598912"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$KOto6xZhdQbr7bUFP0hOzew7elwiOZPpcYj3.PNuI/dOu7qz7Gy2C"], ["created_at", "2020-12-05 02:45:32.610078"], ["updated_at", "2020-12-05 02:45:32.610078"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.3ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:45:32.614487"], ["updated_at", "2020-12-05 02:45:32.614487"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.4ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:45:32.620068"], ["updated_at", "2020-12-05 02:45:32.620068"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mHarvest Create (3.0ms)[0m  [1m[32mINSERT INTO "harvests" ("weight", "harvest_date", "plant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["weight", 1.2], ["harvest_date", 20201201], ["plant_id", 1], ["created_at", "2020-12-05 02:45:32.641426"], ["updated_at", "2020-12-05 02:45:32.641426"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:45:32.646678"], ["updated_at", "2020-12-05 02:45:32.646678"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.2ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.4ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:45:32.653994"], ["updated_at", "2020-12-05 02:45:32.653994"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mHarvest Create (0.2ms)[0m  [1m[32mINSERT INTO "harvests" ("weight", "harvest_date", "plant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["weight", 2.0], ["harvest_date", 20201201], ["plant_id", 2], ["created_at", "2020-12-05 02:45:32.662230"], ["updated_at", "2020-12-05 02:45:32.662230"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mHarvest Load (0.4ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? ORDER BY "harvests"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mHarvest Load (0.3ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? ORDER BY "harvests"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$mpaCdVZ/QDqF0SW0PqePdODBLqvfctRk7Gb4umpOgvTuWyKIRCai6"], ["created_at", "2020-12-05 02:48:44.443101"], ["updated_at", "2020-12-05 02:48:44.443101"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$pwdxZtNXFySo64spUofNGen0d4T.OaFM8YTg2LpQ6Q5kv7whAE9Oq"], ["created_at", "2020-12-05 02:48:44.492297"], ["updated_at", "2020-12-05 02:48:44.492297"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.7ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:48:44.508620"], ["updated_at", "2020-12-05 02:48:44.508620"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (1.4ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:48:44.540654"], ["updated_at", "2020-12-05 02:48:44.540654"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.1ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:48:44.543806"], ["updated_at", "2020-12-05 02:48:44.543806"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:48:44.547168"], ["updated_at", "2020-12-05 02:48:44.547168"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ? ORDER BY "plants"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$Q.LIboPR3ixAUOEDj.AlJOa1OhkkDhT7H1m0sr.8Vuy4R036NJZtS"], ["created_at", "2020-12-05 02:48:44.561236"], ["updated_at", "2020-12-05 02:48:44.561236"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.3ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:48:44.564298"], ["updated_at", "2020-12-05 02:48:44.564298"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.5ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:48:44.569111"], ["updated_at", "2020-12-05 02:48:44.569111"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:48:44.571676"], ["updated_at", "2020-12-05 02:48:44.571676"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:48:44.575268"], ["updated_at", "2020-12-05 02:48:44.575268"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? ORDER BY "beds"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.3ms)[0m  [1m[34mSELECT "beds".* FROM "beds" INNER JOIN "plants" ON "beds"."id" = "plants"."bed_id" WHERE "plants"."user_id" = ? ORDER BY "beds"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trevor@trevor.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Trevor"], ["last_name", "Tarpinian"], ["username", "trevor"], ["email", "trevor@trevor.com"], ["encrypted_password", "$2a$04$O0ThxoJloRc4Rhf83k7yAezbas5k717O43UDoQanykRnz8tFtPVYS"], ["created_at", "2020-12-05 02:48:44.591196"], ["updated_at", "2020-12-05 02:48:44.591196"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.2ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "A629"], ["medium", "Soil"], ["created_at", "2020-12-05 02:48:44.593240"], ["updated_at", "2020-12-05 02:48:44.593240"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.5ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Tomato"], ["user_id", 1], ["bed_id", 1], ["created_at", "2020-12-05 02:48:44.598748"], ["updated_at", "2020-12-05 02:48:44.598748"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBed Create (0.3ms)[0m  [1m[32mINSERT INTO "beds" ("name", "medium", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "B282"], ["medium", "Hydroponic"], ["created_at", "2020-12-05 02:48:44.601605"], ["updated_at", "2020-12-05 02:48:44.601605"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBed Load (0.1ms)[0m  [1m[34mSELECT "beds".* FROM "beds" WHERE "beds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlant Create (0.1ms)[0m  [1m[32mINSERT INTO "plants" ("variety", "user_id", "bed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["variety", "Thai Basil"], ["user_id", 1], ["bed_id", 2], ["created_at", "2020-12-05 02:48:44.605383"], ["updated_at", "2020-12-05 02:48:44.605383"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mHarvest Create (0.9ms)[0m  [1m[32mINSERT INTO "harvests" ("weight", "harvest_date", "plant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["weight", 1.2], ["harvest_date", 20201201], ["plant_id", 1], ["created_at", "2020-12-05 02:48:44.622506"], ["updated_at", "2020-12-05 02:48:44.622506"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mHarvest Create (0.2ms)[0m  [1m[32mINSERT INTO "harvests" ("weight", "harvest_date", "plant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["weight", 2.0], ["harvest_date", 20201201], ["plant_id", 2], ["created_at", "2020-12-05 02:48:44.625914"], ["updated_at", "2020-12-05 02:48:44.625914"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mHarvest Load (0.3ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? ORDER BY "harvests"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mHarvest Load (0.5ms)[0m  [1m[34mSELECT "harvests".* FROM "harvests" INNER JOIN "plants" ON "harvests"."plant_id" = "plants"."id" WHERE "plants"."user_id" = ? ORDER BY "harvests"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
