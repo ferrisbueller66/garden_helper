@@ -7,4 +7,6 @@ class Bed < ApplicationRecord
   validates :name, presence: true
 
   scope :medium_soil, -> { where(medium: "soil")}
+  scope :medium_water, -> { where(medium: "aquaponic")}
+  scope :location_basement, -> { where(location: "basement")}
 end

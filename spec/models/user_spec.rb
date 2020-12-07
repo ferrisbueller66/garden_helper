@@ -33,18 +33,18 @@ describe User do
 		expect(User.new(first_name: "Trevor")).not_to be_valid
 	end
 
-	  it "has many plants" do
-    first_plant = Plant.create(:user_id => user.id, :bed_id => bed1.id, :variety => "Tomato")
-    second_plant = Plant.create(:user_id => user.id, :bed_id => bed2.id, :variety => "Thai Basil")
-    expect(user.plants.first).to eq(first_plant)
-    expect(user.plants.last).to eq(second_plant)
-  end
+	it "has many plants" do
+		first_plant = Plant.create(:user_id => user.id, :bed_id => bed1.id, :variety => "Tomato")
+		second_plant = Plant.create(:user_id => user.id, :bed_id => bed2.id, :variety => "Thai Basil")
+		expect(user.plants.first).to eq(first_plant)
+		expect(user.plants.last).to eq(second_plant)
+  	end
 
 	it "has many beds through plants" do
 		first_plant = Plant.create(:user_id => user.id, :bed_id => bed1.id, :variety => "Tomato")
-    second_plant = Plant.create(:user_id => user.id, :bed_id => bed2.id, :variety => "Thai Basil")
-    expect(user.beds.first).to eq(bed1)
-    expect(user.beds.last).to eq(bed2)
+		second_plant = Plant.create(:user_id => user.id, :bed_id => bed2.id, :variety => "Thai Basil")
+		expect(user.beds.first).to eq(bed1)
+		expect(user.beds.last).to eq(bed2)
 	end
 	
 	it "has many harvests through plants" do
@@ -56,13 +56,8 @@ describe User do
     expect(user.harvests.last).to eq(second_harvest)
   end
 
-#   it "has a method 'mood' that returns 'sad' when the user is more nauseous than happy" do
+#   it "utilizes OmniAuth" do
 #     expect(user.mood).to eq("sad")
-#   end
-
-#   it "has a method 'mood' that returns 'happy' when the user is more happy than nauseous" do
-#     user.update(:happiness => 7)
-#     expect(user.mood).to eq("happy")
 #   end
 
 end
