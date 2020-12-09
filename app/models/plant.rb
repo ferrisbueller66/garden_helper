@@ -6,7 +6,6 @@ class Plant < ApplicationRecord
   validates :variety, presence: true
 
   scope :been_harvested, -> { where(harvested: true) }
-  binding.pry
   #scope :alpha_sort, -> {(self.all.order(variety: :asc))} #replace this scope with scope below
   scope :sorted_by_name, -> {(self.all.order(variety: :asc))}
   scope :sorted_by_germination_date, -> {(self.all.order(germination_date: :asc))}
