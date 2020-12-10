@@ -24,37 +24,40 @@ describe User do
       :medium => "Hydroponic"
     )
   }
-  
-	it "is valid with first and last name, username, email, and password" do
-		expect(user).to be_valid
+  context 'Attributes' do
+		it "is valid with first and last name, username, email, and password" do
+			expect(user).to be_valid
+		end
+
+		it "is not valid without a password" do
+			expect(User.new(first_name: "Trevor")).not_to be_valid
+		end
 	end
 
-	it "is not valid without a password" do
-		expect(User.new(first_name: "Trevor")).not_to be_valid
-	end
+	context 'Associations' do
+		it "has many plants" do
+			first_plant = Plant.create(:user_id => user.id, :bed_id => bed1.id, :variety => "Tomato")
+			second_plant = Plant.create(:user_id => user.id, :bed_id => bed2.id, :variety => "Thai Basil")
+			expect(user.plants.first).to eq(first_plant)
+			expect(user.plants.last).to eq(second_plant)
+			end
 
-	it "has many plants" do
-		first_plant = Plant.create(:user_id => user.id, :bed_id => bed1.id, :variety => "Tomato")
-		second_plant = Plant.create(:user_id => user.id, :bed_id => bed2.id, :variety => "Thai Basil")
-		expect(user.plants.first).to eq(first_plant)
-		expect(user.plants.last).to eq(second_plant)
-  	end
-
-	it "has many beds through plants" do
-		first_plant = Plant.create(:user_id => user.id, :bed_id => bed1.id, :variety => "Tomato")
-		second_plant = Plant.create(:user_id => user.id, :bed_id => bed2.id, :variety => "Thai Basil")
-		expect(user.beds.first).to eq(bed1)
-		expect(user.beds.last).to eq(bed2)
+		it "has many beds through plants" do
+			first_plant = Plant.create(:user_id => user.id, :bed_id => bed1.id, :variety => "Tomato")
+			second_plant = Plant.create(:user_id => user.id, :bed_id => bed2.id, :variety => "Thai Basil")
+			expect(user.beds.first).to eq(bed1)
+			expect(user.beds.last).to eq(bed2)
+		end
+		
+		it "has many harvests through plants" do
+			first_plant = Plant.create(:user_id => user.id, :bed_id => bed1.id, :variety => "Tomato")
+			second_plant = Plant.create(:user_id => user.id, :bed_id => bed2.id, :variety => "Thai Basil")
+			first_harvest = Harvest.create(:weight => "1.2", :harvest_date => 20201201, :plant_id => first_plant.id)
+			second_harvest = Harvest.create(:weight => "2.0", :harvest_date => 20201201, :plant_id => second_plant.id)
+			expect(user.harvests.first).to eq(first_harvest)
+			expect(user.harvests.last).to eq(second_harvest)
+		end
 	end
-	
-	it "has many harvests through plants" do
-		first_plant = Plant.create(:user_id => user.id, :bed_id => bed1.id, :variety => "Tomato")
-    second_plant = Plant.create(:user_id => user.id, :bed_id => bed2.id, :variety => "Thai Basil")
-		first_harvest = Harvest.create(:weight => "1.2", :harvest_date => 20201201, :plant_id => first_plant.id)
-		second_harvest = Harvest.create(:weight => "2.0", :harvest_date => 20201201, :plant_id => second_plant.id)
-    expect(user.harvests.first).to eq(first_harvest)
-    expect(user.harvests.last).to eq(second_harvest)
-  end
 
 #   it "utilizes OmniAuth" do
 #     expect(user.mood).to eq("sad")
