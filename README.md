@@ -6,7 +6,7 @@
 
 ![forks badge](https://img.shields.io/github/forks/tmtarpinian/garden_helper)
 ![stars badge](https://img.shields.io/github/stars/tmtarpinian/garden_helper)
-
+[![Coverage](badge.svg)](https://github.com/tmtarpinian/garden_helper)
 
 ### Table of Contents
 

@@ -56,6 +56,7 @@ group :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
+  gem 'simplecov-shields-badge', require: false
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
