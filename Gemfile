@@ -55,6 +55,7 @@ group :test do
   gem 'rack-test'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
+  gem 'simplecov', require: false
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
