@@ -1,0 +1,23 @@
+name: Branches
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  test_branch:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@473e4d8fe5dd94ee328fdfca9f8c9c7afc9dae5e
+      with:
+        ruby-version: 2.6.1
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Install Packages
+      run:  yarn install
+    - name: Run Tests 
+      run: bundle exec rspec
