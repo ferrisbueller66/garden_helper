@@ -3,7 +3,7 @@
 > An app to track the life-cycle data of every plant in your garden, greenhouse, or aquaponics system.
 
 ![Production](https://github.com/tmtarpinian/garden_helper/actions/workflows/production.yml/badge.svg)
-![Development](https://github.com/tmtarpinian/garden_helper/actions/workflows/development.yml/badge.svg)garden_helper/workflows/development/badge.svg)
+![Development](https://github.com/tmtarpinian/garden_helper/actions/workflows/development.yml/badge.svg)
 [![Coverage](badge.svg)](https://github.com/tmtarpinian/garden_helper)
 
 ### Table of Contents
