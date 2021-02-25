@@ -32,7 +32,5 @@ jobs:
       run: bundle install
     - name: Install Packages
       run:  yarn install
-    - name: Migrate Test Database
-      run: rake db:migrate Rails_ENV=test
     - name: Run Tests 
       run: bundle exec rspec
