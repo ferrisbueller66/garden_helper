@@ -31,8 +31,10 @@ jobs:
     - name: Install Dependencies
       run: 
         bundle install
-        yarn install --check-files
+        yarn install
+    - name: Run Javascript Checks
+      run: yarn lint
     - name: Migrate Test Database
       run: rake db:migrate Rails_ENV=test
-    - name: Run Tests
+    - name: Run Tests 
       run: bundle exec rspec
