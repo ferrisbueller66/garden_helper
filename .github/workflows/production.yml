@@ -29,10 +29,8 @@ jobs:
         ruby-version: 2.6.1
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Install Dependencies
-      run: 
-        bundle install
-        yarn install --check-files
-    - name: Migrate Test Database
-      run: rake db:migrate Rails_ENV=test
-    - name: Run Tests
+      run: bundle install
+    - name: Install Packages
+      run:  yarn install
+    - name: Run Tests 
       run: bundle exec rspec
