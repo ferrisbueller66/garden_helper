@@ -4,11 +4,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.1'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.3.1', '>= 6.1.3.1'
+gem 'rails', '~> 6.1.3.2', '>= 6.1.3.2'
 # Use Postgresql as the production database for Active Record
 gem 'pg', "~> 0.21"
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+gem 'puma', '>= 4.3.8'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
